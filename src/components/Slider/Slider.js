@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MovieCards from "./../MovieCards/MovieCards";
 import "./Slider.css";
-// import PervBtn from "./PervBtn"
-// import NextBtn from "./NextBtn";
+import PervBtn from "../Icons/PervBtn"
+import NextBtn from "../Icons/NextBtn";
 
 export default function Slider({ items }) {
   const [page, setPage] = useState(0);
@@ -28,7 +28,7 @@ export default function Slider({ items }) {
   return (
     <div className="all-container">
 
-      {/* <div onClick={perv} className="perv"> <PervBtn/>  </div> */}
+      <div onClick={perv} className="perv"> <PervBtn/>  </div>
 
       <div className="container-slider">
         <div className="slider" style={{ left: `-${page * 94.5}%` }}>
@@ -43,7 +43,7 @@ export default function Slider({ items }) {
         </div>       
       </div>
 
-      {/* <div onClick={next} className="next"> <NextBtn/> </div>   */}
+      <div onClick={next} className="next"> <NextBtn/> </div>  
 
     </div>
   );
