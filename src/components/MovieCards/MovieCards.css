@@ -1,0 +1,13 @@
+.card {
+    min-width: 26%;
+    margin-left: 5.5%;
+    margin-top: 20px;
+}
+/* .card:first-child {
+    margin-left: 5.5%;
+} */
+.pic {
+    width: 100%;
+    margin: 0;
+    
+} 

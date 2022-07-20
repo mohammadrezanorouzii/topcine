@@ -1,0 +1,23 @@
+.container-slider {
+    width: 100%;
+    overflow: hidden;    
+    background-color: rgb(212, 221, 221);
+    border-radius: 20px;
+}
+.slider {
+    /* left :-94.5%; */
+    display: flex;
+    position: relative;
+}
+.all-container {
+    display: flex;
+    justify-content: center;
+}
+.perv, .next {
+    margin: auto;
+    width: 10%;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    
+}
