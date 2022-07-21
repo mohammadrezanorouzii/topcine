@@ -21,7 +21,7 @@ export default function Slider({ items }) {
       setPage(page - 1);
     }
     if (page === 0){
-      setPage()
+      setPage(6)
     }
   };
 
@@ -35,10 +35,11 @@ export default function Slider({ items }) {
           {items.map((obj) => {
             return (
               <MovieCards
-              name={obj.title}
-              pic={`https://image.tmdb.org/t/p/w500${obj.poster_path}`}
+                name={obj.title}
+                pic={`https://image.tmdb.org/t/p/w500${obj.poster_path}`}
+                imdb={Math.round(obj.vote_average * 10) / 10}
               />
-              );
+            );
             })}
         </div>       
       </div>

@@ -1,7 +1,7 @@
 .card {
     min-width: 26%;
     margin-left: 5.5%;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 /* .card:first-child {
     margin-left: 5.5%;
@@ -11,3 +11,14 @@
     margin: 0;
     
 } 
+.name, .imdb-rating {
+    font-family: "Epilogue";
+    color: azure;
+    font-weight: 10;
+    font-size: 15px;
+    margin: 0;
+    margin-top: 10px;
+}
+.context {
+    overflow: hidden;
+}

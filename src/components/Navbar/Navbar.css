@@ -1,0 +1,74 @@
+/* @import url('https://fonts.googleapis.com/css?family=Inter'); */
+
+body {
+    font-family: "Archivo";                                         
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+    background: #323437;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.logo {
+    max-height: 90px;
+    margin: auto;
+    width: 165px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    background: linear-gradient(270deg, #0981AB 6.75%, #E7689F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.logo-container {
+    height: 90px;
+    position: absolute;
+    left: 30px;
+    display: flex;
+}
+.other-container {
+    height: 90px;;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 40px;
+}
+.saved, .imdb, .contact {
+    margin: auto;
+    max-height: 90px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    margin-right: 30px;
+    color: #FFFFFF;
+}
+.check-container {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: end;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    margin: auto;
+}
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+.check {
+    position: relative;
+    top: 2.5px;
+    right: 2.5px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(41, 42, 45, 94);
+    border-radius: 25px;
+}
