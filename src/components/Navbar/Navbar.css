@@ -38,10 +38,9 @@ body {
     right: 40px;
 }
 .saved, .imdb, .contact {
+    font-family: "Expletus Sans";
     margin: auto;
     max-height: 90px;
-    font-style: normal;
-    font-weight: 400;
     font-size: 25px;
     line-height: 33px;
     margin-right: 30px;

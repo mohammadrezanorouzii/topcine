@@ -2,6 +2,7 @@ import React from 'react'
 import "./Navbar.css"
 import "@fontsource/epilogue";
 import "@fontsource/archivo";
+import "@fontsource/expletus-sans"; 
 
 export default function () {
   return (
