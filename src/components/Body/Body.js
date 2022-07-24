@@ -7,6 +7,7 @@ export default function Body({ movies }) {
   const movies1 = movies.slice(0, 10)
   const movies2 = movies.slice(10, 20)
 
+  console.log(movies);
 
     return (
       <div className="all-body">
@@ -14,6 +15,7 @@ export default function Body({ movies }) {
           {movies1.map((obj) => {
             return (
               <BodyCards
+                popularity={obj.popularity}
                 genre={obj.genre_ids}
                 adult={obj.adult}
                 name={obj.title}
@@ -28,6 +30,7 @@ export default function Body({ movies }) {
           {movies2.map((obj) => {
             return (
               <BodyCards
+                popularity={obj.popularity}
                 genre={obj.genre_ids}
                 adult={obj.adult}
                 name={obj.title}

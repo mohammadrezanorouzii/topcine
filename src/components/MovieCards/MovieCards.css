@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 
-
 .card {
   min-width: 28%;
   position: relative;
@@ -10,9 +9,6 @@
 .card:hover {
     cursor: pointer;
 }
-/* .card:first-child {
-    margin-left: 5.5%;
-} */
 .pic {
   width: 100%;
   margin: 0;

@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Slider items={items} />
-      <Body movies={movies} />
+      <Body movies={movies}/>
     </div>
   );
 }

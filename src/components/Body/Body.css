@@ -6,3 +6,6 @@
     margin-right: 11.7%;
     justify-content: space-between;
 }
+.first-body, .second-body {
+    width: 43%;
+}
