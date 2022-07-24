@@ -1,0 +1,38 @@
+img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+.one-movie-container {
+  border-radius: 20px;
+  height: 10%;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  background-color: #2b2d31;
+  color: #ffffff;
+}
+.body-context {
+  padding: 10px 0 0 10px;
+  width: 80%;
+}
+.body-name {
+  margin: 0 0 10px 0;
+  font-family: "Epilogue";
+  font-weight: 700;
+  font-size: 20px;
+}
+.body-date {
+  margin: 0;
+}
+.body-imdb-container {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+.body-imdb-text {
+  margin: 0;
+}
+.body-imdb,
+.body-context {
+  margin: 0;
+}

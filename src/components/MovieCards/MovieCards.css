@@ -1,42 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Inter");
+
+
 .card {
-    min-width: 26%;
-    margin-left: 5.5%;
-    margin-top: 5px;
-    position: relative;
+  min-width: 28%;
+  position: relative;
+  margin-left: 4%;
+  margin-top: 5px;
+}
+.card:hover {
+    cursor: pointer;
 }
 /* .card:first-child {
     margin-left: 5.5%;
 } */
 .pic {
-    width: 100%;
-    margin: 0;
-    border-radius: 10px;
-} 
-.name, .imdb-rating {
-    font-family: "Epilogue";
-    color: azure;
-    font-weight: 10;
-    font-size: 15px;
-    margin: 0;
-    margin-top: 10px;
+  width: 100%;
+  margin: 0;
+  border-radius: 10px;
+}
+.name {
+  font-family: "Epilogue";
+  color: #FFFFFF;
+  font-weight: 10;
+  font-size: 15px;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 22px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.imdb-rating {
+  font-family: "Epilogue";
+  color: #ffffff;
+  font-weight: 1000;
+  font-size: 15px;
+  margin: 2px 0 0 5px;
+}
+.imdb-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 3px;
+}
+.imdb-name {
+  margin: 0;
+  font-weight: 1000;
 }
 .context {
-    position: absolute;
-    z-index: 1;
-    width: 322.8px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.525) 23.96%, rgba(0, 0, 0, 0.75) 30.67%);
-    border-radius: 0px 0px 10px 10px;
-    color: #FFFFFF;
-    padding: 0 0 10px 10px;
-    animation-name: hover;
-    animation-duration: 0.7s;
+  position: absolute;
+  z-index: 1;
+  height: 90px;
+  width: 100%;
+  bottom: 3px;
+  left: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.01) 0%,
+    rgba(0, 0, 0, 0.4) 10%,
+    rgba(0, 0, 0, 0.7) 20%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 1) 60%
+  );
+  border-radius: 0px 0px 10px 10px;
+  color: #ffffff;
+  animation-name: hover;
+  animation-duration: 0.9s;
 }
 .pic-context {
-    display: flex;
+  display: flex;
 }
 @keyframes hover {
-    0% { opacity: 0; }
-    100%{ opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.long-context {
+  position: absolute;
+  z-index: 1;
+  height: 110px;
+  width: 100%;
+  bottom: 3px;
+  left: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.01) 0%,
+    rgba(0, 0, 0, 0.4) 10%,
+    rgba(0, 0, 0, 0.7) 20%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 1) 60%
+  );
+  border-radius: 0px 0px 10px 10px;
+  color: #ffffff;
+  animation-name: hover;
+  animation-duration: 0.9s;
+}
+.about {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  font-size: 15px;
+  height: 20px;
+  margin-top: 10px;
+}
+.date {
+  margin: 0;
+  margin-right: 10px;
+  font-weight: 500;
 }
