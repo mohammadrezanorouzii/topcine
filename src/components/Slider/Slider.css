@@ -1,0 +1,53 @@
+.container-slider {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.slider {
+  /* left :-94.5%; */
+  display: flex;
+  position: relative;
+}
+.all-container {
+  display: flex;
+  justify-content: center;
+}
+.perv,
+.next {
+  width: 10%;
+  display: flex;
+  position: relative;
+}
+.pervv {
+  position: absolute;
+  right: 0;
+  top: 242px;
+}
+.nextt {
+  position: absolute;
+  top: 242px;
+  left: 0;
+}
+.perv,
+.next :hover {
+  cursor: pointer;
+}
+.trending-container {
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    width: 500px;
+    margin: 20px 0 10px 180px;
+}
+.trending {
+    color: #FFFFFF;
+    font-size: 25px;
+    margin: auto 0;
+    margin-left: 5px;
+}
+.line {
+    margin: auto 0;
+    background-color: #de518e;
+    height: 100%;
+    width: 5px;
+}

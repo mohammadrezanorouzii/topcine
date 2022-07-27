@@ -1,0 +1,124 @@
+img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.one-movie-container {
+  border-radius: 20px;
+  height: 400px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  background-color: #2b2d31;
+  color: #ffffff;
+}
+.one-movie-container:hover {
+  cursor: pointer;
+}
+.body-context {
+  padding: 10px 0 0 10px;
+  width: 80%;
+}
+.body-name {
+  margin: 0 0 10px 0;
+  font-family: "Epilogue";
+  font-weight: 700;
+  font-size: 25px;
+  width: 120%;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+
+}
+.body-date {
+  margin: 0;
+  font-weight: 300;
+  font-family: "Epilogue";
+}
+.body-imdb-container {
+  width: 160px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 20px;
+}
+.popularity-container {
+  flex-direction: row;
+  display: flex;
+  position: absolute;
+  left: 10px;
+  font-family: "Epilogue";
+  bottom: 10px;
+  height: 40px;
+}
+.popularity,
+.popularity-text {
+  margin: auto 5px auto 0;
+}
+.container-container {
+  width: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.01) 0%,
+    rgba(0, 0, 0, 0.3) 10%,
+    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 1) 70%
+  );
+  height: 120px;
+  bottom: 0px;
+  position: absolute;
+  animation-name: hover;
+  animation-duration: 0.3s;
+}
+@keyframes hover {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.star {
+  margin: auto 5px;
+}
+.body-imdb-text {
+  margin: auto 0;
+}
+.body-imdb {
+  margin: auto 5px;
+}
+.genre-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  width: 700px;
+}
+.genre {
+  padding: 5px;
+  margin: 0;
+  margin-right: 10px;
+  font-family: "Epilogue";
+  border-radius: 10px;
+  border: #ffffff 2px solid;
+}
+.genre:nth-child(1):hover {
+  background-color: #de518e;
+}
+.genre:nth-child(2):hover {
+  background-color: #A9619A;
+}
+.genre:nth-child(3):hover {
+  background-color: #7570A7;
+}
+.genre:nth-child(4):hover {
+  background-color: #4080B3;
+}
+.genre:nth-child(5):hover {
+  background-color: #0b8fbf;
+}
+.img-container {
+  width: 100%;
+  position: relative;
+}

@@ -1,0 +1,11 @@
+.all-body {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 11.7%;
+    margin-right: 11.7%;
+    justify-content: space-between;
+}
+.first-body, .second-body {
+    width: 43%;
+}
