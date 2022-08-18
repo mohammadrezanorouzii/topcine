@@ -8,7 +8,6 @@ body {
   flex-direction: row;
   height: 90px;
   background: #323437;
-  margin-bottom: 5px;
   border-radius: 5px;
 }
 .logo {

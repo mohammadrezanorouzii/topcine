@@ -1,0 +1,10 @@
+.series-slider2 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 5px;
+}
+.total2 {
+  overflow: hidden;
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+.header-img {
+  border-radius: 0;
+  height: 700px;
+}
+.total {
+  position: relative;
+}
+.header-context {
+  position: absolute;
+  color: #ffffff;
+  right: 100px;
+  bottom: 70px;
+  font-size: 35px;
+  width: 380px;
+  height: 250px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  word-spacing: 3px;
+}
+.header-context p {
+  margin: 0;
+}
+.header-context button {
+  margin-top: 40px;
+  background-color: #de3f00;
+  border: none;
+  outline: none;
+  width: 180px;
+  height: 60px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}

@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.login {
+  background-color: #292a2d;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-total {
+  width: 100%;
+  padding: 0;
+  height: 100%;
+}
+.login-shadow {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    #171616 50%,
+    rgba(23, 22, 22, 0.8) 54.45%,
+    rgba(23, 22, 22, 0.7) 57.35%,
+    rgba(96, 86, 86, 0) 98.9%
+  );
+}
+.login-logo-container {
+  height: 90px;
+  padding: 15px 0 0 15px;
+}
+.login-logo {
+  margin: 0;
+  font-family: "Roboto";
+  max-height: 50px;
+  width: 200px;
+  font-size: 50px;
+  letter-spacing: -5px;
+  line-height: 48px;
+  background: linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.login-context {
+  /* border: 2px solid aqua; */
+  width: 50%;
+  height: 100vh;
+}
+.text-container {
+  margin: 20px 50px;
+}
+.text-container p {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 40px;
+}
+.login-total {
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-repeat: no-repeat;
+  width: 95%;
+  height: 90%;
+}
+input {
+  margin: 5px 0 0 0;
+  height: 30px;
+  width: 98%;
+  border-radius: 10px;
+  outline: none;
+  background-color: rgb(42, 42, 46);
+  font-size: 20px;
+  border: none;
+  color: #ffffff;
+}
+input:invalid {
+  animation: shake 300ms;
+}
+@keyframes shake {
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+.email-container {
+  padding: 10px 0 0 10px;
+  width: 98%;
+  height: 70px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-color: rgb(42, 42, 46);
+  border-radius: 10px;
+}
+.inputs {
+  width: 620px;
+  height: 400px;
+  margin-left: 50px;
+}
+.email, .pass {
+  font-size: 15px;
+  color: #ffffff7b;
+  font-family: "Roboto";
+  font-weight: 500;
+  margin: 0;
+}
+.pass-container {
+  padding: 10px 0 0 10px;
+  width: 98%;
+  height: 70px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-color: rgb(42, 42, 46);
+  border-radius: 10px;
+  margin-top: 20px;
+}

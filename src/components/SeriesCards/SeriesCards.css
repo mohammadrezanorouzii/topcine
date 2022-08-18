@@ -1,0 +1,7 @@
+.series-img {
+  width: 340px;
+  height: 460px;
+  border-radius: 0;
+  margin-left: 20px;
+  object-fit: fill;
+}

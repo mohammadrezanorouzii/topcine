@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Slider from "./components/Slider/Slider";
-import Body from "./components/Body/Body";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import LogIn from "./components/LogIn/LogIn";
+import Home from "./components/Home/Home";
 
 function App() {
   const [items, setItems] = useState([]);
   const [movies, setMovies] = useState([]);
-  
+  const [series, setSeries] = useState([]);
+  const [series2, setSeries2] = useState([]);
+
   const options = {
     method: "GET",
   };
@@ -36,12 +38,41 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
 
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return setSeries(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=3",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return setSeries2(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Slider items={items} />
-      <Body movies={movies}/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<LogIn />}>
+        </Route>
+        {/* 575 */}
+        {/* <Navbar /> */}
+        <Route path="/" element={<Home items={items} movies={movies} series={series} series2={series2} />}>
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

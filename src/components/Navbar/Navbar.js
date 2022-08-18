@@ -4,7 +4,7 @@ import "@fontsource/epilogue";
 import "@fontsource/archivo";
 import "@fontsource/expletus-sans";
 
-export default function () {
+export default function Navbar () {
   return (
     <div className="navbar">
       <div className="logo-container">
