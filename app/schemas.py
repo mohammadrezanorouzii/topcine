@@ -1,5 +1,6 @@
-from pydantic import BaseModel, EmailStr, conint
 from typing import Optional
+from pydantic import BaseModel, EmailStr, conint
+
 
 
 
@@ -18,6 +19,11 @@ class UserCreate(BaseModel):
     username : str
     email : EmailStr
     password : str
+    fist_name : str
+    last_name : str
+    is_male : bool
+    is_female : bool
+    is_other : Optional[bool] = False
 
 
 class UserLogin(BaseModel):

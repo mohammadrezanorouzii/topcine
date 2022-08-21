@@ -1,11 +1,23 @@
 from fastapi import FastAPI
-from .routers import movies, users, auth, votes
+from .routers import auth, users
+# from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
 
 
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=origins,
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
+
 app.include_router(auth.router)
-app.include_router(movies.router)
 app.include_router(users.router)
-app.include_router(votes.router)
+
+@app.get("/")
+def root():
+    return {'message' : 'F'}
