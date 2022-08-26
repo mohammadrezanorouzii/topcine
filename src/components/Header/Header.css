@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 .header-img {
   border-radius: 0;
   height: 700px;
@@ -11,11 +13,12 @@
   right: 100px;
   bottom: 70px;
   font-size: 35px;
-  width: 380px;
+  width: 350px;
   height: 250px;
   font-weight: 700;
-  letter-spacing: 3px;
-  word-spacing: 3px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-family: "Roboto";
 }
 .header-context p {
   margin: 0;

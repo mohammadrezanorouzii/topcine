@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 .container-slider {
   width: 100%;
   overflow: hidden;
@@ -33,21 +35,22 @@
   cursor: pointer;
 }
 .trending-container {
-    display: flex;
-    flex-direction: row;
-    height: 35px;
-    width: 500px;
-    margin: 20px 0 10px 180px;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  width: 500px;
+  margin: 20px 0 10px 180px;
 }
 .trending {
-    color: #FFFFFF;
-    font-size: 25px;
-    margin: auto 0;
-    margin-left: 5px;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: "Roboto";
+  margin: auto 0;
+  margin-left: 5px;
 }
 .line {
-    margin: auto 0;
-    background-color: #de518e;
-    height: 100%;
-    width: 5px;
+  margin: auto 0;
+  background-color: #de518e;
+  height: 100%;
+  width: 5px;
 }

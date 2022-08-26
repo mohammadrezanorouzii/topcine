@@ -4,6 +4,7 @@ import "./App.css";
 import LogIn from "./components/LogIn/LogIn";
 import Home from "./components/Home/Home";
 import SignUp from "./components/SignUp/SignUp"
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -68,11 +69,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<LogIn />}>
         </Route>
-        {/* 575 */}
-        {/* <Navbar /> */}
         <Route path="/" element={<Home items={items} movies={movies} series={series} series2={series2} />}>
         </Route>
         <Route path="signup" element={<SignUp />} ></Route>
+        <Route path="*" element={<NotFoundPage />}>
+        </Route>
       </Routes>
     </Router>
   );

@@ -4,7 +4,6 @@ import img1 from "../pics/it.jpg";
 import CheckPassword from "./CheckPassword/CheckPassword";
 import { Link } from "react-router-dom";
 
-
 export default function SignUp() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -85,7 +84,7 @@ export default function SignUp() {
               </div>
               <div className="line4">
                 <p className="line4-text">
-                  dont have any idea for your password ?
+                  don't have any idea for your password ?
                 </p>
                 <a
                   className="clickhere"

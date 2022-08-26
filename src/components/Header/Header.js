@@ -27,9 +27,8 @@ export default function Header() {
     <div className="total">
       <img src={showingPic} alt="" className="header-img" />
       <div className="header-context">
-        <p className="">
-          Start Exploring thousands of films for free, support of your public
-          library or university
+        <p>
+          Start Exploring thousands of films for free 
         </p>
         <button> GET STARTED </button>
       </div>
