@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-.notfound-total {
+.notfoundtotal {
   width: 100%;
   position: relative;
   height: 100vh;
   margin: 0;
   padding: 0;
 }
-.notfound-context {
+.notfoundcontext {
   width: 420px;
   height: 400px;
   position: absolute;
@@ -21,7 +21,7 @@
   background-color: #510000;
   margin-bottom: 10px;
 }
-.pagenotfound-container {
+.pagenotfoundcontainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
   color: #ffffff;
   font-weight: 1000;
 }
-.getout-btn-link {
+.getoutbtnlink {
   margin-top: 10px;
   background-color: #510000;
   border: 2px solid #ffffff;

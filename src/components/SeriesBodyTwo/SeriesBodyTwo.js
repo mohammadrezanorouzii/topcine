@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SeriesCardsTwo from "../SeriesCardsTwo/SeriesCardsTwo";
-import "./SeriesBodyTwo.css";
+import styles from "./SeriesBodyTwo.module.scss";
 
 export default function SeriesBodyTwo({ series2 }) {
   const [n, setN] = useState(-1000);
@@ -14,8 +14,8 @@ export default function SeriesBodyTwo({ series2 }) {
 
   return (
     <>
-    <div className="total2">
-      <div className="series-slider2" style={{ left: `${n*0.1}%` }}>
+    <div className={styles.total2}>
+      <div className={styles.seriesslider2} style={{ left: `${n*0.1}%` }}>
         {series2.map((x) => {
           return (
             <SeriesCardsTwo

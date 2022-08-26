@@ -1,10 +1,10 @@
 import React from 'react'
-import "./SeriesCardsTwo.css"
+import styles from "./SeriesCardsTwo.module.scss"
 
 export default function SeriesCardsTwo({pic}) {
   return (
     <div className=''>
-      <img src={pic} alt="" className='series-img' />
+      <img src={pic} alt="" className={StyleSheet.seriesimg} />
     </div>
   )
 }

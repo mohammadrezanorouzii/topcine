@@ -25,19 +25,19 @@
   margin-top: 30px;
   margin-left: 10px;
 }
-.imdb-rating {
+.imdbrating {
   font-family: "Epilogue";
   color: #ffffff;
   font-weight: 1000;
   font-size: 15px;
   margin: 2px 0 0 5px;
 }
-.imdb-container {
+.imdbcontainer {
   display: flex;
   flex-direction: row;
   margin-left: 3px;
 }
-.imdb-name {
+.imdbname {
   margin: 0;
   font-weight: 1000;
 }
@@ -60,7 +60,7 @@
   animation-name: hover;
   animation-duration: 0.9s;
 }
-.pic-context {
+.piccontext {
   display: flex;
 }
 @keyframes hover {
@@ -71,7 +71,7 @@
     opacity: 1;
   }
 }
-.long-context {
+.longcontext {
   position: absolute;
   z-index: 1;
   height: 110px;

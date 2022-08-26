@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
 }
-.login-shadow {
+.loginshadow {
   margin: 0;
   width: 100%;
   height: 100%;
@@ -21,49 +21,49 @@
     rgba(96, 86, 86, 0) 98.9%
   );
 }
-.login-logo-container {
+.loginlogocontainer {
   height: 90px;
   padding: 15px 0 0 15px;
 }
-.login-logo {
+.loginlogo {
   margin: 0;
   font-family: "Roboto";
   max-height: 50px;
-  width: 200px;
+  width: 20px;
   font-size: 50px;
-  letter-spacing: -5px;
+  letter-spacing: -2px;
   line-height: 48px;
   background: linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.login-context {
+.logincontext {
   /* border: 2px solid aqua; */
   width: 50%;
   height: 100vh;
 }
-.text-container {
+.textcontainer {
   margin: 20px 0 0 50px;
   display: flex;
   flex-direction: row;
   position: relative;
 }
-.text-container p {
+.textcontainer p {
   margin: 0;
   color: #ffffff;
   font-family: "Roboto";
   font-weight: 500;
   font-size: 40px;
 }
-.login-total {
+.logintotal {
   border-radius: 20px;
-  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
   background-repeat: no-repeat;
   width: 95%;
   height: 90%;
 }
-.login-circle {
+.logincircle {
   width: 11px;
   height: 11px;
   border-radius: 50%;
@@ -72,8 +72,8 @@
   bottom: 10px;
   left: 115px;
 }
-.input-email,
-.input-pass {
+.inputemail,
+.inputpass {
   margin: 5px 0 0 0;
   height: 30px;
   width: 98%;
@@ -104,19 +104,19 @@
     border: 2px rgb(204, 61, 61) solid;
   }
 } */
-.email-container {
+.emailcontainer {
   padding: 10px 0 0 10px;
   width: 98%;
   height: 70px;
-  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
   background-color: rgb(42, 42, 46);
   border-radius: 10px;
 }
-.email-container-border {
+.emailcontainerborder {
   padding: 10px 0 0 10px;
   width: 98%;
   height: 70px;
-  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
   background-color: rgb(42, 42, 46);
   border-radius: 10px;
   border: #de518e 2px solid;
@@ -134,62 +134,80 @@
   font-weight: 500;
   margin: 0;
 }
-.email-colored {
+.emailcolored {
   font-size: 15px;
   color: #de518e;
   font-family: "Roboto";
   font-weight: 500;
   margin: 0;
 }
-.pass-colored {
+.passcolored {
   font-size: 15px;
   color: #de518e;
   font-family: "Roboto";
   font-weight: 500;
   margin: 0;
 }
-.pass-container {
+.passcontainer {
   padding: 10px 0 0 10px;
   width: 98%;
   height: 70px;
-  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
   background-color: rgb(42, 42, 46);
   border-radius: 10px;
   margin-top: 20px;
 }
-.pass-container-border {
+.passcontainerborder {
   padding: 10px 0 0 10px;
   width: 98%;
   height: 70px;
-  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
   background-color: rgb(42, 42, 46);
   border-radius: 10px;
   margin-top: 20px;
   border: #de518e 2px solid;
 }
-.login-btn-container {
+.loginbtncontainer {
   width: 100%;
   height: 50px;
   margin: 0;
 }
-.login-btn {
+.loginbtn {
   border-radius: 10px;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 25px;
   margin: 0;
   width: 100%;
-  height: 50px;
-  background: linear-gradient(270deg, #0b8fbfd9 5%, #de518edb 100%);
+  height: 80px;
+  background: #de518e;
 }
-.login-btn:hover {
+@keyframes fontsize {
+  0% {
+    font-size: 26px;
+  }
+  25% {
+    font-size: 28px;
+  }
+  50% {
+    font-size: 30px;
+  }
+  75% {
+    font-size: 32px;
+  }
+  100% {
+    font-size: 32px;
+  }
+}
+.loginbtn:hover {
+  animation: fontsize 300ms forwards;
   cursor: pointer;
 }
-.login-error {
+.loginerror {
   font-size: 18px;
   color: crimson;
   margin: 0;
 }
-.remememberme-container {
+.rememembermecontainer {
   margin-top: 10px;
   display: flex;
   flex-direction: row;
@@ -197,13 +215,13 @@
   height: 35px;
   margin-left: 5px;
 }
-.rememberme {
+.rememembermecontainer input {
   width: 17px;
   height: 17px;
   border: 50%;
   margin: 0;
   margin-top: 1px;
-  background-color: #171616;
+  background-color: #000000;
 }
 .rememberme-text {
   color: #ffffff;
@@ -213,19 +231,19 @@
   font-size: 17px;
   font-family: "Roboto";
 }
-.new-user-container {
+.newusercontainer {
   margin: 0 0 10px 50px;
   display: flex;
   flex-direction: row;
 }
-.new-user-text {
+.newusertext {
   margin: 0;
   color: #ffffff;
   font-size: 16px;
   font-family: "Roboto";
   opacity: 0.5;
 }
-.new-user {
+.newuser {
   text-decoration: none;
   margin: 0;
   margin-left: 10px;

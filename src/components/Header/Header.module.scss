@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-.header-img {
+.headerimg {
   border-radius: 0;
   height: 700px;
 }
 .total {
   position: relative;
 }
-.header-context {
+.headercontext {
   position: absolute;
   color: #ffffff;
   right: 100px;
@@ -20,13 +20,14 @@
   word-spacing: 2px;
   font-family: "Roboto";
 }
-.header-context p {
+.headercontext p {
   margin: 0;
 }
-.header-context button {
+.headercontext button {
   margin-top: 40px;
   background-color: #de3f00;
   border: none;
+  border-radius: 10px;
   outline: none;
   width: 180px;
   height: 60px;

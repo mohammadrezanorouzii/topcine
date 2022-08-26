@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CheckPassword.css";
+import styles from "./CheckPassword.module.scss";
 import Done from "../../Icons/Done";
 import NotOk from "../../Icons/NotOk";
 
@@ -37,24 +37,32 @@ export default function CheckPassword({ password }) {
 
   return (
     <>
-      <div className="checkpass">
-        <div className="line1">
-          <div className="icon-done">{safe1 ? <Done /> : <NotOk />}</div>
-          <p className={`${safe1 ? "line1-text-light" : "line1-text"}`}>
+      <div className={styles.checkpass}>
+        <div className={styles.line1}>
+          <div className={styles["icon-done"]}>
+            {safe1 ? <Done /> : <NotOk />}
+          </div>
+          <p
+            className={`${
+              safe1 ? styles["line1-text-light"] : styles["line1-text"]
+            }`}
+          >
             use at least 8 characters
           </p>
         </div>
 
-        <div className="line2">
-          <div className="icon-done">{safe2 ? <Done /> : <NotOk />}</div>
-          <p className={`${safe2 ? "line1-text-light" : "line1-text"}`}>
+        <div className={styles.line2}>
+          <div className={styles["icon-done"]}>
+            {safe2 ? <Done /> : <NotOk />}
+          </div>
+          <p className={`${safe2 ? styles["line1-text-light"] : styles["line1-text"]}`}>
             use at least one uppercase
           </p>
         </div>
 
-        <div className="line3">
-          <div className="icon-done">{safe3 ? <Done /> : <NotOk />}</div>
-          <p className={`${safe3 ? "line1-text-light" : "line1-text"}`}>
+        <div className={styles.line3}>
+          <div className={styles["icon-done"]}>{safe3 ? <Done /> : <NotOk />}</div>
+          <p className={`${safe3 ? styles["line1-text-light"] : styles["line1-text"]}`}>
             use at least one number
           </p>
         </div>

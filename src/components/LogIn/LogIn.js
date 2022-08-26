@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LogIn.css";
+import styles from "./LogIn.module.scss"
 import img1 from "../pics/it.jpg";
 import { Link } from "react-router-dom";
 
@@ -20,33 +20,32 @@ export default function LogIn() {
   };
 
   return (
-    <div className="login">
-      <div className="login-total" style={{ backgroundImage: `url(${img1})` }}>
-        <div className="login-shadow">
-          <div className="login-context">
-            <div className="login-logo-container">
-              <p className="login-logo"> TopCine </p>
+    <div className={styles.login}>
+      <div className={styles.logintotal} style={{ backgroundImage: `url(${img1})` }}>
+        <div className={styles.loginshadow}>
+          <div className={styles.logincontext}>
+            <div className={styles.loginlogocontainer}>
+              <Link className={styles.loginlogo} to="/"> TopCine </Link>
             </div>
-            <div className="text-container">
+            <div className={styles.textcontainer}>
               <p> Log In </p>
-              <div className="login-circle"></div>
+              <div className={styles.logincircle}></div>
             </div>
-            <div className="new-user-container">
-              <p className="new-user-text"> Dont have an account ? </p>
-              <Link className="new-user" to="/signup"> Sign Up </Link>
+            <div className={styles.newusercontainer}>
+              <p className={styles.newusertext}> Dont have an account ? </p>
+              <Link className={styles.newuser} to="/signup"> Sign Up </Link>
             </div>
-            <form className="inputs" onSubmit={checkValidation}>
+            <form className={styles.inputs} onSubmit={checkValidation}>
               <div
                 className={`${
-                  emailBorder ? "email-container-border" : "email-container"
+                  emailBorder ? styles.emailcontainerborder : styles.emailcontainer
                 }`}
               >
-                <p className={`${emailBorder ? "email-colored" : "email"}`}>
-                  {" "}
+                <p className={`${emailBorder ? styles.emailcolored : styles.email}`}>
                   Email :
                 </p>
                 <input
-                  className="input-email"
+                  className={styles.inputemail}
                   type="text"
                   required
                   onFocus={() => {
@@ -62,15 +61,14 @@ export default function LogIn() {
               </div>
               <div
                 className={`${
-                  passBorder ? "pass-container-border" : "pass-container"
+                  passBorder ? styles.passcontainerborder : styles.passcontainer
                 }`}
               >
-                <p className={`${passBorder ? "pass-colored" : "pass"}`}>
-                  {" "}
+                <p className={`${passBorder ? styles.passcolored : styles.pass}`}>
                   Password :
                 </p>
                 <input
-                  className="input-pass"
+                  className={styles.inputpass}
                   type="password"
                   required
                   onFocus={() => {
@@ -87,18 +85,17 @@ export default function LogIn() {
               </div>
               <div>
                 {error && (
-                  <p className="login-error">
-                    {" "}
+                  <p className={styles.loginerror}>
                     your username or password is incorrect, Try Again{" "}
                   </p>
                 )}
               </div>
-              <div className="remememberme-container">
-                <input type="checkbox" className="rememberme" />
-                <p className="rememberme-text"> Remember Me </p>
+              <div className={styles.rememembermecontainer}>
+                <input type="checkbox" />
+                <p className={styles["rememberme-text"]}> Remember Me </p>
               </div>
-              <div className="login-btn-container">
-                <input type="submit" className="login-btn" value="Log In" />
+              <div className={styles.loginbtncontainer}>
+                <input type="submit" className={styles.loginbtn} value="Log In" />
               </div>
             </form>
           </div>

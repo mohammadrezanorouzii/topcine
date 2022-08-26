@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MovieCards from "./../MovieCards/MovieCards";
-import "./Slider.css";
+import styles from "./Slider.module.scss";
 import PervBtn from "../Icons/PervBtn";
 import NextBtn from "../Icons/NextBtn";
 
@@ -27,19 +27,19 @@ export default function Slider({ items, movies }) {
 
   return (<>
 
-    <div className="trending-container">
-      <div className="line"></div>
-      <p className="trending"> TRENDING MOVIES </p> 
+    <div className={styles["trending-container"]}>
+      <div className={styles.line}></div>
+      <p className={styles.trending}> TRENDING MOVIES </p> 
     </div>
 
-    <div className="all-container">
+    <div className={styles["all-container"]}>
 
-      <div className="perv">
-        <div className="pervv" onClick={perv}> <PervBtn /> </div>
+      <div className={styles.perv}>
+        <div className={styles.pervv} onClick={perv}> <PervBtn /> </div>
       </div>
 
-      <div className="container-slider">
-        <div className="slider" style={{ left: `-${page * 96}%` }}>
+      <div className={styles["container-slider"]}>
+        <div className={styles.slider} style={{ left: `-${page * 96}%` }}>
           {items.map((obj) => {
             return (
               <MovieCards
@@ -53,8 +53,8 @@ export default function Slider({ items, movies }) {
         </div>
       </div>
 
-      <div className="next">
-        <div className="nextt" onClick={next}> <NextBtn /> </div>
+      <div className={styles.next}>
+        <div className={styles.nextt} onClick={next}> <NextBtn /> </div>
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import BodyCards from "../BodyCards/BodyCards";
-import "./Body.css"
+import styles from "./Body.module.scss"
 
 export default function Body({ movies }) {
 
@@ -10,8 +10,8 @@ export default function Body({ movies }) {
   console.log(movies);
 
     return (
-      <div className="all-body">
-        <div className="first-body">
+      <div className={styles.allbody}>
+        <div className={styles.firstbody}>
           {movies1.map((obj) => {
             return (
               <BodyCards
@@ -26,7 +26,7 @@ export default function Body({ movies }) {
             );
           })}
         </div>
-        <div className="second-body">
+        <div className={styles.secondbody}>
           {movies2.map((obj) => {
             return (
               <BodyCards

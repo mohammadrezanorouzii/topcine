@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SignUp.css";
+import styles from "./SignUp.module.scss";
 import img1 from "../pics/it.jpg";
 import CheckPassword from "./CheckPassword/CheckPassword";
 import { Link } from "react-router-dom";
@@ -14,27 +14,27 @@ export default function SignUp() {
   const [passFocus, setPassFocus] = useState(false);
 
   return (
-    <div className="signup">
-      <div className="signup-total" style={{ backgroundImage: `url(${img1})` }}>
-        <div className="signup-shadow">
-          <div className="checkpass-container">
+    <div className={styles.signup}>
+      <div className={styles.signuptotal} style={{ backgroundImage: `url(${img1})` }}>
+        <div className={styles.signupshadow}>
+          <div className={styles.checkpasscontainer}>
             {passFocus && <CheckPassword password={password} />}
           </div>
-          <div className="signup-context">
-            <form className="signup-form">
-              <div className="create-text-container">
-                <p className="create-text"> Craete new account </p>
-                <div className="signup-circle"></div>
+          <div className={styles.signupcontext}>
+            <form className={styles.signupform}>
+              <div className={styles.createtextcontainer}>
+                <p className={styles.createtext}> Craete new account </p>
+                <div className={styles.signupcircle}></div>
               </div>
-              <div className="already-container">
-                <p className="already"> Already a memeber ? </p>
-                <Link className="already-login" to="/login"> Log In </Link>
+              <div className={styles.alreadycontainer}>
+                <p className={styles.already}> Already a memeber ? </p>
+                <Link className={styles.alreadylogin} to="/login"> Log In </Link>
               </div>
-              <div className="fl-names">
-                <div className="fname-container">
-                  <p className="fname-text"> First name </p>
+              <div className={styles.flnames}>
+                <div className={styles.fnamecontainer}>
+                  <p className={styles.fnametext}> First name </p>
                   <input
-                    className="fname"
+                    className={styles.fname}
                     value={fname}
                     required
                     onChange={(e) => {
@@ -42,10 +42,10 @@ export default function SignUp() {
                     }}
                   />
                 </div>
-                <div className="lname-container">
-                  <p className="lname-text"> Last name </p>
+                <div className={styles.lnamecontainer}>
+                  <p className={styles.lnametext}> Last name </p>
                   <input
-                    className="lname"
+                    className={styles.lname}
                     value={lname}
                     onChange={(e) => {
                       setLname(e.target.value);
@@ -53,10 +53,10 @@ export default function SignUp() {
                   />
                 </div>
               </div>
-              <div className="signup-email-container">
-                <p className="signup-email-text"> Email Adrress</p>
+              <div className={styles.signupemailcontainer}>
+                <p className={styles.signupemailtext}> Email Adrress</p>
                 <input
-                  className="signup-email"
+                  className={styles.signupemail}
                   required
                   value={email}
                   onChange={(e) => {
@@ -64,10 +64,21 @@ export default function SignUp() {
                   }}
                 />
               </div>
-              <div className="signup-pass-container">
-                <p className="signup-pass-text"> Password </p>
+              <div className={styles['username-container']}>
+                <p className={styles["username-text"]}> Username </p>
                 <input
-                  className="signup-pass"
+                  className={styles.username}
+                  type="text"
+                  value={verifyPassword}
+                  onChange={(e) => {
+                    setVerifyPassword(e.target.value);
+                  }}
+                />
+              </div>
+              <div className={styles.signuppasscontainer}>
+                <p className={styles.signuppasstext}> Password </p>
+                <input
+                  className={styles.signuppass}
                   type="password"
                   value={password}
                   required
@@ -82,39 +93,28 @@ export default function SignUp() {
                   }}
                 />
               </div>
-              <div className="line4">
-                <p className="line4-text">
+              <div className={styles.line4}>
+                <p className={styles.line4text}>
                   don't have any idea for your password ?
                 </p>
                 <a
-                  className="clickhere"
+                  className={styles.clickhere}
                   href="https://github.com/mohammadrezanorouzii/react-password-generator"
                 >
                   Click Here
                 </a>
               </div>
-              <div className="signup-verify-pass-container">
-                <p className="signup-pass-text"> Confirm Password </p>
-                <input
-                  className="signup-pass"
-                  type="password"
-                  value={verifyPassword}
-                  onChange={(e) => {
-                    setVerifyPassword(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="sex-submit-container">
-                <div className="sex-container">
-                  <p className="sex-text"> Sex </p>
-                  <select id="sex" className="sex">
+              <div className={styles.sexsubmitcontainer}>
+                <div className={styles.sexcontainer}>
+                  <p className={styles.sextext}> Sex </p>
+                  <select id="sex" className={styles.sex}>
                     <option value="volvo"> Male </option>
                     <option value="saab"> Female </option>
                     <option value="opel"> Other </option>
                   </select>
                 </div>
-                <div className="btn-container">
-                  <input type="submit" className="signup-btn" value="Sign Up" />
+                <div className={styles.btncontainer}>
+                  <input type="submit" className={styles.signupbtn} value="Sign Up" />
                 </div>
               </div>
             </form>

@@ -2,7 +2,7 @@ img {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
-.one-movie-container {
+.onemoviecontainer {
   border-radius: 20px;
   height: 400px;
   box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
@@ -10,14 +10,14 @@ img {
   background-color: #2b2d31;
   color: #ffffff;
 }
-.one-movie-container:hover {
+.onemoviecontainer:hover {
   cursor: pointer;
 }
-.body-context {
+.bodycontext {
   padding: 10px 0 0 10px;
   width: 80%;
 }
-.body-name {
+.bodyname {
   margin: 0 0 10px 0;
   font-family: "Epilogue";
   font-weight: 700;
@@ -28,12 +28,12 @@ img {
   text-overflow: ellipsis; 
 
 }
-.body-date {
+.bodydate {
   margin: 0;
   font-weight: 300;
   font-family: "Epilogue";
 }
-.body-imdb-container {
+.bodyimdbcontainer {
   width: 160px;
   height: 40px;
   display: flex;
@@ -44,7 +44,7 @@ img {
   right: 10px;
   border-radius: 20px;
 }
-.popularity-container {
+.popularitycontainer {
   flex-direction: row;
   display: flex;
   position: absolute;
@@ -54,10 +54,10 @@ img {
   height: 40px;
 }
 .popularity,
-.popularity-text {
+.popularitytext {
   margin: auto 5px auto 0;
 }
-.container-container {
+.containercontainer {
   width: 100%;
   background: linear-gradient(
     rgba(0, 0, 0, 0.01) 0%,
@@ -83,13 +83,13 @@ img {
 .star {
   margin: auto 5px;
 }
-.body-imdb-text {
+.bodyimdbtext {
   margin: auto 0;
 }
-.body-imdb {
+.bodyimdb {
   margin: auto 5px;
 }
-.genre-container {
+.genrecontainer {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
@@ -118,7 +118,7 @@ img {
 .genre:nth-child(5):hover {
   background-color: #0b8fbf;
 }
-.img-container {
+.imgcontainer {
   width: 100%;
   position: relative;
 }

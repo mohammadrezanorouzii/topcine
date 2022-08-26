@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Navbar.css";
+import styles from './Navbar.module.scss'
 import "@fontsource/epilogue";
 import "@fontsource/archivo";
 import "@fontsource/expletus-sans";
@@ -28,26 +28,26 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className={`${navbarOpacityIsZero ? "light-navbar" : "dark-navbar"}`}>
-      <div className="navbar-items">
-        <div className="logo-container">
-          <p className="logo"> TopCine </p>
+    <div className={`${navbarOpacityIsZero ? styles.lightnavbar : styles.darknavbar }`}>
+      <div className={styles.navbaritems}>
+        <div className={styles.logocontainer}>
+          <p className={styles.logo}> TopCine </p>
         </div>
 
-        <div className="other-container">
-          <Link className="saved" to='/saved'> Saved </Link>
-          <Link className="go-to-login" to='/login'> Log in </Link>
-          <Link className="go-to-signup" to='/signup'> Sign up </Link>
+        <div className={styles.othercontainer}>
+          <Link className={styles.saved} to='/saved'> Saved </Link>
+          <Link className={styles.gotologin} to='/login'> Log in </Link>
+          <Link className={styles.gotosignup} to='/signup'> Sign up </Link>
 
-          <div className="check-container">
+          <div className={styles.checkcontainer}>
             <input type="checkbox" />
-            <div className="check"></div>
+            <div className={styles.check}></div>
           </div>
         </div>
       </div>
 
-      {!navbarOpacityIsZero &&  <div className="scroll-indicator-container">
-        <div className="dark-scroll" style={{width:`${scrollY/55}%`}}></div>
+      {!navbarOpacityIsZero &&  <div className={styles.scrollindicatorcontainer}>
+        <div className={styles.darkscroll} style={{width:`${scrollY/55}%`}}></div>
       </div>}
 
     </div>

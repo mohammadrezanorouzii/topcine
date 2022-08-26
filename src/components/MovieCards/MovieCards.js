@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./MovieCards.css";
+import styles from "./MovieCards.module.scss";
 import "@fontsource/epilogue";
 import Star from "../Icons/Star";
 
@@ -23,37 +23,37 @@ export default function MovieCards({ name, pic, imdb, date }) {
 
   return (
     <div
-      className="card"
+      className={styles.card}
       onMouseOver={() => {
         longNameCheck();
         changeHovering();
       }}
       onMouseLeave={falseHovering}
     >
-      <div className="pic">
-        <img className="pic" src={pic} alt={name} />
+      <div className={styles.pic}>
+        <img className={styles.pic} src={pic} alt={name} />
         {hovering ? (
           !longName ? (
-            <div className="context">
-              <p className="name"> {name} </p>
-              <div className="about">
-                <p className="date"> {date} </p>
+            <div className={styles.context}>
+              <p className={styles.name}> {name} </p>
+              <div className={styles.about}>
+                <p className={styles.date}> {date} </p>
                 <Star />
-                <div className="imdb-container">
-                  <p className="imdb-name"> IMDB : </p>
-                  <p className="imdb-rating"> {imdb} / 10</p>
+                <div className={styles.imdbcontainer}>
+                  <p className={styles.imdbname}> IMDB : </p>
+                  <p className={styles.imdbrating}> {imdb} / 10</p>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="long-context">
-              <p className="name"> {name} </p>
-              <div className="about">
-                <p className="date"> {date} </p>
+            <div className={styles.longcontext}>
+              <p className={styles.name}> {name} </p>
+              <div className={styles.about}>
+                <p className={styles.date}> {date} </p>
                 <Star />
-                <div className="imdb-container">
-                  <p className="imdb-name"> IMDB : </p>
-                  <p className="imdb-rating"> {imdb} / 10</p>
+                <div className={styles.imdbcontainer}>
+                  <p className={styles.imdbname}> IMDB : </p>
+                  <p className={styles.imdbrating}> {imdb} / 10</p>
                 </div>
               </div>
             </div>
