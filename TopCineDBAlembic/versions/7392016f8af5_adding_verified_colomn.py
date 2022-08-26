@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade() -> None:
-    op.add_column("users", sa.Column("verified", sa.Boolean(), nullable = False, server_default = "False"))
+    op.add_column("users", sa.Column("verified", sa.Boolean(), nullable = False, server_default = "FALSE"))
     pass
 
 

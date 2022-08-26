@@ -1,9 +1,6 @@
 from typing import Optional
-from pydantic import BaseModel, EmailStr, conint
-
-
-
-
+from pydantic import BaseModel, EmailStr
+from .models import Gender
 
 
 class UserBase(BaseModel):
@@ -12,6 +9,9 @@ class UserBase(BaseModel):
     username : str
     email : str
     password : str
+    first_name : str
+    last_name : Optional[str] = None
+    gender : Gender
 
 
 class UserCreate(BaseModel):
@@ -19,26 +19,49 @@ class UserCreate(BaseModel):
     username : str
     email : EmailStr
     password : str
-    fist_name : str
-    last_name : str
-    is_male : bool
-    is_female : bool
-    is_other : Optional[bool] = False
+    first_name : str
+    last_name : Optional[str] = None
+    gender : Gender
 
 
-class UserLogin(BaseModel):
+class UserUpdate(BaseModel):
 
     username : str
+    first_name : Optional[str]
+    last_name : Optional[str] = None
     password : str
+    gender : Gender
 
 
 class UserResponse(BaseModel):
 
     id : int
     username : str
+    first_name : str
+    last_name : str
 
     class Config:
-        orm_mode : True
+        orm_mode=True
+
+class WatchList(BaseModel):
+
+    user_id : int
+    movie_id : int
+
+
+class WatchListCreate(BaseModel):
+
+    user_id : int
+    movie_id : int
+
+
+class WatchListResponse(BaseModel):
+
+    user_id : int
+    movie_id : int
+
+    class Config:
+        orm_mode=True
 
 
 class Token(BaseModel):
@@ -52,7 +75,3 @@ class TokenData(BaseModel):
     id : Optional[str] = None
 
 
-class Vote(BaseModel):
-
-    movie_id : int
-    dir : conint(le=1)

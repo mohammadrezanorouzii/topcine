@@ -20,7 +20,6 @@ def upgrade() -> None:
     op.create_table("users", sa.Column("id", sa.Integer(), nullable=False,primary_key=True),
                              sa.Column('username', sa.String(), nullable=False),
                              sa.Column('email', sa.String(), nullable=False),
-                             sa.Column('username', sa.String(), nullable=False),
                              sa.Column("created_at", sa.TIMESTAMP(timezone = True), nullable = False, server_default = sa.text("NOW()")))
     pass
 

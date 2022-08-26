@@ -7,6 +7,9 @@ Create Date: 2022-08-20 20:54:08.987924
 """
 from alembic import op
 import sqlalchemy as sa
+import enum
+from sqlalchemy.dialects import postgresql
+
 
 
 # revision identifiers, used by Alembic.
@@ -15,16 +18,21 @@ down_revision = '25d9775b8ed1'
 branch_labels = None
 depends_on = None
 
+class Gender(enum.Enum):
+
+    male = "male"
+    female = "female"
+    other = "other"
 
 def upgrade() -> None:
-    op.add_column("users", sa.Column("is_male", sa.Boolean(), nullable = True, server_default = "False"))
-    op.add_column("users", sa.Column("is_female", sa.Boolean(), nullable = True, server_default = "False"))
-    op.add_column("users", sa.Column("is_other", sa.Boolean(), nullable = True, server_default = "False"))
+    gender = postgresql.ENUM(Gender, name="gender")
+    gender.create(op.get_bind(), checkfirst=True)
+    op.add_column('users', sa.Column('gender',  gender))
+
     pass
 
 
 def downgrade() -> None:
-    op.drop_column("users", "is_male")
-    op.drop_column("users", "is_female")
-    op.drop_column("users", "is_other")
+    op.drop_column("users", "gender")
+
     pass
