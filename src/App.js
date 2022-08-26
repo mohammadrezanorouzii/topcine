@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import LogIn from "./components/LogIn/LogIn";
 import Home from "./components/Home/Home";
+import SignUp from "./components/SignUp/SignUp"
 
 function App() {
   const [items, setItems] = useState([]);
@@ -71,6 +72,7 @@ function App() {
         {/* <Navbar /> */}
         <Route path="/" element={<Home items={items} movies={movies} series={series} series2={series2} />}>
         </Route>
+        <Route path="signup" element={<SignUp />} ></Route>
       </Routes>
     </Router>
   );

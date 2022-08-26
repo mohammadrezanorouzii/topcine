@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.signup {
+  background-color: #292a2d;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-total {
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-repeat: no-repeat;
+  width: 95%;
+  height: 90%;
+}
+.signup-shadow {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(
+    270deg,
+    #171616 50%,
+    rgba(23, 22, 22, 0.8) 54.45%,
+    rgba(23, 22, 22, 0.7) 57.35%,
+    rgba(96, 86, 86, 0) 98.9%
+  );
+}
+.signup-context {
+  height: 100%;
+  width: 50%;
+}
+.start-text {
+  color: #ffffff;
+  opacity: 0.5;
+  font-size: 14px;
+  margin: 0;
+  font-family: "Roboto";
+  font-weight: 400;
+}
+.signup-circle {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #0b8fbf;
+  position: absolute;
+  bottom: 9px;
+  left: 358px;
+}
+.create-text-container {
+  margin: 15px 0 5px 28px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.create-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 40px;
+  font-family: "Roboto";
+  font-weight: 800;
+}
+.already-container {
+  margin: 0 0 0 30px;
+  display: flex;
+  flex-direction: row;
+}
+.already {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Roboto";
+  opacity: 0.5;
+}
+.already-login {
+  text-decoration: none;
+  margin: 0;
+  margin-left: 10px;
+  color: #0b8fbf;
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+.fl-names {
+  display: flex;
+  max-width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0 10px 28px; /* important */
+}
+.fname-container,
+.lname-container {
+  padding: 10px 0 0 10px;
+  width: 46%;
+  height: 70px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-color: rgb(42, 42, 46);
+  border-radius: 10px;
+}
+.fname-text,
+.lname-text,
+.signup-email-text,
+.signup-pass-text {
+  font-size: 15px;
+  color: #ffffff7b;
+  font-family: "Roboto";
+  font-weight: 500;
+  margin: 0;
+}
+.signup-email-text,
+.signup-pass-text {
+  padding: 10px 0 0 10px;
+}
+.signup-email-container,
+.signup-pass-container {
+  max-width: 90%;
+  margin: 20px 0 10px 28px; /* important */
+  height: 80px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-color: rgb(42, 42, 46);
+  border-radius: 10px;
+}
+.signup-verify-pass-container {
+  max-width: 90%;
+  margin: 10px 0 10px 28px; /* important */
+  height: 80px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-color: rgb(42, 42, 46);
+  border-radius: 10px;
+}
+.fname,
+.lname {
+  margin: 5px 0 0 0;
+  height: 30px;
+  width: 98%;
+  border-radius: 10px;
+  outline: none;
+  background-color: rgb(42, 42, 46);
+  font-size: 20px;
+  border: none;
+  color: #ffffff;
+}
+.signup-email,
+.signup-pass {
+  margin: 5px 0 0 10px;
+  height: 30px;
+  width: 97%;
+  border-radius: 10px;
+  outline: none;
+  background-color: rgb(42, 42, 46);
+  font-size: 20px;
+  border: none;
+  color: #ffffff;
+}
+/* .fname:invalid,
+.lname:invalid,
+.signup-email:invalid,
+.signup-pass:invalid {
+  animation: shake 500ms;
+}
+@keyframes shake {
+  25% {
+    transform: translateX(3px);
+    border: 2px rgb(204, 61, 61) solid;
+  }
+  50% {
+    transform: translateX(-3px);
+    border: 2px rgb(204, 61, 61) solid;
+  }
+  75% {
+    transform: translateX(3px);
+    border: 2px rgb(204, 61, 61) solid;
+  }
+} */
+.line4-text {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Roboto";
+  margin: 0;
+  color: #ffffff;
+  opacity: 0.7;
+}
+.clickhere {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: "Roboto";
+  margin: 0 0 0 5px;
+  color: #0b8fbf;
+  text-decoration: none;
+}
+.line4 {
+  margin: 0 0 0 35px;
+  display: flex;
+  flex-direction: row;
+}
+.sex-submit-container {
+  width: 90%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 0 30px;
+}
+.sex-container {
+  height: 70px;
+  box-shadow: 20px 20px 40px rgb(0 0 0 / 25%);
+  background-color: rgb(42, 42, 46);
+  border-radius: 10px;
+  width: 46%;
+  padding: 10px 0 0 10px;
+}
+.sex-text {
+  font-size: 15px;
+  color: #ffffff7b;
+  font-family: "Roboto";
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+.sex {
+  font-size: 15px;
+  background-color: #292a2d;
+  width: 80px;
+  height: 25px;
+  color: #0b8fbf;
+  border-radius: 5px;
+}
+.btn-container {
+  width: 46%;
+  height: 80px;
+}
+.signup-btn {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0;
+  background: linear-gradient(270deg, #0b8fbfd9 5%, #de518edb 100%);
+}
