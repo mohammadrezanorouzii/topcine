@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import Body from "../Body/Body";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
@@ -6,7 +7,6 @@ import SeriesBodyTwo from "../SeriesBodyTwo/SeriesBodyTwo";
 import Slider from "../Slider/Slider";
 
 export default function Home({ series, items, movies, series2 }) {
-
   return (
     <div>
       <Navbar />
@@ -14,7 +14,7 @@ export default function Home({ series, items, movies, series2 }) {
       <Slider items={items} movies={movies} />
       <SeriesBody series={series} />
       <SeriesBodyTwo series2={series2} />
-      <Body movies={movies}/>
+      <Body movies={movies} />
     </div>
   );
 }

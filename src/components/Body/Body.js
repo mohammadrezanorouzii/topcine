@@ -1,15 +1,18 @@
 import React from "react";
 import BodyCards from "../BodyCards/BodyCards";
-import styles from "./Body.module.scss"
+import styles from "./Body.module.scss";
 
 export default function Body({ movies }) {
+  const movies1 = movies.slice(0, 10);
+  const movies2 = movies.slice(10, 20);
 
-  const movies1 = movies.slice(0, 10)
-  const movies2 = movies.slice(10, 20)
+  return (
+    <>
+      <div className={styles["trending-container"]}>
+        <div className={styles.line}></div>
+        <p className={styles.trending}> TRENDING MOVIES </p>
+      </div>
 
-  console.log(movies);
-
-    return (
       <div className={styles.allbody}>
         <div className={styles.firstbody}>
           {movies1.map((obj) => {
@@ -42,6 +45,6 @@ export default function Body({ movies }) {
           })}
         </div>
       </div>
-    );
-
+    </>
+  );
 }

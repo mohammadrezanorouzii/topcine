@@ -1,5 +1,5 @@
 .allbody {
-    margin-top: 50px;
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
     margin-left: 11.7%;
@@ -9,3 +9,24 @@
 .firstbody, .secondbody {
     width: 43%;
 }
+.trending-container {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 500px;
+    margin: 40px 0 10px 180px;
+  }
+  .trending {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: "Roboto";
+    margin: auto 0;
+    margin-left: 10px;
+  }
+  .line {
+    margin: 0;
+    background-color: #de518e;
+    height: 100%;
+    width: 5px;
+  }
+  

@@ -8,6 +8,7 @@
 .slider {
   /* left :-94.5%; */
   display: flex;
+  transition: left 2s, transform 2s;
   position: relative;
 }
 .all-container {
@@ -34,22 +35,22 @@
 .next :hover {
   cursor: pointer;
 }
-.trending-container {
+.popular-container {
   display: flex;
   flex-direction: row;
-  height: 35px;
+  height: 40px;
   width: 500px;
   margin: 20px 0 10px 180px;
 }
-.trending {
+.popular {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 30px;
   font-family: "Roboto";
   margin: auto 0;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .line {
-  margin: auto 0;
+  margin: 0;
   background-color: #de518e;
   height: 100%;
   width: 5px;

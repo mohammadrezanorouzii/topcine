@@ -1,10 +1,22 @@
+.total {
+  overflow: hidden;
+  width: 100%;
+}
 .seriesslider {
   display: flex;
   flex-direction: row;
   position: relative;
   margin-top: 20px;
+  animation: slideshow 120s linear infinite;
 }
-.total {
-  overflow: hidden;
-  width: 100%;
+@keyframes slideshow {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -185%;
+  }
+  100% {
+    left: -370%;
+  }
 }

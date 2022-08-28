@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import LogIn from "./components/LogIn/LogIn";
 import Home from "./components/Home/Home";
-import SignUp from "./components/SignUp/SignUp"
+import SignUp from "./components/SignUp/SignUp";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 function App() {
@@ -11,6 +11,10 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
   const [series2, setSeries2] = useState([]);
+
+  // items should include 60 elements
+
+  //----------------------------------- FETCH DATA -----------------------------------
 
   const options = {
     method: "GET",
@@ -67,13 +71,20 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<LogIn />}>
-        </Route>
-        <Route path="/" element={<Home items={items} movies={movies} series={series} series2={series2} />}>
-        </Route>
-        <Route path="signup" element={<SignUp />} ></Route>
-        <Route path="*" element={<NotFoundPage />}>
-        </Route>
+        <Route path="/login" element={<LogIn />}></Route>
+        <Route
+          path="/"
+          element={
+            <Home
+              items={items}
+              movies={movies}
+              series={series}
+              series2={series2}
+            />
+          }
+        ></Route>
+        <Route path="signup" element={<SignUp />}></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </Router>
   );

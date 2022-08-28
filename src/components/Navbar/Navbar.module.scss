@@ -11,7 +11,7 @@ body {
 .lightnavbar {
   display: flex;
   flex-direction: column;
-  animation: backgroundLightOpacity 700ms forwards;
+  animation: backgroundLightOpacity 200ms forwards;
   height: 90px;
   border-radius: 0 0 5px 5px;
   z-index: 10;
@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 90px;
-  animation: backgroundOpacity 700ms forwards;
+  animation: backgroundOpacity 600ms forwards;
   border-radius: 0 0 5px 5px;
   position: fixed;
   z-index: 10;
@@ -116,7 +116,7 @@ input[type="checkbox"] {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 5px;
+  height: 3px;
 }
 .darkscroll {
   background: linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%);
