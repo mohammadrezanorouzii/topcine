@@ -1,0 +1,28 @@
+.total {
+  margin-top: 100px;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: #FFFFFF 2px solid;
+}
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
+}
+.twitter,
+.linkedin,
+.instagram,
+.github {
+  background-color: #2b2d31;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
