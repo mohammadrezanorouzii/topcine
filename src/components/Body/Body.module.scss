@@ -1,32 +1,57 @@
 .allbody {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    margin-left: 11.7%;
-    margin-right: 11.7%;
-    justify-content: space-between;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 11.7%;
+  margin-right: 11.7%;
+  justify-content: space-between;
 }
-.firstbody, .secondbody {
-    width: 43%;
+.firstbody,
+.secondbody {
+  width: 43%;
 }
-.trending-container {
-    display: flex;
-    flex-direction: row;
-    height: 40px;
-    width: 500px;
-    margin: 40px 0 10px 180px;
-  }
-  .trending {
-    color: #ffffff;
-    font-size: 30px;
-    font-family: "Roboto";
-    margin: auto 0;
-    margin-left: 10px;
-  }
-  .line {
-    margin: 0;
-    background-color: #de518e;
-    height: 100%;
-    width: 5px;
-  }
-  
+.choose-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 70%;
+  margin: 40px 0 20px 180px;
+}
+.top-container,
+.now-container,
+.up-container {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin: 0 50px 0 0;
+}
+.top-container-low-opacity,
+.now-container-low-opacity,
+.up-container-low-opacity {
+  opacity: 0.3;
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin: 0 50px 0 0;
+}
+.top-container:hover,
+.now-container:hover,
+.up-container:hover,
+.top-container-low-opacity:hover,
+.now-container-low-opacity:hover,
+.up-container-low-opacity:hover {
+  cursor: pointer;
+}
+.top {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "Roboto";
+  margin: auto 0;
+  margin-left: 10px;
+}
+.line {
+  margin: 0;
+  background-color: #de518e;
+  height: 100%;
+  width: 5px;
+}

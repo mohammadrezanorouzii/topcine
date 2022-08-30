@@ -35,14 +35,14 @@
 .next :hover {
   cursor: pointer;
 }
-.popular-container {
+.trending-container {
   display: flex;
   flex-direction: row;
   height: 40px;
   width: 500px;
   margin: 20px 0 10px 180px;
 }
-.popular {
+.trending {
   color: #ffffff;
   font-size: 30px;
   font-family: "Roboto";

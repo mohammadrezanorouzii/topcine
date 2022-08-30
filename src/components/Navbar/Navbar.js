@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from './Navbar.module.scss'
+import styles from "./Navbar.module.scss";
 import "@fontsource/epilogue";
 import "@fontsource/archivo";
 import "@fontsource/expletus-sans";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [navbarOpacityIsZero, setNavbarOpacityIsZero] = useState(true);
-  const [scrollY, setScrollY] = useState(0)
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -17,7 +17,7 @@ export default function Navbar() {
       } else {
         setNavbarOpacityIsZero(true);
       }
-      setScrollY(window.scrollY)
+      setScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,16 +28,29 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className={`${navbarOpacityIsZero ? styles.lightnavbar : styles.darknavbar }`}>
+    <div
+      className={`${
+        navbarOpacityIsZero ? styles.lightnavbar : styles.darknavbar
+      }`}
+    >
       <div className={styles.navbaritems}>
         <div className={styles.logocontainer}>
           <p className={styles.logo}> TopCine </p>
         </div>
 
         <div className={styles.othercontainer}>
-          <Link className={styles.saved} to='/saved'> Saved </Link>
-          <Link className={styles.gotologin} to='/login'> Log in </Link>
-          <Link className={styles.gotosignup} to='/signup'> Sign up </Link>
+          <Link className={styles.saved} to="/saved">
+            {" "}
+            Saved{" "}
+          </Link>
+          <Link className={styles.gotologin} to="/login">
+            {" "}
+            Log in{" "}
+          </Link>
+          <Link className={styles.gotosignup} to="/signup">
+            {" "}
+            Sign up{" "}
+          </Link>
 
           <div className={styles.checkcontainer}>
             <input type="checkbox" />
@@ -46,10 +59,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {!navbarOpacityIsZero &&  <div className={styles.scrollindicatorcontainer}>
-        <div className={styles.darkscroll} style={{width:`${scrollY/55}%`}}></div>
-      </div>}
-
+      {!navbarOpacityIsZero && (
+        <div className={styles.scrollindicatorcontainer}>
+          <div
+            className={styles.darkscroll}
+            style={{ width: `${scrollY / 55}%` }}
+          ></div>
+        </div>
+      )}
     </div>
   );
 }

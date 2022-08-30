@@ -15,22 +15,19 @@
   border-radius: 10px;
 }
 .name {
-  font-family: "Epilogue";
+  font-family: "Expletus Sans";
   color: #FFFFFF;
   font-weight: 10;
   font-size: 15px;
-  margin: 0;
-  margin-top: 10px;
   font-size: 22px;
-  margin-top: 30px;
-  margin-left: 10px;
+  margin: 25px 0 10px 10px;
 }
 .imdbrating {
-  font-family: "Epilogue";
+  margin: -2px 0 10px 5px ;
+  font-family: "Expletus Sans";
   color: #ffffff;
   font-weight: 1000;
   font-size: 15px;
-  margin: 2px 0 0 5px;
 }
 .imdbcontainer {
   display: flex;
@@ -93,10 +90,9 @@
 .about {
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
   font-size: 15px;
   height: 20px;
-  margin-top: 10px;
 }
 .date {
   margin: 0;

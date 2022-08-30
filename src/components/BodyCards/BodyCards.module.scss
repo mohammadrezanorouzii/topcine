@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500&display=swap');
+
 img {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
 .onemoviecontainer {
   border-radius: 20px;
-  height: 400px;
+  height: 410px;
   box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: #2b2d31;
   color: #ffffff;
 }
@@ -19,8 +22,8 @@ img {
 }
 .bodyname {
   margin: 0 0 10px 0;
-  font-family: "Epilogue";
-  font-weight: 700;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
   font-size: 25px;
   width: 120%;
   white-space: nowrap; 
@@ -31,7 +34,7 @@ img {
 .bodydate {
   margin: 0;
   font-weight: 300;
-  font-family: "Epilogue";
+  font-family: 'Roboto Slab', serif;
 }
 .bodyimdbcontainer {
   width: 160px;
@@ -49,7 +52,7 @@ img {
   display: flex;
   position: absolute;
   left: 10px;
-  font-family: "Epilogue";
+  font-family: 'Roboto Slab', serif;
   bottom: 10px;
   height: 40px;
 }
@@ -92,14 +95,14 @@ img {
 .genrecontainer {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
+  margin-top: 5px;
   width: 700px;
 }
 .genre {
   padding: 5px;
   margin: 0;
   margin-right: 10px;
-  font-family: "Epilogue";
+  font-family: 'Roboto Slab', serif;
   border-radius: 10px;
   border: #ffffff 2px solid;
 }

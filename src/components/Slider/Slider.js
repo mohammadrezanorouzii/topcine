@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MovieCards from "./../MovieCards/MovieCards";
 import styles from "./Slider.module.scss";
 import PervBtn from "../Icons/PervBtn";
 import NextBtn from "../Icons/NextBtn";
 
-export default function Slider({ items, movies }) {
+export default function Slider({items}) {
   const [page, setPage] = useState(0);
 
   const next = () => {
@@ -27,9 +27,9 @@ export default function Slider({ items, movies }) {
 
   return (
     <>
-      <div className={styles["popular-container"]}>
+      <div className={styles["trending-container"]}>
         <div className={styles.line}></div>
-        <p className={styles.popular}> POPULAR MOVIES </p>
+        <p className={styles.trending}> TRENDING MOVIES </p>
       </div>
 
       <div className={styles["all-container"]}>

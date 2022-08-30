@@ -8,7 +8,9 @@ import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [movies, setMovies] = useState([]);
+  const [topMovies, setTopMovies] = useState([]);
+  const [nowMovies, setNowMovies] = useState([]);
+  const [upMovies, setUpMovies] = useState([]);
   const [series, setSeries] = useState([]);
   const [series2, setSeries2] = useState([]);
 
@@ -34,12 +36,36 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+      "https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
       options
     )
       .then((response) => response.json())
       .then((response) => {
-        return setMovies(response.results);
+        return setTopMovies(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return setNowMovies(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return setUpMovies(response.results);
       })
       .catch((err) => console.error(err));
   }, []);
@@ -58,7 +84,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=3",
+      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=2",
       options
     )
       .then((response) => response.json())
@@ -77,7 +103,9 @@ function App() {
           element={
             <Home
               items={items}
-              movies={movies}
+              topMovies={topMovies}
+              nowMovies={nowMovies}
+              upMovies={upMovies}
               series={series}
               series2={series2}
             />
