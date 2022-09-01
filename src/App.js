@@ -5,6 +5,7 @@ import LogIn from "./components/LogIn/LogIn";
 import Home from "./components/Home/Home";
 import SignUp from "./components/SignUp/SignUp";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
+import SinglePage from "./components/SinglePage/SinglePage";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -112,6 +113,7 @@ function App() {
           }
         ></Route>
         <Route path="signup" element={<SignUp />}></Route>
+        <Route path="singlepage" element={<SinglePage />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </Router>
