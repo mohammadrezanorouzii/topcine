@@ -123,3 +123,56 @@ input[type="checkbox"] {
   width: 100%;
   height: 100%;
 }
+.search-container {
+  width: 160px;
+  height: 40px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.477);
+  background-color: #2b2d31;
+  margin-top: auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  input {
+    border-radius: 30px;
+    width: 110px;
+    height: 32px;
+    margin: auto 0;
+    background-color: #2b2d31;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 3px 10px 3px 5px;
+    font-size: 20px;
+    font-family: "Archivo";
+    font-weight: 590;
+  }
+}
+.search {
+  margin: 5px 0 0 5px;
+}
+.search-container-long {
+  width: 350px;
+  height: 40px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.477);
+  background-color: #2b2d31;
+  margin-top: auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  transition: width 2s, transform 2s;
+  input {
+    border-radius: 30px;
+    transition: width 2s, transform 2s;
+    width: 300px;
+    height: 32px;
+    margin: auto 0;
+    background-color: #2b2d31;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 3px 10px 3px 5px;
+    font-size: 20px;
+    font-family: "Archivo";
+    font-weight: 590;
+  }
+}

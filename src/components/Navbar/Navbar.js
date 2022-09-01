@@ -4,10 +4,13 @@ import "@fontsource/epilogue";
 import "@fontsource/archivo";
 import "@fontsource/expletus-sans";
 import { Link } from "react-router-dom";
+import Search from "../Icons/Search";
 
 export default function Navbar() {
   const [navbarOpacityIsZero, setNavbarOpacityIsZero] = useState(true);
   const [scrollY, setScrollY] = useState(0);
+  const [focus, setFocus] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -37,6 +40,34 @@ export default function Navbar() {
         <div className={styles.logocontainer}>
           <p className={styles.logo}> TopCine </p>
         </div>
+
+        {!navbarOpacityIsZero && (
+          <div
+            className={
+              focus
+                ? styles["search-container-long"]
+                : styles["search-container"]
+            }
+            onFocus={() => {
+              setFocus(true);
+            }}
+            onBlur={() => {
+              setFocus(false);
+            }}
+          >
+            <div className={styles["search"]}>
+              <Search />
+            </div>
+            <input
+              type="text"
+              placeholder="Search here"
+              value={searchValue}
+              onChange={(e) => {
+                setSearchValue(e.target.value);
+              }}
+            />
+          </div>
+        )}
 
         <div className={styles.othercontainer}>
           <Link className={styles.saved} to="/saved">
