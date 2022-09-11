@@ -21,11 +21,7 @@ export default function BodyCards({ name, pic, imdb, date, adult, genre, popular
     method: "GET",
   };
 
-  // console.log(genreName);
-
-  const genreName = genres
-    .filter((item) => genre.includes(item.id))
-    .slice(0, 5);
+  const genreName = genres.filter((item) => genre.includes(item.id)).slice(0, 5);
 
   useEffect(() => {
     if (imdb === 0) {
