@@ -71,22 +71,15 @@ export default function Navbar() {
 
         <div className={styles.othercontainer}>
           <Link className={styles.saved} to="/saved">
-            {" "}
-            Saved{" "}
+            Saved
           </Link>
           <Link className={styles.gotologin} to="/login">
-            {" "}
-            Log in{" "}
+            Log in
           </Link>
           <Link className={styles.gotosignup} to="/signup">
-            {" "}
-            Sign up{" "}
+            Sign up
           </Link>
 
-          <div className={styles.checkcontainer}>
-            <input type="checkbox" />
-            <div className={styles.check}></div>
-          </div>
         </div>
       </div>
 
@@ -94,7 +87,7 @@ export default function Navbar() {
         <div className={styles.scrollindicatorcontainer}>
           <div
             className={styles.darkscroll}
-            style={{ width: `${scrollY / 55}%` }}
+            style={{ width: `${scrollY / 60}%` }}
           ></div>
         </div>
       )}

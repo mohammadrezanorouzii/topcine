@@ -7,6 +7,7 @@ import Three from "../Icons/Three";
 import SelectedOne from "../Icons/SelectedOne";
 import SelectedTwo from "../Icons/SelectedTwo";
 import SelectedThree from "../Icons/SelectedThree";
+import { logDOM } from "@testing-library/react";
 
 export default function SinglePage() {
   const [movieInfo, setMovieInfo] = useState([]);
@@ -79,15 +80,16 @@ export default function SinglePage() {
         return setMovieCredits(response.cast);
       })
       .catch((err) => console.error(err));
-
   }, []);
 
   var credits = movieCredits.slice(0, 5);
   var credits2 = movieCredits.slice(5, 10);
   var credits3 = movieCredits.slice(10, 15);
 
-  var allGenres = movieInfo.genres
-  console.log(allGenres);
+  // console.log(Object.keys(allGenres));
+
+  // var nameAllGenres = allGenres.filter(e => {e.name})
+  // console.log(nameAllGenres);
 
   return (
     // <div className={styles.total}>
@@ -125,11 +127,11 @@ export default function SinglePage() {
           <div>
             <p className={styles.overview}>{movieInfo.overview}</p>
           </div>
-          <div className={styles["genres-container"]}>
+          {/* <div className={styles["genres-container"]}>
             {allGenres.map(e => {
-              return ( <p className={styles["genre"]}> {e.name} </p> )
+              return ( <p className={styles["genre"]}> {e.id} </p> )
             })}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={styles.body}>

@@ -57,8 +57,7 @@ export default function Slider({items}) {
 
         <div className={styles.next}>
           <div className={styles.nextt} onClick={next}>
-            {" "}
-            <NextBtn />{" "}
+            <NextBtn />
           </div>
         </div>
       </div>

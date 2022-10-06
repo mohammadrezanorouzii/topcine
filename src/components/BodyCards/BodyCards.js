@@ -43,7 +43,7 @@ export default function BodyCards({ name, pic, imdb, date, adult, genre, popular
     <div
       className={styles.onemoviecontainer}
       onMouseOver={trueHovering}
-      // onMouseLeave={falseHovering}
+      onMouseLeave={falseHovering}
     >
       {adult && <Adult />}
 
