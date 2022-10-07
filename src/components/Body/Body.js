@@ -185,6 +185,8 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       .catch((err) => console.error(err));
   }, [n]);
 
+  console.log(showMovies1);
+
   // button on click setn(3) and a function should setShowMovies(loadedMovies)
 
   const clickedTop = () => {

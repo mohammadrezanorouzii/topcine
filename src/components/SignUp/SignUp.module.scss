@@ -102,6 +102,15 @@
   background-color: rgb(42, 42, 46);
   border-radius: 10px;
 }
+.bordercontainer {
+  padding: 10px 0 0 10px;
+  width: 46%;
+  height: 70px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
+  background-color: rgb(42, 42, 46);
+  border-radius: 10px;
+  border: #de518e 1px solid;
+}
 .fnametext,
 .lnametext,
 .signupemailtext,

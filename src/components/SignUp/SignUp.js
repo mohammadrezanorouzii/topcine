@@ -8,10 +8,37 @@ export default function SignUp() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
+  // const [us, setEmail] = useState("");
   const [password, setPasswrod] = useState("");
-  const [verifyPassword, setVerifyPassword] = useState("");
+  const [username, setUsername] = useState("");
   // const [emailFous, setEmailFocus] = useState(false);
   const [passFocus, setPassFocus] = useState(false);
+  const [gender ,setGender] = useState()
+
+
+  fetch('http://localhost:3000/signup', {
+    method: 'POST',
+    body: JSON.stringify({
+      username : username ,
+      email : email,
+      password : password,
+      first_name : fname,
+      last_name : lname,
+      gender : gender
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+    }).then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      return Promise.reject(response);
+    }).then(function (data) {
+      console.log(data);
+    }).catch(function (error) {
+      console.warn('Something went wrong.', error);
+    });
 
   return (
     <div className={styles.signup}>
@@ -69,9 +96,9 @@ export default function SignUp() {
                 <input
                   className={styles.username}
                   type="text"
-                  value={verifyPassword}
+                  value={username}
                   onChange={(e) => {
-                    setVerifyPassword(e.target.value);
+                    setUsername(e.target.value);
                   }}
                 />
               </div>
@@ -107,10 +134,12 @@ export default function SignUp() {
               <div className={styles.sexsubmitcontainer}>
                 <div className={styles.sexcontainer}>
                   <p className={styles.sextext}> Sex </p>
-                  <select id="sex" className={styles.sex}>
-                    <option value="volvo"> Male </option>
-                    <option value="saab"> Female </option>
-                    <option value="opel"> Other </option>
+                  <select id="sex" className={styles.sex} onChange={e => {
+                    setGender(e.target.value)
+                  }}>
+                    <option value={gender}> Male </option>
+                    <option value={gender}> Female </option>
+                    <option value={gender}> Other </option>
                   </select>
                 </div>
                 <div className={styles.btncontainer}>

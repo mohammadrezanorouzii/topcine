@@ -35,6 +35,8 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
 
+
+
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
