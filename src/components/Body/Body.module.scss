@@ -59,20 +59,32 @@
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  button {
-    width: 35px;
-    height: 35px;
-    box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.25);
-    background-color: #2b2d31;
-    color: #ffffff;
-    border: none;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 2px;
-    margin: 0 4px;
-  }
   button:hover {
     cursor: pointer;
     border: #de518e 2px solid;
   }
+}
+.selected {
+  width: 35px;
+  height: 35px;
+  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.25);
+  background-color: #de518e;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 2px;
+  margin: 0 4px;
+}
+.not {
+  width: 35px;
+  height: 35px;
+  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.25);
+  background-color: #2b2d31;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 2px;
+  margin: 0 4px;
 }

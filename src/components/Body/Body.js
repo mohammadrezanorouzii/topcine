@@ -9,68 +9,181 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
   const [showMovies1, setShowMovies1] = useState(topMovies);
   const [showMovies2, setShowMovies2] = useState(topMovies);
   const [showMovies3, setShowMovies3] = useState(topMovies);
-  const [selected1, setSelected1] = useState(false);
-  const [selected2, setSelected2] = useState(true);
-  const [selected3, setSelected3] = useState(true);
-  const [selected4, setSelected4] = useState(true);
-  const [selected5, setSelected5] = useState(true);
-  const [selected6, setSelected6] = useState(true);
-  const [selected7, setSelected7] = useState(true);
-  const [selected8, setSelected8] = useState(true);
-  const [selected9, setSelected9] = useState(true);
-  const [selected10, setSelected10] = useState(true);
-
+  const [selected1, setSelected1] = useState(true);
+  const [selected2, setSelected2] = useState(false);
+  const [selected3, setSelected3] = useState(false);
+  const [selected4, setSelected4] = useState(false);
+  const [selected5, setSelected5] = useState(false);
+  const [selected6, setSelected6] = useState(false);
+  const [selected7, setSelected7] = useState(false);
+  const [selected8, setSelected8] = useState(false);
+  const [selected9, setSelected9] = useState(false);
+  const [selected10, setSelected10] = useState(false);
   const [n, setn] = useState(1);
 
-  useEffect(() => {
-    function incrementNum() {
-      setTopIsSelected(true);
-      setNowIsSelected(false);
-      setUpIsSelected(false);
-      setShowMovies1(topMovies);
+  const check = (x) => {
+    setn(x);
+    if (x === 1) {
+      setSelected1(true);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(false);
     }
-    incrementNum();
-  }, [topMovies]);
+    if (x === 2) {
+      setSelected1(false);
+      setSelected2(true);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(false);
+    }
+    if (x === 3) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(true);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(false);
+    }
+    if (x === 4) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(true);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(false);
+    }
+    if (x === 5) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(true);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(false);
+    }
+    if (x === 6) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(true);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(false);
+    }
+    if (x === 7) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(true);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(false);
+    }
+    if (x === 8) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(true);
+      setSelected9(false);
+      setSelected10(false);
+    }
+    if (x === 9) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(true);
+      setSelected10(false);
+    }
+    if (x === 10) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      setSelected5(false);
+      setSelected6(false);
+      setSelected7(false);
+      setSelected8(false);
+      setSelected9(false);
+      setSelected10(true);
+    }
+  };
 
   const options = {
     method: "GET",
   };
 
   useEffect(() => {
-  fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
-    options
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      return setShowMovies1(response.results);
-    })
-    .catch((err) => console.error(err));
-}, [n]);
+    fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return setShowMovies1(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, [n]);
 
-useEffect(() => {
-  fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
-    options
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      return setShowMovies2(response.results);
-    })
-    .catch((err) => console.error(err));
-}, [n]);
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return setShowMovies2(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, [n]);
 
-useEffect(() => {
-  fetch(
-    `https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
-    options
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      return setShowMovies3(response.results);
-    })
-    .catch((err) => console.error(err));
-}, [n]);
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        return setShowMovies3(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, [n]);
 
   // button on click setn(3) and a function should setShowMovies(loadedMovies)
 
@@ -99,8 +212,6 @@ useEffect(() => {
   const movies4 = showMovies2.slice(10, 20);
   const movies5 = showMovies3.slice(0, 10);
   const movies6 = showMovies3.slice(10, 20);
-  
-  // setShowMovies(loadedMovies)
 
   return (
     <>
@@ -140,116 +251,202 @@ useEffect(() => {
         </div>
       </div>
 
-      {topIsSelected && <div className={styles.allbody}>
-        <div className={styles.firstbody}>
-          {movies1.map((obj) => {
-            return (
-              <BodyCards
-                popularity={obj.popularity}
-                genre={obj.genre_ids}
-                adult={obj.adult}
-                name={obj.title}
-                pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
-                imdb={Math.round(obj.vote_average * 10) / 10}
-                date={obj.release_date.substr(0, 4)}
-              />
-            );
-          })}
+      {topIsSelected && (
+        <div className={styles.allbody}>
+          <div className={styles.firstbody}>
+            {movies1.map((obj) => {
+              return (
+                <BodyCards
+                  popularity={obj.popularity}
+                  genre={obj.genre_ids}
+                  adult={obj.adult}
+                  name={obj.title}
+                  pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
+                  imdb={Math.round(obj.vote_average * 10) / 10}
+                  date={obj.release_date.substr(0, 4)}
+                />
+              );
+            })}
+          </div>
+          <div className={styles.secondbody}>
+            {movies2.map((obj) => {
+              return (
+                <BodyCards
+                  popularity={obj.popularity}
+                  genre={obj.genre_ids}
+                  adult={obj.adult}
+                  name={obj.title}
+                  pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
+                  imdb={Math.round(obj.vote_average * 10) / 10}
+                  date={obj.release_date.substr(0, 4)}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div className={styles.secondbody}>
-          {movies2.map((obj) => {
-            return (
-              <BodyCards
-                popularity={obj.popularity}
-                genre={obj.genre_ids}
-                adult={obj.adult}
-                name={obj.title}
-                pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
-                imdb={Math.round(obj.vote_average * 10) / 10}
-                date={obj.release_date.substr(0, 4)}
-              />
-            );
-          })}
-        </div>
-      </div>}
+      )}
 
-      {nowIsSelected && <div className={styles.allbody}>
-        <div className={styles.firstbody}>
-          {movies3.map((obj) => {
-            return (
-              <BodyCards
-                popularity={obj.popularity}
-                genre={obj.genre_ids}
-                adult={obj.adult}
-                name={obj.title}
-                pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
-                imdb={Math.round(obj.vote_average * 10) / 10}
-                date={obj.release_date.substr(0, 4)}
-              />
-            );
-          })}
+      {nowIsSelected && (
+        <div className={styles.allbody}>
+          <div className={styles.firstbody}>
+            {movies3.map((obj) => {
+              return (
+                <BodyCards
+                  popularity={obj.popularity}
+                  genre={obj.genre_ids}
+                  adult={obj.adult}
+                  name={obj.title}
+                  pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
+                  imdb={Math.round(obj.vote_average * 10) / 10}
+                  date={obj.release_date.substr(0, 4)}
+                />
+              );
+            })}
+          </div>
+          <div className={styles.secondbody}>
+            {movies4.map((obj) => {
+              return (
+                <BodyCards
+                  popularity={obj.popularity}
+                  genre={obj.genre_ids}
+                  adult={obj.adult}
+                  name={obj.title}
+                  pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
+                  imdb={Math.round(obj.vote_average * 10) / 10}
+                  date={obj.release_date.substr(0, 4)}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div className={styles.secondbody}>
-          {movies4.map((obj) => {
-            return (
-              <BodyCards
-                popularity={obj.popularity}
-                genre={obj.genre_ids}
-                adult={obj.adult}
-                name={obj.title}
-                pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
-                imdb={Math.round(obj.vote_average * 10) / 10}
-                date={obj.release_date.substr(0, 4)}
-              />
-            );
-          })}
-        </div>
-      </div>}
+      )}
 
-      {upIsSelected && <div className={styles.allbody}>
-        <div className={styles.firstbody}>
-          {movies5.map((obj) => {
-            return (
-              <BodyCards
-                popularity={obj.popularity}
-                genre={obj.genre_ids}
-                adult={obj.adult}
-                name={obj.title}
-                pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
-                imdb={Math.round(obj.vote_average * 10) / 10}
-                date={obj.release_date.substr(0, 4)}
-              />
-            );
-          })}
+      {upIsSelected && (
+        <div className={styles.allbody}>
+          <div className={styles.firstbody}>
+            {movies5.map((obj) => {
+              return (
+                <BodyCards
+                  popularity={obj.popularity}
+                  genre={obj.genre_ids}
+                  adult={obj.adult}
+                  name={obj.title}
+                  pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
+                  imdb={Math.round(obj.vote_average * 10) / 10}
+                  date={obj.release_date.substr(0, 4)}
+                />
+              );
+            })}
+          </div>
+          <div className={styles.secondbody}>
+            {movies6.map((obj) => {
+              return (
+                <BodyCards
+                  popularity={obj.popularity}
+                  genre={obj.genre_ids}
+                  adult={obj.adult}
+                  name={obj.title}
+                  pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
+                  imdb={Math.round(obj.vote_average * 10) / 10}
+                  date={obj.release_date.substr(0, 4)}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div className={styles.secondbody}>
-          {movies6.map((obj) => {
-            return (
-              <BodyCards
-                popularity={obj.popularity}
-                genre={obj.genre_ids}
-                adult={obj.adult}
-                name={obj.title}
-                pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
-                imdb={Math.round(obj.vote_average * 10) / 10}
-                date={obj.release_date.substr(0, 4)}
-              />
-            );
-          })}
-        </div>
-      </div>}
+      )}
 
       <div className={styles["all-btns"]}>
-        <button onClick={() => {setn(1)}} className={!selected1 ? "selected" : "not"}> 1 </button>
-        <button onClick={() => {setn(2)}} className={!selected2 ? "selected" : "not"}> 2 </button>
-        <button onClick={() => {setn(3)}} className={!selected3 ? "selected" : "not"}> 3 </button>
-        <button onClick={() => {setn(4)}} className={!selected4 ? "selected" : "not"}> 4 </button>
-        <button onClick={() => {setn(5)}} className={!selected5 ? "selected" : "not"}> 5 </button>
-        <button onClick={() => {setn(6)}} className={!selected6 ? "selected" : "not"}> 6 </button>
-        <button onClick={() => {setn(7)}} className={!selected7 ? "selected" : "not"}> 7 </button>
-        <button onClick={() => {setn(8)}} className={!selected8 ? "selected" : "not"}> 8 </button>
-        <button onClick={() => {setn(9)}} className={!selected9 ? "selected" : "not"}> 9 </button>
-        <button onClick={() => {setn(10)}} className={!selected10 ? "selected" : "not"}> 10 </button>
+        <button
+          onClick={() => {
+            check(1);
+          }}
+          className={selected1 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          1{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(2);
+          }}
+          className={selected2 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          2{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(3);
+          }}
+          className={selected3 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          3{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(4);
+          }}
+          className={selected4 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          4{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(5);
+          }}
+          className={selected5 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          5{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(6);
+          }}
+          className={selected6 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          6{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(7);
+          }}
+          className={selected7 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          7{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(8);
+          }}
+          className={selected8 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          8{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(9);
+          }}
+          className={selected9 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          9{" "}
+        </button>
+        <button
+          onClick={() => {
+            check(10);
+          }}
+          className={selected10 ? styles["selected"] : styles.not}
+        >
+          {" "}
+          10{" "}
+        </button>
       </div>
     </>
   );
