@@ -4,9 +4,6 @@
 
 <h1 align="center">Movie App</h1>
 
-## Its an App For Movies Where You Can Search Movies & Tv shows
-
-
 <h1>Preview</h1>
 
 ![Screenshot](asdasdasd.jpg)
