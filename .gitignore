@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-__pycache__
-venv/
-.env
-=======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -26,4 +21,3 @@ venv/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
->>>>>>> d467b37ac02c2f1fdc075dbf30d7ffcab37ffdb7

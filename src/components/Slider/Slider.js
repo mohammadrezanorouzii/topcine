@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MovieCards from "./../MovieCards/MovieCards";
+import MovieCards from "../MovieCards/MovieCards";
 import styles from "./Slider.module.scss";
 import PervBtn from "../Icons/PervBtn";
 import NextBtn from "../Icons/NextBtn";
