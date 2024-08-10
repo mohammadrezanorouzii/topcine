@@ -8,6 +8,8 @@ import SelectedOne from "../../Icons/SelectedOne";
 import SelectedTwo from "../../Icons/SelectedTwo";
 import SelectedThree from "../../Icons/SelectedThree";
 import { useParams } from "react-router-dom";
+import { MdOutlineExpandMore } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function SinglePage() {
   const movie_id = Number(useParams().id);
@@ -20,7 +22,10 @@ export default function SinglePage() {
   const [castsPart2, setCastsPart2] = useState(false);
   const [castsPart3, setCastsPart3] = useState(false);
 
-  const [plus, setPlus] = useState(false);
+  const [visibleReviewIndex, setVisibleReviewIndex] = useState(null);
+  const handleButtonClick = (index) => {
+    setVisibleReviewIndex(visibleReviewIndex === index ? null : index); // Toggle visibility
+  };
 
   const true1 = () => {
     setCastsPart1(true);
@@ -82,12 +87,11 @@ export default function SinglePage() {
       .catch((err) => console.error(err));
   }, [movie_id]);
 
-  console.log(movieInfo);
-  console.log(movie_id);
-
   var credits = movieCredits.slice(0, 5);
   var credits2 = movieCredits.slice(5, 10);
   var credits3 = movieCredits.slice(10, 15);
+
+  console.log(movieReviews);
 
   return (
     <>
@@ -187,54 +191,57 @@ export default function SinglePage() {
             {castsPart3 ? <SelectedThree /> : <Three onClick={true3} />}
           </div>
         </div>
-        
-        
-        {/* movie reviews */}
 
+        {/* movie reviews */}
 
         <div className={styles["text-container"]}>
           <div className={styles["text-line"]}></div>
           <p> REVIEWS </p>
         </div>
         <div className={styles["total-reviews"]}>
-          {movieReviews.map((e) => {
+          {movieReviews.map((e, index) => {
             return (
-              <div className={styles.outOfNameBro}>
-                <div
-                  className={styles["one-review"]}
-                  onClick={() => {
-                    setPlus(true);
-                  }}
-                >
-                  <div className={styles.context}>
-                    {/* <img
-                      src={e.author_details.avatar_path.substr(7, 1000)}
-                      alt="not found"
-                    /> */}
-                    <p className={styles["review-name"]}> {e.author} </p>
+              <>
+                <div className={styles["one-card"]} key={index}>
+                  <div
+                    className={styles["review-header"]}
+                    onClick={() => handleButtonClick(index)}
+                  >
+                    {e.author_details.avatar_path != null ? (
+                      <img
+                        src={`https://image.tmdb.org/t/p/original/${e.author_details.avatar_path}`}
+                      />
+                    ) : (
+                      <div className={styles["noImage"]}> No Image</div>
+                    )}
+                    <p> {e.author} </p>
+                    <div>
+                      <MdOutlineExpandMore className={styles["icon"]} />
+                    </div>
                   </div>
+                  {visibleReviewIndex === index && (
+                    <div className={styles["review-context"]}>
+                      <p> {e.content} </p>
+                      {/* {!showAll && <div><p>{e.content.substr(0,1000)}</p> <button onClick={()=>{setShowAll(!showAll)}}> show all </button> </div>} 
+                    {showAll && <p>{e.content}</p>}  */}
+                      <div className={styles["review-details"]}>
+                        <p className={styles["review-date"]}>
+                          {e.created_at.substr(0, 10)}
+                        </p>
+                        <p className={styles.lastUpdate}> Last Update : </p>{" "}
+                        <p className={styles["review-up"]}>
+                          {e.updated_at.substr(0, 10)}
+                        </p>
+                      </div>
+                      <div className={styles.url}>
+                        <p>
+                          credit : <a href={e.url}> {e.url} </a>
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
-
-                {plus && (
-                  <div className={styles["review-context"]}>
-                    <p> {e.content} </p>
-                    <div className={styles["review-details"]}>
-                      <p className={styles["review-date"]}>
-                        {e.created_at.substr(0, 10)}
-                      </p>
-                      <p className={styles.lastUpdate}> Last Update : </p>{" "}
-                      <p className={styles["review-up"]}>
-                        {e.updated_at.substr(0, 10)}{" "}
-                      </p>
-                    </div>
-                    <div className={styles.url}>
-                      <p>
-                        credit : <a href={e.url}> {e.url} </a>
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
+              </>
             );
           })}
         </div>

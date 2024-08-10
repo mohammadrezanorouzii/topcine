@@ -148,7 +148,7 @@
   margin: 10px;
 }
 .total-reviews {
-  background-color: #7570A7;
+  background-color: #2b2d31;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -165,31 +165,56 @@
   flex-direction: column;
   width: 48%;
 }
-.one-review {
-  height: 120px;
-  border-radius: 20px 20px 0 0;
+.one-card {
+  // height: 120px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
   background-color: #2b2d31;
-  margin-top: 10px;
-  img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    margin: 15px;
-  }
+  margin-top: 20px;
   P {
     color: #ffffff;
     font-size: 40px;
     font-family: "Roboto";
     margin: auto 0;
   }
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+  }
+}
+.icon {
+  color: #de518e;
+  width: 50px;
+  height: 50px;
+  border: #de518e 2px solid;
+  border-radius: 50%;
+  position: absolute;
+  right: 30px;
+  top: 25px;
+}
+.review-header {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.noImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: #4080B3 3px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+
 }
 .review-context {
   box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
-  background-color: #2b2d31;
   padding: 10px;
   P {
     margin: 0;
@@ -197,6 +222,7 @@
     font-size: 20px;
     font-family: "Roboto";
   }
+
 }
 .review-details {
   display: flex;
