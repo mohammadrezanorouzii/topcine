@@ -3,7 +3,6 @@ import BodyCards from "../BodyCards/BodyCards";
 import styles from "./Body.module.scss";
 
 export default function Body({ topMovies, nowMovies, upMovies }) {
-
   const [topIsSelected, setTopIsSelected] = useState(true); // 1
   const [nowIsSelected, setNowIsSelected] = useState(false); // 2
   const [upIsSelected, setUpIsSelected] = useState(false); // 3
@@ -12,8 +11,8 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
   const [showMovies2, setShowMovies2] = useState(topMovies);
   const [showMovies3, setShowMovies3] = useState(topMovies);
 
-  const btns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  const [n, setn] = useState(1)
+  const btns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const [n, setn] = useState(1);
 
   const options = {
     method: "GET",
@@ -229,12 +228,18 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       )}
 
       <div className={styles["all-btns"]}>
-        {btns.map(e => {
+        {btns.map((e) => {
           return (
-            <button className={e === n ? styles["selected"] : styles.not} onClick={() => { setn(e) }}> {e} </button>
-          )
+            <button
+              className={e === n ? styles["selected"] : styles.not}
+              onClick={() => {
+                setn(e);
+              }}
+            >
+              {e}
+            </button>
+          );
         })}
-
       </div>
     </>
   );

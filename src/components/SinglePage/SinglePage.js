@@ -7,14 +7,13 @@ import Three from "../Icons/Three";
 import SelectedOne from "../Icons/SelectedOne";
 import SelectedTwo from "../Icons/SelectedTwo";
 import SelectedThree from "../Icons/SelectedThree";
-import { logDOM } from "@testing-library/react";
 
 export default function SinglePage() {
   const [movieInfo, setMovieInfo] = useState([]);
   const [movieReviews, setMovieReviews] = useState([]);
   const [moviePics, setMoviePics] = useState([]);
   const [movieCredits, setMovieCredits] = useState([]);
-  const [movie_id, setmovie_id] = useState(238);
+  const [movie_id, setmovie_id] = useState(165);
   const [castsPart1, setCastsPart1] = useState(true);
   const [castsPart2, setCastsPart2] = useState(false);
   const [castsPart3, setCastsPart3] = useState(false);
@@ -86,25 +85,8 @@ export default function SinglePage() {
   var credits2 = movieCredits.slice(5, 10);
   var credits3 = movieCredits.slice(10, 15);
 
-  // console.log(Object.keys(allGenres));
-
-  // var nameAllGenres = allGenres.filter(e => {e.name})
-  // console.log(nameAllGenres);
-
   return (
-    // <div className={styles.total}>
-    //   <p> {movieInfo.title} </p>
-    //   <img
-    //     src={`https://image.tmdb.org/t/p/w500${movieInfo.backdrop_path}`}
-    //     alt={movieInfo.name}
-    //   />
-    //   {movieReviews.map((e) => {
-    //     return <p> {e.author_details.username} </p>;
-    //   })}
-    //   {movieCredits.map((e) => {
-    //     return <p> {e.character} </p>;
-    //   })}
-    // </div>
+
     <>
       <div className={styles["header"]}>
         <div className={styles.line}></div>
@@ -210,19 +192,16 @@ export default function SinglePage() {
                   onClick={() => {
                     setPlus(true);
                   }}
-                  // onBlur={() => {
-                  //   setPlus(false);
-                  // }}
                 >
                   <div className={styles.context}>
                     <img
                       src={e.author_details.avatar_path.substr(7, 1000)}
                       alt="not found"
                     />
-                    {/* <p className={styles["review-content"]}> {e.content} </p> */}
                     <p className={styles["review-name"]}> {e.author} </p>
                   </div>
-                  <div className={styles.plus}>
+
+                  {/* <div className={styles.plus}>
                     <div className={styles["total-plus"]}>
                       <div
                         className={
@@ -231,8 +210,11 @@ export default function SinglePage() {
                       ></div>
                       <div className={styles["plus-two"]}></div>
                     </div>
-                  </div>
+                  </div> */} 
+
+                  {/* add a plus icon here */}
                 </div>
+                
                 {plus && (
                   <div className={styles["review-context"]}>
                     <p> {e.content} </p>
@@ -247,7 +229,7 @@ export default function SinglePage() {
                     </div>
                     <div className={styles.url}>
                       <p>
-                        credit : <a href={e.url}> {e.url} </a>{" "}
+                        credit : <a href={e.url}> {e.url} </a>
                       </p>
                     </div>
                   </div>
