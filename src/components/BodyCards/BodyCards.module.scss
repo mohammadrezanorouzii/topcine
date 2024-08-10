@@ -18,14 +18,16 @@ img {
 }
 .bodycontext {
   padding: 10px 0 0 10px;
-  width: 80%;
+  width: 100%;
+  position: relative;
+
 }
 .bodyname {
   margin: 0 0 10px 0;
   font-family: 'Roboto Slab', serif;
   font-weight: 300;
   font-size: 25px;
-  width: 120%;
+  width: 100%;
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis; 
@@ -97,6 +99,22 @@ img {
   flex-direction: row;
   margin-top: 5px;
   width: 700px;
+}
+.seeMoreLink {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #A9619A;
+  font-family: 'Roboto Slab', serif;
+  border-radius: 10px;
+  border: #A9619A 2px solid;
+  position: absolute;
+  right: 20px;
+}
+.customLink {
+  text-decoration: none;
+  color: #ffffff;
 }
 .genre {
   padding: 5px;

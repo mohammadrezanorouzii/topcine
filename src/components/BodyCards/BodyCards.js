@@ -77,7 +77,9 @@ export default function BodyCards({ name, pic, imdb, date, adult, genre, popular
           {genreName.map((e) => (
             <p className={styles.genre}> {e.name} </p>
           ))}
-          <Link to={`/singlepage/${id}`}> see more </Link>
+          <div className={styles["seeMoreLink"]}> 
+          <Link to={`/singlepage/${id}`} className={styles.customLink}> See More </Link>
+          </div>
         </div>
       </div>
     </div>
