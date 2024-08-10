@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./NotFoundPage.module.scss"
-import img1 from "../pics/404.jpg"
+import img1 from "../../pics/404.jpg"
 import { Link } from 'react-router-dom'
 
 export default function NotFoundPage() {

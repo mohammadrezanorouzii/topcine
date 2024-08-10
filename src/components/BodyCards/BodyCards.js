@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Star from "../Icons/Star";
-import Adult from "../Icons/Adult";
+import Star from "../../Icons/Star";
+import Adult from "../../Icons/Adult";
 import "@fontsource/epilogue";
 import styles from "./BodyCards.module.scss";
+import {Link} from 'react-router-dom'
 
-export default function BodyCards({ name, pic, imdb, date, adult, genre, popularity }) {
+export default function BodyCards({ name, pic, imdb, date, adult, genre, popularity, id }) {
   const [imdbIsTrue, setImdbIsTrue] = useState(true);
   const [hovering, setHovering] = useState(false);
   const [genres, setGenres] = useState([]);
@@ -70,11 +71,13 @@ export default function BodyCards({ name, pic, imdb, date, adult, genre, popular
 
       <div className={styles.bodycontext}>
         <p className={styles.bodyname}> {name} </p>
+        {/* <p> {id} </p> */}
         <p className={styles.bodydate}> {date} </p>
         <div className={styles.genrecontainer}>
           {genreName.map((e) => (
             <p className={styles.genre}> {e.name} </p>
           ))}
+          <Link to={`/singlepage/${id}`}> see more </Link>
         </div>
       </div>
     </div>

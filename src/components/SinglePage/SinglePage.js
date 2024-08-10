@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from "react";
 import styles from "./SinglePage.module.scss";
-import imdbLogo from "../pics/imdb-logo.png";
-import One from "../Icons/One";
-import Two from "../Icons/Two";
-import Three from "../Icons/Three";
-import SelectedOne from "../Icons/SelectedOne";
-import SelectedTwo from "../Icons/SelectedTwo";
-import SelectedThree from "../Icons/SelectedThree";
+import imdbLogo from "../../pics/imdb-logo.png";
+import One from "../../Icons/One";
+import Two from "../../Icons/Two";
+import Three from "../../Icons/Three";
+import SelectedOne from "../../Icons/SelectedOne";
+import SelectedTwo from "../../Icons/SelectedTwo";
+import SelectedThree from "../../Icons/SelectedThree";
+import { useParams } from "react-router-dom";
 
 export default function SinglePage() {
+  const movie_id = Number(useParams().id);
+
   const [movieInfo, setMovieInfo] = useState([]);
   const [movieReviews, setMovieReviews] = useState([]);
   const [moviePics, setMoviePics] = useState([]);
   const [movieCredits, setMovieCredits] = useState([]);
-  const [movie_id, setmovie_id] = useState(165);
   const [castsPart1, setCastsPart1] = useState(true);
   const [castsPart2, setCastsPart2] = useState(false);
   const [castsPart3, setCastsPart3] = useState(false);
+
   const [plus, setPlus] = useState(false);
 
   const true1 = () => {
@@ -39,8 +42,6 @@ export default function SinglePage() {
     method: "GET",
   };
 
-  // Details
-
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movie_id}?api_key=7a47242793d59eb1570389827de8affd&language=en-US`,
@@ -51,7 +52,7 @@ export default function SinglePage() {
         return setMovieInfo(response);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [movie_id]);
 
   // Reviews
 
@@ -65,7 +66,7 @@ export default function SinglePage() {
         return setMovieReviews(response.results);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [movie_id]);
 
   // Credits - cast
 
@@ -79,14 +80,16 @@ export default function SinglePage() {
         return setMovieCredits(response.cast);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [movie_id]);
+
+  console.log(movieInfo);
+  console.log(movie_id);
 
   var credits = movieCredits.slice(0, 5);
   var credits2 = movieCredits.slice(5, 10);
   var credits3 = movieCredits.slice(10, 15);
 
   return (
-
     <>
       <div className={styles["header"]}>
         <div className={styles.line}></div>
@@ -97,7 +100,11 @@ export default function SinglePage() {
           />
         </div>
         <div className={styles.info}>
-          <p className={styles.name}> {movieInfo.title} </p>
+          <p className={styles.name}>
+            {movieInfo.title && movieInfo.title.length > 35
+              ? movieInfo.title.substring(0, 35) + "..."
+              : movieInfo.title}
+          </p>
           <div className={styles["down-info"]}>
             <p className={styles.date}> {movieInfo.release_date} </p>
             <img src={imdbLogo} alt="imdb" />
@@ -106,6 +113,7 @@ export default function SinglePage() {
             </p>
             <p className={styles.count}> ({movieInfo.vote_count}) </p>
           </div>
+          {/* <p> {movieInfo.budget} $ </p> */}
           <div>
             <p className={styles.overview}>{movieInfo.overview}</p>
           </div>
@@ -179,6 +187,11 @@ export default function SinglePage() {
             {castsPart3 ? <SelectedThree /> : <Three onClick={true3} />}
           </div>
         </div>
+        
+        
+        {/* movie reviews */}
+
+
         <div className={styles["text-container"]}>
           <div className={styles["text-line"]}></div>
           <p> REVIEWS </p>
@@ -194,27 +207,14 @@ export default function SinglePage() {
                   }}
                 >
                   <div className={styles.context}>
-                    <img
+                    {/* <img
                       src={e.author_details.avatar_path.substr(7, 1000)}
                       alt="not found"
-                    />
+                    /> */}
                     <p className={styles["review-name"]}> {e.author} </p>
                   </div>
-
-                  {/* <div className={styles.plus}>
-                    <div className={styles["total-plus"]}>
-                      <div
-                        className={
-                          plus ? styles["plus-one"] : styles["plus-three"]
-                        }
-                      ></div>
-                      <div className={styles["plus-two"]}></div>
-                    </div>
-                  </div> */} 
-
-                  {/* add a plus icon here */}
                 </div>
-                
+
                 {plus && (
                   <div className={styles["review-context"]}>
                     <p> {e.content} </p>

@@ -92,9 +92,6 @@
     margin: 0 0 0 10px;
   }
 }
-.total-casts {
-  // border: #de518e 2px solid;
-}
 .text-line {
   margin: 0;
   background-color: #de518e;
@@ -151,9 +148,11 @@
   margin: 10px;
 }
 .total-reviews {
+  background-color: #7570A7;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
+  gap: 10px;
   justify-content: space-between;
 }
 .context {
@@ -161,6 +160,7 @@
   flex-direction: row;
 }
 .outOfNameBro {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   width: 48%;
@@ -212,37 +212,6 @@
     font-family: "Roboto";
   }
 }
-.total-plus {
-  margin: 40px 20px 40px 0;
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
-.plus-one {
-  background-color: #2b2d31;
-  width: 10px;
-  height: 40px;
-  border-radius: 10px;
-  position: absolute;
-  margin: auto 0;
-}
-.plus-three {
-  background-color: #de518e;
-  width: 10px;
-  height: 40px;
-  border-radius: 10px;
-  position: absolute;
-  margin: auto 0;
-}
-.plus-two {
-  background-color: #de518e;
-  margin: auto 0;
-  width: 10px;
-  height: 40px;
-  border-radius: 20px;
-  transform: rotateZ(90deg);
-  position: absolute;
-}
 .url {
   display: flex;
   flex-direction: row;
@@ -253,6 +222,8 @@
     font-family: "Roboto";
   }
 }
+
+// important
 .genres-container {
   display: flex;
   flex-direction: row;

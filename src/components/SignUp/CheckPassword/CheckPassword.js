@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./CheckPassword.module.scss";
-import Done from "../../Icons/Done";
-import NotOk from "../../Icons/NotOk";
+import Done from "../../../Icons/Done";
+import NotOk from "../../../Icons/NotOk";
 
 export default function CheckPassword({ password }) {
   const [safe1, setSafe1] = useState(false);

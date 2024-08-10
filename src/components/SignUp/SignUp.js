@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SignUp.module.scss";
-import img1 from "../pics/it.jpg";
+import img1 from "../../pics/it.jpg";
 import CheckPassword from "./CheckPassword/CheckPassword";
 import { Link } from "react-router-dom";
 

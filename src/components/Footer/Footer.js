@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import Twitter from "../Icons/Twitter";
-import Linkedin from "../Icons/Linkedin";
-import Github from "../Icons/Github";
+import Twitter from "../../Icons/Twitter";
+import Linkedin from "../../Icons/Linkedin";
+import Github from "../../Icons/Github";
 import { Link } from "react-router-dom";
 
 export default function Footer() {

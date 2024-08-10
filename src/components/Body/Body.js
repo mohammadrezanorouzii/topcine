@@ -12,7 +12,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
   const [showMovies3, setShowMovies3] = useState(topMovies);
 
   const btns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const [n, setn] = useState(1);
+  const [n, setn] = useState(1);  
 
   const options = {
     method: "GET",
@@ -54,8 +54,8 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       .catch((err) => console.error(err));
   }, [n]);
 
-  console.log(showMovies1);
-
+  // console.log(showMovies1);
+  
   // button on click setn(3) and a function should setShowMovies(loadedMovies)
 
   const clickedTop = () => {
@@ -76,14 +76,15 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
     setNowIsSelected(false);
     setShowMovies3(upMovies);
   };
-
+  
   const movies1 = showMovies1.slice(0, 10);
   const movies2 = showMovies1.slice(10, 20);
   const movies3 = showMovies2.slice(0, 10);
   const movies4 = showMovies2.slice(10, 20);
   const movies5 = showMovies3.slice(0, 10);
   const movies6 = showMovies3.slice(10, 20);
-
+  
+  console.log(movies1);
   return (
     <>
       <div className={styles["choose-container"]} onScroll={clickedTop}>
@@ -135,6 +136,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
                   pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
                   imdb={Math.round(obj.vote_average * 10) / 10}
                   date={obj.release_date.substr(0, 4)}
+                  id={obj.id}
                 />
               );
             })}
@@ -150,6 +152,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
                   pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
                   imdb={Math.round(obj.vote_average * 10) / 10}
                   date={obj.release_date.substr(0, 4)}
+                  id={obj.id}
                 />
               );
             })}
@@ -166,6 +169,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
                   popularity={obj.popularity}
                   genre={obj.genre_ids}
                   adult={obj.adult}
+                  id={obj.id}
                   name={obj.title}
                   pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
                   imdb={Math.round(obj.vote_average * 10) / 10}
@@ -185,6 +189,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
                   pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
                   imdb={Math.round(obj.vote_average * 10) / 10}
                   date={obj.release_date.substr(0, 4)}
+                  id={obj.id}
                 />
               );
             })}
@@ -205,6 +210,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
                   pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
                   imdb={Math.round(obj.vote_average * 10) / 10}
                   date={obj.release_date.substr(0, 4)}
+                  id={obj.id}
                 />
               );
             })}
@@ -220,6 +226,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
                   pic={`https://image.tmdb.org/t/p/w500${obj.backdrop_path}`}
                   imdb={Math.round(obj.vote_average * 10) / 10}
                   date={obj.release_date.substr(0, 4)}
+                  id={obj.id}
                 />
               );
             })}

@@ -4,7 +4,7 @@ import "@fontsource/epilogue";
 import "@fontsource/archivo";
 import "@fontsource/expletus-sans";
 import { Link } from "react-router-dom";
-import Search from "../Icons/Search";
+import Search from "../../Icons/Search";
 
 export default function Navbar() {
   const [navbarOpacityIsZero, setNavbarOpacityIsZero] = useState(true);

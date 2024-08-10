@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./MovieCards.module.scss";
 import "@fontsource/epilogue";
-import Star from "../Icons/Star";
+import Star from "../../Icons/Star";
 
 export default function MovieCards({ name, pic, imdb, date }) {
   const [hovering, setHovering] = useState(false);

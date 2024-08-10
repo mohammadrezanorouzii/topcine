@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./LogIn.module.scss";
-import img1 from "../pics/it.jpg";
+import img1 from "../../pics/it.jpg";
 import { Link } from "react-router-dom";
 
 export default function LogIn() {

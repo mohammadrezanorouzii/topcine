@@ -4,48 +4,22 @@ body {
   background-color: #292a2d;
 }
 ::-webkit-scrollbar {
-  width: 20px;
-}
-::-webkit-scrollbar-track {
-  background-color: rgba(150, 154, 160, 0.227)
+  width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 20px;
+  border-radius: 10px;
   background: linear-gradient(#0b8fbf 6.75%, #de518e 100%);
   margin: 0 10px;
-  border: 5px solid transparent;
+  border: 1px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(146, 146, 146);
-  border-radius: 20px;
+  background: linear-gradient(#de518e 100%, #0b8fbf 100%);
+  border-radius: 10px;
   margin: 0 10px;
-  border: 5px solid transparent;
+  border: 1px solid transparent;
   background-clip: content-box;
 }
-/* Buttons */
-::-webkit-scrollbar-button:single-button {
-  background-color: #323437;
-  display: block;
-  border-style: solid;
-  height: 15px;
-  width: 20px;
-}
-/* Up */
-::-webkit-scrollbar-button:single-button:vertical:decrement {
-  border-width: 0 10px 15px 10px;
-  border-color: transparent transparent rgb(146, 146, 146) transparent;
-}
-::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-  border-color: transparent transparent rgba(146, 146, 146, 0.511) transparent;
-  cursor: pointer;
-}
-/* Down */
-::-webkit-scrollbar-button:single-button:vertical:increment {
-  border-width: 15px 10px 0 10px;
-  border-color: rgb(146, 146, 146) transparent transparent transparent;
-}
-::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-  border-color: rgba(146, 146, 146, 0.511) transparent transparent transparent;
-  cursor: pointer;
+::-webkit-scrollbar-button:single-button:vertical:decrement, ::-webkit-scrollbar-button:single-button:vertical:increment {
+  display: none;
 }

@@ -115,7 +115,7 @@ function App() {
           }
         ></Route>
         <Route path="signup" element={<SignUp />}></Route>
-        <Route path="singlepage" element={<SinglePage />}></Route>
+        <Route path="singlepage/:id" element={<SinglePage />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </Router>
