@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Gloria+Hallelujah&family=Lilita+One&family=Lobster&family=Margarine&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Shadows+Into+Light&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Gloria+Hallelujah&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Gloria+Hallelujah&family=Lilita+One&family=Lobster&family=Margarine&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Gloria+Hallelujah&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lobster&display=swap");
 
 // body {
 //   font-family: "Archivo";
@@ -95,10 +95,20 @@
   max-height: 80px;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 300;
-  font-style: normal;
   font-size: 30px;
   margin-right: 30px;
   color: #ffffff;
+}
+.saved:hover {
+  @extend .saved;
+  color: #0b8fbf;
+  font-size: 32px;
+  transition: font-size 0.2s ease;
+}
+.gotologin:hover,
+.gotosignup:hover {
+  @extend .saved;
+  color: #de518e;
 }
 .checkcontainer {
   background-color: #f0f0f0;
@@ -186,5 +196,32 @@ input[type="checkbox"] {
     padding: 3px 10px 3px 5px;
     font-size: 20px;
     font-family: "Bebas Neue", sans-serif;
+  }
+}
+.burger {
+  display: none;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  /* Styles for devices with max width 1024px */
+  .lightnavbar {
+    display: none;
+  }
+  .darknavbar {
+    display: none;
+  }
+  .burger-icon {
+    width: 50px;
+    color: #f0f0f0;
+    height: 50px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  .burger {
+    position: relative;
+    width: 100%;
+    display: flex;
+    opacity: 1;
   }
 }

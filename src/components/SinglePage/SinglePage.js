@@ -212,7 +212,7 @@ export default function SinglePage() {
                         src={`https://image.tmdb.org/t/p/original/${e.author_details.avatar_path}`}
                       />
                     ) : (
-                      <div className={styles["noImage"]}> No Image</div>
+                      <div className={styles["noImage"]}> Not Available </div>
                     )}
                     <p> {e.author} </p>
                     <div>

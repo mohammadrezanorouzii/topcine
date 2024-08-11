@@ -2,6 +2,7 @@
 
 .headerimg {
   border-radius: 0;
+  width: 100%;
   height: 700px;
 }
 .headercontext {
@@ -31,4 +32,25 @@
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;
+}
+@media (max-width: 480px) {
+
+}
+@media (max-width: 768px) {
+  .headercontext {
+  position: absolute;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-family: "Roboto";
+  
+  }
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1920px) {
 }
