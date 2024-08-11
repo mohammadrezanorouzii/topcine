@@ -27,13 +27,13 @@
 }
 .loginlogo {
   margin: 0;
-  font-family: "Roboto";
   max-height: 50px;
   width: 20px;
   font-size: 50px;
-  letter-spacing: -2px;
+  letter-spacing: 2px;
+  font-family: "Margarine", sans-serif;
   line-height: 48px;
-  background: linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%);
+  background: linear-gradient(270deg, #0b8fbf 0%, #de518e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

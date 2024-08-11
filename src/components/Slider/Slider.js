@@ -35,8 +35,7 @@ export default function Slider({items}) {
       <div className={styles["all-container"]}>
         <div className={styles.perv}>
           <div className={styles.pervv} onClick={perv}>
-            {" "}
-            <PervBtn />{" "}
+            <PervBtn />
           </div>
         </div>
 

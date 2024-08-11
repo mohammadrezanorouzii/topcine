@@ -1,9 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Gloria+Hallelujah&family=Lilita+One&family=Lobster&family=Margarine&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Gloria+Hallelujah&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lobster&display=swap');
 
-body {
-  font-family: "Archivo";
-}
+// body {
+//   font-family: "Archivo";
+// }
 .navbaritems {
   display: flex;
   flex-direction: row;
@@ -12,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   animation: backgroundLightOpacity 200ms forwards;
-  height: 90px;
+  height: 80px;
   border-radius: 0 0 5px 5px;
   z-index: 10;
   width: 100%;
@@ -32,7 +41,7 @@ body {
 .darknavbar {
   display: flex;
   flex-direction: column;
-  height: 90px;
+  height: 80px;
   animation: backgroundOpacity 600ms forwards;
   border-radius: 0 0 5px 5px;
   position: fixed;
@@ -51,22 +60,25 @@ body {
   }
 }
 .logocontainer {
-  max-height: 90px;
-  width: 200px;
+  max-height: 80px;
+  width: 220px;
   padding: 15px 0 0 15px;
 }
 .logo {
   margin: 0;
-  font-family: "Roboto";
-  max-height: 50px;
-  font-weight: 500;
   font-size: 50px;
-  letter-spacing: -5px;
-  line-height: 48px;
-  background: linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%);
+  letter-spacing: 2px;
+  line-height: 50px;
+  font-weight: 900;
+  background: linear-gradient(270deg, #0b8fbf 0%, #de518e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  // font-family: "Concert One", sans-serif;
+  // font-family: "Pacifico", cursive;
+  // font-family: "Silkscreen", sans-serif;
+  // font-family: "Gloria Hallelujah", cursive;
+  font-family: "Margarine", sans-serif;
 }
 .othercontainer {
   height: 80px;
@@ -79,12 +91,12 @@ body {
 .gotologin,
 .gotosignup {
   text-decoration: none;
-  font-family: "Expletus Sans";
   margin: auto;
   max-height: 80px;
-  font-size: 25px;
-  font-weight: 500;
-  line-height: 33px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
   margin-right: 30px;
   color: #ffffff;
 }
@@ -125,6 +137,7 @@ input[type="checkbox"] {
   height: 100%;
 }
 .search-container {
+  margin-left: 20px;
   width: 160px;
   height: 40px;
   box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.477);
@@ -144,8 +157,7 @@ input[type="checkbox"] {
     outline: none;
     padding: 3px 10px 3px 5px;
     font-size: 20px;
-    font-family: "Archivo";
-    font-weight: 590;
+    font-family: "Bebas Neue", sans-serif;
   }
 }
 .search {
@@ -173,7 +185,6 @@ input[type="checkbox"] {
     outline: none;
     padding: 3px 10px 3px 5px;
     font-size: 20px;
-    font-family: "Archivo";
-    font-weight: 590;
+    font-family: "Bebas Neue", sans-serif;
   }
 }

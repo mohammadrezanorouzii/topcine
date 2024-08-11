@@ -29,13 +29,12 @@ export default function LogIn() {
           <div className={styles.logincontext}>
             <div className={styles.loginlogocontainer}>
               <Link className={styles.loginlogo} to="/">
-                {" "}
-                TopCine{" "}
+                TopCine
               </Link>
             </div>
             <div className={styles.textcontainer}>
               <p> Log In </p>
-              <div className={styles.logincircle}></div>
+              {/* <div className={styles.logincircle}></div> */}
             </div>
             <div className={styles.newusercontainer}>
               <p className={styles.newusertext}> Dont have an account ? </p>

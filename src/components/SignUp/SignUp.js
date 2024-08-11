@@ -56,7 +56,7 @@ export default function SignUp() {
             <form className={styles.signupform}>
               <div className={styles.createtextcontainer}>
                 <p className={styles.createtext}> Craete new account </p>
-                <div className={styles.signupcircle}></div>
+                {/* <div className={styles.signupcircle}></div> */}
               </div>
               <div className={styles.alreadycontainer}>
                 <p className={styles.already}> Already a memeber ? </p>
