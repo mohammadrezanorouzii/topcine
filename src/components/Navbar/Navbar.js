@@ -42,8 +42,8 @@ export default function Navbar() {
         }}
       >
         <GiHamburgerMenu className={styles["burger-icon"]} />
-      {openBurger && <Hamburger />}
       </div>
+      {openBurger && <Hamburger />}
 
       <div
         className={`${
@@ -55,7 +55,7 @@ export default function Navbar() {
             <p className={styles.logo}> TopCine </p>
           </div>
 
-          {!navbarOpacityIsZero && (
+          {/* {!navbarOpacityIsZero && (
             <div
               className={
                 focus
@@ -81,7 +81,7 @@ export default function Navbar() {
                 }}
               />
             </div>
-          )}
+          )} */}
 
           <div className={styles.othercontainer}>
             <Link className={styles.saved} to="/saved">

@@ -5,9 +5,24 @@
   position: relative;
   margin-left: 4%;
   margin-top: 5px;
+  display: grid;
+}
+@media (max-width : 1200px) {
+  .card {
+    min-width: 44%;
+    margin-left: 4%;
+  }
+}
+@media (max-width : 800px) {
+  .card {
+    min-width: 92%;
+    position: relative;
+    margin-left: 4%;
+    margin-top: 5px;
+  }
 }
 .card:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .pic {
   width: 100%;
@@ -16,14 +31,14 @@
 }
 .name {
   font-family: "Expletus Sans";
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 10;
   font-size: 15px;
   font-size: 22px;
   margin: 25px 0 10px 10px;
 }
 .imdbrating {
-  margin: -2px 0 10px 5px ;
+  margin: -2px 0 10px 5px;
   font-family: "Expletus Sans";
   color: #ffffff;
   font-weight: 1000;

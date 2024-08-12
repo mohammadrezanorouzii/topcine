@@ -1,21 +1,32 @@
 .allbody {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-  margin-left: 11.7%;
-  margin-right: 11.7%;
-  justify-content: space-between;
+  // margin-top: 15px;
+  // display: flex;
+  display: grid;
+  // flex-direction: row;
+  // flex: 1;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  // margin-left: 11.7%;
+  // margin-right: 11.7%;
+  margin-inline: 10%;
+  // justify-content: space-between;
+  column-gap: 10%;
+}
+@media (max-width: 600px) {
+  .allbody {
+    grid-template-columns: 1fr; /* Stack the elements in a column on smaller screens */
+    gap: 16px; /* Adjust gap as needed */
+  }
 }
 .firstbody,
 .secondbody {
-  width: 43%;
+  min-width: 45%;
 }
 .choose-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 70%;
-  margin: 40px 0 20px 180px;
+  margin: 20px 10%;
 }
 .top-container,
 .now-container,
@@ -48,6 +59,16 @@
   font-family: "Roboto";
   margin: auto 0;
   margin-left: 10px;
+}
+@media (max-width: 1050px) {
+  .top {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .top {
+    font-size: 15px;
+  }
 }
 .line {
   margin: 0;
@@ -87,4 +108,18 @@
   font-weight: 500;
   border-radius: 2px;
   margin: 0 4px;
+}
+.pre-btn, .next-btn {
+  width: 35px;
+  height: 35px;
+  box-shadow: 30px 30px 40px rgba(0, 0, 0, 0.25);
+  background-color: #2b2d31;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 0 4px;
+}
+.pre-btn:hover, .next-btn:hover {
+  background-color: #de518e;
 }

@@ -15,8 +15,6 @@ function App() {
   const [series, setSeries] = useState([]);
   const [series2, setSeries2] = useState([]);
 
-  // items should include 60 elements
-
   //----------------------------------- FETCH DATA -----------------------------------
 
   const options = {
@@ -30,7 +28,7 @@ function App() {
     )
       .then((response) => response.json())
       .then((response) => {
-        return setItems(response.results);
+        return setItems(response.results.splice(0,18));
       })
       .catch((err) => console.error(err));
   }, []);

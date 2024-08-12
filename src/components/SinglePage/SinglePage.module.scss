@@ -4,6 +4,17 @@
 .header {
   display: flex;
   flex-direction: row;
+  width: 100%;
+}
+.no-profile {
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 600px;
+  margin: 50px 0 0 50px;
+  border: #0b8fbf 2px solid;
+  img {
+    border-radius: 20px;
+  }
 }
 .line {
   background-color: #ffffff;
@@ -14,31 +25,39 @@
   margin-top: 350px;
 }
 .img-container {
-  width: 400px;
-  height: 600px;
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 600px;
   margin: 50px 0 0 50px;
   img {
     border-radius: 20px;
   }
 }
 .info {
-  width: 50%;
-  height: 500px;
-  margin: 50px 0 0 20px;
-  // border: 2px solid aqua;
+  min-width: 50%;
+  height: auto;
+  overflow: auto;
+  margin: 280px 0 0 25px;
 }
 .name {
-  margin: 245px 0 0 0;
   font-size: 40px;
+  margin: 0;
   color: #ffffff;
-  // font-family: 'Balsamiq Sans', cursive;
   font-family: "Kumbh Sans", sans-serif;
+}
+@media (max-width: 992px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .info {
+    margin: 0 0 0 50px;
+  }
 }
 .date {
   margin: 0;
   font-size: 30px;
   color: #ffffff;
-  // font-family: 'Balsamiq Sans', cursive;
   font-family: "Kumbh Sans", sans-serif;
 }
 .down-info {
@@ -99,11 +118,16 @@
   width: 5px;
 }
 .cast {
-  margin: 10px 0 0 0;
+  margin: 10px 0;
+  gap: 10px;
+  width: 100%;
+  max-height: 430px;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  flex-wrap: wrap;
+  background-color: #2b2d31;
 }
 .one-cast {
   margin: 0;
@@ -206,12 +230,11 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: #4080B3 3px solid;
+  border: #4080b3 3px solid;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #ffffff;
-
 }
 .review-context {
   box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25);
@@ -222,7 +245,6 @@
     font-size: 20px;
     font-family: "Roboto";
   }
-
 }
 .review-details {
   display: flex;
@@ -268,16 +290,16 @@
     cursor: pointer;
   }
   .genre:nth-child(2):hover {
-    background-color: #A9619A;
+    background-color: #a9619a;
     cursor: pointer;
   }
   .genre:nth-child(3):hover {
     cursor: pointer;
-    background-color: #7570A7;
+    background-color: #7570a7;
   }
   .genre:nth-child(4):hover {
     cursor: pointer;
-    background-color: #4080B3;
+    background-color: #4080b3;
   }
   .genre:nth-child(5):hover {
     cursor: pointer;

@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import BodyCards from "../BodyCards/BodyCards";
 import styles from "./Body.module.scss";
+import { GrFormNext, GrFormPrevious  } from "react-icons/gr";
 
 export default function Body({ topMovies, nowMovies, upMovies }) {
-  const [topIsSelected, setTopIsSelected] = useState(true); // 1
-  const [nowIsSelected, setNowIsSelected] = useState(false); // 2
-  const [upIsSelected, setUpIsSelected] = useState(false); // 3
+  const [categoryNumber, setCategory] = useState(1);
 
   const [showMovies1, setShowMovies1] = useState(topMovies);
   const [showMovies2, setShowMovies2] = useState(topMovies);
   const [showMovies3, setShowMovies3] = useState(topMovies);
 
   const btns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const [n, setn] = useState(1);  
+  const [n, setn] = useState(1);
 
   const options = {
     method: "GET",
@@ -28,19 +27,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         return setShowMovies1(response.results);
       })
       .catch((err) => console.error(err));
-  }, [n]);
-
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setShowMovies2(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, [n]);
+  }, [n, categoryNumber]);
 
   useEffect(() => {
     fetch(
@@ -49,48 +36,54 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
     )
       .then((response) => response.json())
       .then((response) => {
+        return setShowMovies2(response.results);
+      })
+      .catch((err) => console.error(err));
+  }, [n, categoryNumber]);
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=${n}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
         return setShowMovies3(response.results);
       })
       .catch((err) => console.error(err));
-  }, [n]);
+  }, [n, categoryNumber]);
 
   // console.log(showMovies1);
-  
+
   // button on click setn(3) and a function should setShowMovies(loadedMovies)
 
   const clickedTop = () => {
-    setTopIsSelected(true);
-    setNowIsSelected(false);
-    setUpIsSelected(false);
+    setCategory(1);
     setShowMovies1(topMovies);
   };
   const clickedNow = () => {
-    setNowIsSelected(true);
-    setTopIsSelected(false);
-    setUpIsSelected(false);
+    setCategory(2);
     setShowMovies2(nowMovies);
   };
   const clickedUp = () => {
-    setUpIsSelected(true);
-    setTopIsSelected(false);
-    setNowIsSelected(false);
+    setCategory(3);
     setShowMovies3(upMovies);
   };
-  
+
   const movies1 = showMovies1.slice(0, 10);
   const movies2 = showMovies1.slice(10, 20);
   const movies3 = showMovies2.slice(0, 10);
   const movies4 = showMovies2.slice(10, 20);
   const movies5 = showMovies3.slice(0, 10);
   const movies6 = showMovies3.slice(10, 20);
-  
+
   console.log(movies1);
   return (
     <>
       <div className={styles["choose-container"]} onScroll={clickedTop}>
         <div
           className={
-            topIsSelected
+            categoryNumber === 1
               ? styles["top-container"]
               : styles["top-container-low-opacity"]
           }
@@ -101,7 +94,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         </div>
         <div
           className={
-            nowIsSelected
+            categoryNumber === 2
               ? styles["now-container"]
               : styles["now-container-low-opacity"]
           }
@@ -112,7 +105,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         </div>
         <div
           className={
-            upIsSelected
+            categoryNumber === 3
               ? styles["up-container"]
               : styles["up-container-low-opacity"]
           }
@@ -123,7 +116,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         </div>
       </div>
 
-      {topIsSelected && (
+      {categoryNumber === 1 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
             {movies1.map((obj) => {
@@ -160,7 +153,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         </div>
       )}
 
-      {nowIsSelected && (
+      {categoryNumber === 2 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
             {movies3.map((obj) => {
@@ -197,7 +190,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         </div>
       )}
 
-      {upIsSelected && (
+      {categoryNumber === 3 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
             {movies5.map((obj) => {
@@ -235,6 +228,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       )}
 
       <div className={styles["all-btns"]}>
+        <GrFormPrevious  className={styles["pre-btn"]} onClick={()=>{if (n>1) {setn(n-1)}}}/>
         {btns.map((e) => {
           return (
             <button
@@ -247,6 +241,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             </button>
           );
         })}
+        <GrFormNext className={styles["next-btn"]} onClick={()=>{if (n<10) {setn(n+1)}}}/>
       </div>
     </>
   );

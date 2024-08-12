@@ -10,9 +10,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Gloria+Hallelujah&family=Lilita+One&family=Lobster&family=Pacifico&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Concert+One&family=Lobster&display=swap");
 
-// body {
-//   font-family: "Archivo";
-// }
+body {
+  font-family: "Archivo";
+}
 .navbaritems {
   display: flex;
   flex-direction: row;
@@ -102,8 +102,6 @@
 .saved:hover {
   @extend .saved;
   color: #0b8fbf;
-  font-size: 32px;
-  transition: font-size 0.2s ease;
 }
 .gotologin:hover,
 .gotosignup:hover {
@@ -202,8 +200,8 @@ input[type="checkbox"] {
   display: none;
   opacity: 0;
 }
+
 @media (max-width: 768px) {
-  /* Styles for devices with max width 1024px */
   .lightnavbar {
     display: none;
   }
@@ -211,17 +209,17 @@ input[type="checkbox"] {
     display: none;
   }
   .burger-icon {
+    cursor: pointer;
     width: 50px;
     color: #f0f0f0;
     height: 50px;
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: 0;
   }
   .burger {
-    position: relative;
-    width: 100%;
     display: flex;
     opacity: 1;
+    width: 100%;
   }
 }

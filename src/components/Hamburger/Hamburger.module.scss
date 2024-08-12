@@ -1,4 +1,5 @@
 .container {
+  max-height: 50px;
   display: flex;
   flex-direction: row;
   width: calc(100% - 60px);
@@ -10,7 +11,7 @@
   gap: 10px;
   border-radius: 0 0 10px 10px;
 }
-a {
+.container a {
   cursor: pointer;
   font-size: 30px;
   font-family: "Bebas Neue", sans-serif;
@@ -22,11 +23,15 @@ a {
 .saved:hover {
   @extend .saved;
   color: #0b8fbf;
-  font-size: 32px;
-  transition: font-size 0.2s ease;
 }
 .gotologin:hover,
 .gotosignup:hover {
   @extend .saved;
   color: #de518e;
+}
+@media (min-width: 768px) {
+  .container {
+    opacity: 0;
+    display: none;
+  }
 }

@@ -8,10 +8,10 @@ export default function Slider({items}) {
   const [page, setPage] = useState(0);
 
   const next = () => {
-    if (page < 7) {
+    if (page < 6) {
       setPage(page + 1);
     }
-    if (page === 6) {
+    if (page === 5) {
       setPage(0);
     }
   };
@@ -21,7 +21,7 @@ export default function Slider({items}) {
       setPage(page - 1);
     }
     if (page === 0) {
-      setPage(6);
+      setPage(5);
     }
   };
 
