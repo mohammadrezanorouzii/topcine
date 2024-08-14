@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SeriesCardsTwo from "../SeriesCardsTwo/SeriesCardsTwo";
 import styles from "./SeriesBodyTwo.module.scss";
 

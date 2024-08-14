@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import SignUp from "./components/SignUp/SignUp";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import SinglePage from "./components/SinglePage/SinglePage";
+import ScrollToTop from "./components/ScrollToTheTop/ScrollToTop";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -17,14 +18,9 @@ function App() {
 
   //----------------------------------- FETCH DATA -----------------------------------
 
-  const options = {
-    method: "GET",
-  };
-
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/trending/movie/week?api_key=7a47242793d59eb1570389827de8affd&language=en-US",
-      options
+      "https://api.themoviedb.org/3/trending/movie/week?api_key=7a47242793d59eb1570389827de8affd&language=en-US"
     )
       .then((response) => response.json())
       .then((response) => {
@@ -33,12 +29,9 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
 
-
-
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
-      options
+      "https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
     )
       .then((response) => response.json())
       .then((response) => {
@@ -49,8 +42,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
-      options
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
     )
       .then((response) => response.json())
       .then((response) => {
@@ -61,8 +53,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
-      options
+      "https://api.themoviedb.org/3/movie/popular?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
     )
       .then((response) => response.json())
       .then((response) => {
@@ -73,8 +64,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
-      options
+      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
     )
       .then((response) => response.json())
       .then((response) => {
@@ -85,8 +75,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=2",
-      options
+      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=2"
     )
       .then((response) => response.json())
       .then((response) => {
@@ -97,6 +86,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/login" element={<LogIn />}></Route>
         <Route

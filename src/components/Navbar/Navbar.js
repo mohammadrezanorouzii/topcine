@@ -5,14 +5,13 @@ import "@fontsource/archivo";
 import "@fontsource/expletus-sans";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Search from "../../Icons/Search";
 import Hamburger from "../Hamburger/Hamburger";
 
 export default function Navbar() {
   const [navbarOpacityIsZero, setNavbarOpacityIsZero] = useState(true);
   const [scrollY, setScrollY] = useState(0);
-  const [focus, setFocus] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
+  // const [focus, setFocus] = useState(false);
+  // const [searchValue, setSearchValue] = useState("");
   const [openBurger, setBurger] = useState(false);
 
   useEffect(() => {

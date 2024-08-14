@@ -5,11 +5,9 @@ import { GrFormNext, GrFormPrevious  } from "react-icons/gr";
 
 export default function Body({ topMovies, nowMovies, upMovies }) {
   const [categoryNumber, setCategory] = useState(1);
-
   const [showMovies1, setShowMovies1] = useState(topMovies);
   const [showMovies2, setShowMovies2] = useState(topMovies);
   const [showMovies3, setShowMovies3] = useState(topMovies);
-
   const btns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [n, setn] = useState(1);
 
@@ -53,10 +51,6 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       .catch((err) => console.error(err));
   }, [n, categoryNumber]);
 
-  // console.log(showMovies1);
-
-  // button on click setn(3) and a function should setShowMovies(loadedMovies)
-
   const clickedTop = () => {
     setCategory(1);
     setShowMovies1(topMovies);
@@ -70,14 +64,6 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
     setShowMovies3(upMovies);
   };
 
-  const movies1 = showMovies1.slice(0, 10);
-  const movies2 = showMovies1.slice(10, 20);
-  const movies3 = showMovies2.slice(0, 10);
-  const movies4 = showMovies2.slice(10, 20);
-  const movies5 = showMovies3.slice(0, 10);
-  const movies6 = showMovies3.slice(10, 20);
-
-  console.log(movies1);
   return (
     <>
       <div className={styles["choose-container"]} onScroll={clickedTop}>
@@ -119,7 +105,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       {categoryNumber === 1 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
-            {movies1.map((obj) => {
+            {showMovies1.slice(0,10).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -135,7 +121,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             })}
           </div>
           <div className={styles.secondbody}>
-            {movies2.map((obj) => {
+            {showMovies1.slice(10,20).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -156,7 +142,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       {categoryNumber === 2 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
-            {movies3.map((obj) => {
+            {showMovies2.slice(0,10).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -172,7 +158,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             })}
           </div>
           <div className={styles.secondbody}>
-            {movies4.map((obj) => {
+            {showMovies2.slice(10,20).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -193,7 +179,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       {categoryNumber === 3 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
-            {movies5.map((obj) => {
+            {showMovies3.slice(0,10).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -209,7 +195,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             })}
           </div>
           <div className={styles.secondbody}>
-            {movies6.map((obj) => {
+            {showMovies3.slice(10,20).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
