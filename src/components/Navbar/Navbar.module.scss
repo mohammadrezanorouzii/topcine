@@ -108,15 +108,15 @@ body {
   @extend .saved;
   color: #de518e;
 }
-.checkcontainer {
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: end;
-  width: 60px;
-  height: 30px;
-  border-radius: 30px;
-  margin: auto;
-}
+// .checkcontainer {
+//   background-color: #c61414;
+//   display: flex;
+//   justify-content: end;
+//   width: 60px;
+//   height: 30px;
+//   border-radius: 30px;
+//   margin: auto;
+// }
 input[type="checkbox"]:hover {
   cursor: pointer;
 }

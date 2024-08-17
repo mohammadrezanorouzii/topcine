@@ -1,13 +1,14 @@
 import React from "react";
 import SeriesCardsTwo from "../SeriesCardsTwo/SeriesCardsTwo";
-import styles from "./SeriesBodyTwo.module.scss";
 
 export default function SeriesBodyTwo({ series2 }) {
 
   return (
     <>
-    <div className={styles.total2}>
-      <div className={styles.seriesslider2}>
+    <div className="carousel carousel-center
+                   max-w-fit p-5 m-0">
+      <div className="carousel-item "
+       >
         {series2.map((x) => {
           return (
             <SeriesCardsTwo

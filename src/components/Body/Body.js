@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BodyCards from "../BodyCards/BodyCards";
 import styles from "./Body.module.scss";
-import { GrFormNext, GrFormPrevious  } from "react-icons/gr";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 export default function Body({ topMovies, nowMovies, upMovies }) {
   const [categoryNumber, setCategory] = useState(1);
@@ -66,7 +66,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
 
   return (
     <>
-      <div className={styles["choose-container"]} onScroll={clickedTop}>
+      <div className="" onScroll={clickedTop}>
         <div
           className={
             categoryNumber === 1
@@ -105,7 +105,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       {categoryNumber === 1 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
-            {showMovies1.slice(0,10).map((obj) => {
+            {showMovies1.slice(0, 10).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -121,7 +121,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             })}
           </div>
           <div className={styles.secondbody}>
-            {showMovies1.slice(10,20).map((obj) => {
+            {showMovies1.slice(10, 20).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -142,7 +142,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       {categoryNumber === 2 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
-            {showMovies2.slice(0,10).map((obj) => {
+            {showMovies2.slice(0, 10).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -158,7 +158,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             })}
           </div>
           <div className={styles.secondbody}>
-            {showMovies2.slice(10,20).map((obj) => {
+            {showMovies2.slice(10, 20).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -179,7 +179,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       {categoryNumber === 3 && (
         <div className={styles.allbody}>
           <div className={styles.firstbody}>
-            {showMovies3.slice(0,10).map((obj) => {
+            {showMovies3.slice(0, 10).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -195,7 +195,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             })}
           </div>
           <div className={styles.secondbody}>
-            {showMovies3.slice(10,20).map((obj) => {
+            {showMovies3.slice(10, 20).map((obj) => {
               return (
                 <BodyCards
                   popularity={obj.popularity}
@@ -213,8 +213,23 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         </div>
       )}
 
+      {/* <div className="join">
+        <button className="join-item btn">1</button>
+        <button className="join-item btn">2</button>
+        <button className="join-item btn btn-disabled">...</button>
+        <button className="join-item btn">99</button>
+        <button className="join-item btn">100</button>
+      </div> */}
+
       <div className={styles["all-btns"]}>
-        <GrFormPrevious  className={styles["pre-btn"]} onClick={()=>{if (n>1) {setn(n-1)}}}/>
+        <GrFormPrevious
+          className={styles["pre-btn"]}
+          onClick={() => {
+            if (n > 1) {
+              setn(n - 1);
+            }
+          }}
+        />
         {btns.map((e) => {
           return (
             <button
@@ -227,7 +242,14 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
             </button>
           );
         })}
-        <GrFormNext className={styles["next-btn"]} onClick={()=>{if (n<10) {setn(n+1)}}}/>
+        <GrFormNext
+          className={styles["next-btn"]}
+          onClick={() => {
+            if (n < 10) {
+              setn(n + 1);
+            }
+          }}
+        />
       </div>
     </>
   );

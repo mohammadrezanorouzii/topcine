@@ -1,10 +1,9 @@
 import React from 'react'
-import styles from "./SeriesCards.module.scss"
 
 export default function SeriesCards({pic}) {
   return (
-    <div className=''>
-      <img src={pic} alt="" className={styles.seriesimg} />
+    <div > 
+      <img src={pic} alt="" className="max-w-screen-sm rounded-none h-[460px] w-[340px]" />
     </div>
   )
 }
