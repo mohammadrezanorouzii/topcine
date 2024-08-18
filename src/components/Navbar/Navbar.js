@@ -10,13 +10,12 @@ export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
   // const [focus, setFocus] = useState(false);
   // const [searchValue, setSearchValue] = useState("");
-  const [openBurger, setBurger] = useState(false);
-  const [showBurger, setShowBurger] = useState(true);
+  // const [openBurger, setBurger] = useState(false);
+  // const [showBurger, setShowBurger] = useState(true);
 
   useEffect(() => {
     const handleScroll = (event) => {
       setScrollY(window.scrollY);
-      // console.log("window.scrollY", window.scrollY);
       if (window.scrollY > 200) {
         setNavbarOpacityIsZero(false);
       } else {
@@ -59,15 +58,19 @@ export default function Navbar() {
 
       <div
         className={`${
-          navbarOpacityIsZero ? styles.lightnavbar : styles.darknavbar
+          navbarOpacityIsZero
+            ? "flex flex-row animate-backgroundLightOpacity rounded-b-md w-full fixed p-1"
+            : "flex z-10 flex-row animate-backgroundDarkOpacity rounded-b-md w-full fixed p-1"
         }`}
       >
-        <div className={styles.navbaritems}>
-          <div className={styles.logocontainer}>
-            <p className={styles.logo}> TopCine </p>
-          </div>
+        <div
+          //  className={styles.logocontainer}
+          className="width-[300px] h-max m-auto"
+        >
+          <p className={styles.logo}> TopCine </p>
+        </div>
 
-          {/* {!navbarOpacityIsZero && (
+        {/* {!navbarOpacityIsZero && (
             <div
               className={
                 focus
@@ -95,23 +98,31 @@ export default function Navbar() {
             </div>
           )} */}
 
-          <div className={styles.othercontainer}>
-            <Link className={styles.saved} to="/saved">
-              Saved
-            </Link>
-            <Link className={styles.gotologin} to="/login">
-              Log in
-            </Link>
-            <Link className={styles.gotosignup} to="/signup">
-              Sign up
-            </Link>
-          </div>
+        <div className="navbar flex flex-row justify-end space-x-5">
+          <Link
+            className="text-[#ffffff] font-bebas font-light text-[30px] "
+            to="/saved"
+          >
+            Saved
+          </Link>
+          <Link
+            className="text-[#ffffff] font-bebas font-light text-[30px]"
+            to="/login"
+          >
+            Log in
+          </Link>
+          <Link
+            className="text-[#ffffff] font-bebas font-light text-[30px]"
+            to="/signup"
+          >
+            Sign up
+          </Link>
         </div>
 
         {!navbarOpacityIsZero && (
-          <div className={styles.scrollindicatorcontainer}>
+          <div className="absolute bottom-0 h-[4px] left-0 w-screen">
             <div
-              className={styles.darkscroll}
+              className="w-full h-full bg-scroll-gradient"
               style={{ width: `${scrollY / 60}%` }}
             ></div>
           </div>
