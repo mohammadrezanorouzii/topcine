@@ -32,102 +32,114 @@ export default function Navbar() {
 
   return (
     <>
-      {/* <label className="btn btn-circle swap swap-rotate"  onClick={() => {
-          setBurger(!openBurger);
-        }}> 
-        <input type="checkbox" />
-        <svg
-          className="swap-off fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 512 512"
-        >
-          <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-        </svg>
-        <svg
-          className="swap-on fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 512 512"
-        >
-          <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-        </svg>
-      </label> */}
-
-      <div
-        className={`${
-          navbarOpacityIsZero
-            ? "flex flex-row animate-backgroundLightOpacity rounded-b-md w-full fixed p-1"
-            : "flex z-10 flex-row animate-backgroundDarkOpacity rounded-b-md w-full fixed p-1"
-        }`}
-      >
-        <div
-          //  className={styles.logocontainer}
-          className="width-[300px] h-max m-auto"
-        >
-          <p className={styles.logo}> TopCine </p>
-        </div>
-
-        {/* {!navbarOpacityIsZero && (
-            <div
-              className={
-                focus
-                  ? styles["search-container-long"]
-                  : styles["search-container"]
-              }
-              onFocus={() => {
-                setFocus(true);
-              }}
-              onBlur={() => {
-                setFocus(false);
-              }}
-            >
-              <div className={styles["search"]}>
-                <Search searchValue={searchValue} />
-              </div>
-              <input
-                type="text"
-                placeholder="Search here"
-                value={searchValue}
-                onChange={(e) => {
-                  setSearchValue(e.target.value);
-                }}
-              />
+      {
+        <div className="drawer">
+          <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+          <div
+            className={`${
+              navbarOpacityIsZero
+                ? "navbar w-full animate-backgroundLightOpacity rounded-b-md fixed p-1"
+                : "navbar w-full animate-backgroundDarkOpacity rounded-b-md z-10 fixed p-1"
+            }`}
+          >
+            <div className="flex-none lg:hidden">
+              <label
+                htmlFor="my-drawer-3"
+                aria-label="open sidebar"
+                className="btn btn-square btn-ghost"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  className="inline-block h-6 w-6 stroke-current"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
             </div>
-          )} */}
-
-        <div className="navbar flex flex-row justify-end space-x-5">
-          <Link
-            className="text-[#ffffff] font-bebas font-light text-[30px] "
-            to="/saved"
-          >
-            Saved
-          </Link>
-          <Link
-            className="text-[#ffffff] font-bebas font-light text-[30px]"
-            to="/login"
-          >
-            Log in
-          </Link>
-          <Link
-            className="text-[#ffffff] font-bebas font-light text-[30px]"
-            to="/signup"
-          >
-            Sign up
-          </Link>
-        </div>
-
-        {!navbarOpacityIsZero && (
-          <div className="absolute bottom-0 h-[4px] left-0 w-screen">
-            <div
-              className="w-full h-full bg-scroll-gradient"
-              style={{ width: `${scrollY / 60}%` }}
-            ></div>
+            <div className="mx-2 flex-1 px-2">
+              <p className={styles.logo}> TopCine </p>
+            </div>
+            <div className="hidden flex-none lg:block">
+              <ul className="menu menu-horizontal">
+                <li>
+                  <Link
+                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-primary hover:border-none"
+                    to="/saved"
+                  >
+                    Saved
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-secondary "
+                    to="/login"
+                  >
+                    Log in
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-secondary"
+                    to="/signup"
+                  >
+                    Sign up
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {!navbarOpacityIsZero && (
+              <div className="absolute bottom-0 h-[4px] left-0 w-screen">
+                <div
+                  className="w-full h-full bg-scroll-gradient"
+                  style={{ width: `${scrollY / 60}%` }}
+                ></div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
+
+          <div className="drawer-side">
+            <label
+              htmlFor="my-drawer-3"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <ul className="menu bg-base-200 min-h-full w-80 p-4">
+              {/* Sidebar content here */}
+              <li>
+                <Link
+                  className="text-text font-bebas font-light text-[30px] hover:text-primary "
+                  to="/saved"
+                >
+                  Saved
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-text font-bebas font-light text-[30px] hover:text-secondary"
+                  to="/login"
+                >
+                  Log in
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-text font-bebas font-light text-[30px] hover:text-secondary"
+                  to="/signup"
+                >
+                  Sign up
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      }
     </>
   );
 }
