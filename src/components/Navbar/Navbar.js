@@ -70,7 +70,7 @@ export default function Navbar() {
               <ul className="menu menu-horizontal">
                 <li>
                   <Link
-                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-primary hover:border-none"
+                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-secondaryy hover:border-none"
                     to="/saved"
                   >
                     Saved
@@ -78,7 +78,7 @@ export default function Navbar() {
                 </li>
                 <li>
                   <Link
-                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-secondary "
+                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-primaryy "
                     to="/login"
                   >
                     Log in
@@ -86,7 +86,7 @@ export default function Navbar() {
                 </li>
                 <li>
                   <Link
-                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-secondary"
+                    className="text-[#ffffff] font-bebas font-light text-[20px] hover:text-primaryy"
                     to="/signup"
                   >
                     Sign up
@@ -111,10 +111,9 @@ export default function Navbar() {
               className="drawer-overlay"
             ></label>
             <ul className="menu bg-base-200 min-h-full w-80 p-4">
-              {/* Sidebar content here */}
               <li>
                 <Link
-                  className="text-text font-bebas font-light text-[30px] hover:text-primary "
+                  className="text-text font-bebas font-light text-[30px] hover:text-secondaryy mx-auto"
                   to="/saved"
                 >
                   Saved
@@ -122,7 +121,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  className="text-text font-bebas font-light text-[30px] hover:text-secondary"
+                  className="text-text font-bebas font-light text-[30px] hover:text-primaryy mx-auto"
                   to="/login"
                 >
                   Log in
@@ -130,7 +129,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  className="text-text font-bebas font-light text-[30px] hover:text-secondary"
+                  className="text-text font-bebas font-light text-[30px] hover:text-primaryy mx-auto"
                   to="/signup"
                 >
                   Sign up

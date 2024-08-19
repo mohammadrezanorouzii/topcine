@@ -4,10 +4,8 @@ import SeriesCardsTwo from "../SeriesCardsTwo/SeriesCardsTwo";
 export default function SeriesBodyTwo({ series2 }) {
 
   return (
-    <>
-    <div className="carousel carousel-center
-                   max-w-fit p-5 m-0">
-      <div className="carousel-item "
+    <div className="overflow-hidden w-full">
+      <div className="flex relative flex-row animate-animationtwo mt-4"
        >
         {series2.map((x) => {
           return (
@@ -18,6 +16,5 @@ export default function SeriesBodyTwo({ series2 }) {
         })}
       </div>
     </div>
-    </>
   );
 }

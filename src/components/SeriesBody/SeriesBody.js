@@ -4,9 +4,8 @@ import SeriesCards from "../SeriesCards/SeriesCards";
 export default function SeriesBody({ series }) {
   return (
     <>
-    <div className="carousel carousel-center
-                   max-w-fit p-5 m-0">
-      <div className="carousel-item "
+    <div className="overflow-hidden w-full">
+      <div className="flex relative flex-row animate-animation mt-4"
        >
         {series.map((x) => {
           return (

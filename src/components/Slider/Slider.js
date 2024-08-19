@@ -1,46 +1,29 @@
-import React, { useState } from "react";
-import MovieCards from "../MovieCards/MovieCards";
-import styles from "./Slider.module.scss";
-import PervBtn from "../../Icons/PervBtn";
-import NextBtn from "../../Icons/NextBtn";
+import React from "react";
 
-export default function Slider({items}) {
-  const [page, setPage] = useState(0);
-
-  const next = () => {
-    if (page < 6) {
-      setPage(page + 1);
-    }
-    if (page === 5) {
-      setPage(0);
-    }
-  };
-
-  const perv = () => {
-    if (page > -1) {
-      setPage(page - 1);
-    }
-    if (page === 0) {
-      setPage(5);
-    }
-  };
+export default function Slider({ items }) {
 
   return (
     <>
-      <div className={styles["trending-container"]}>
-        <div className={styles.line}></div>
-        <p className={styles.trending}> TRENDING MOVIES </p>
+      <div className="flex flex-row w-4/5 mx-auto my-5 h-[40px]">
+        <div className="h-full bg-primaryy w-[5px]"></div>
+        <p className="text-textt text-3xl my-auto mx-2"> TRENDING MOVIES </p>
       </div>
 
-      <div className={styles["all-container"]}>
-        <div className={styles.perv}>
-          <div className={styles.pervv} onClick={perv}>
+      {/* <div className="flex justify-center">
+        <div className="w-[10%] flex relative hover:cursor-pointer">
+          <div className="r-0 my-auto ml-16" onClick={perv}>
             <PervBtn />
           </div>
         </div>
 
-        <div className={styles["container-slider"]}>
-          <div className={styles.slider} style={{ left: `-${page * 96}%` }}>
+        <div className="w-full overflow-hidden rounded-md grid grid-cols-1">
+          <div
+            className="flex relative "
+            style={{
+              left: `-${page * 96}%`,
+              transition: "left 2s, transform 2s",
+            }}
+          >
             {items.map((obj) => {
               return (
                 <MovieCards
@@ -54,11 +37,29 @@ export default function Slider({items}) {
           </div>
         </div>
 
-        <div className={styles.next}>
-          <div className={styles.nextt} onClick={next}>
+        <div className="w-[10%] flex relative">
+          <div
+            className="r-0 my-auto mr-16 hover:cursor-pointer"
+            onClick={next}
+          >
             <NextBtn />
           </div>
         </div>
+      </div> */}
+      <div className="carousel w-[80%] mx-36 border-none focus:border-none">
+        {items.map((e) => {
+          return (
+            <>
+              <div className="carousel-item border-none rounded-none">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${e.poster_path}`}
+                  alt={e.name}
+                  className="w-full max-h-[560px] m-4 rounded-lg"
+                />
+              </div>
+            </>
+          );
+        })}
       </div>
     </>
   );

@@ -9,6 +9,8 @@ module.exports = {
       auto: "auto",
     }),
     animation: {
+      animation: 'slideshow 300s linear infinite',
+      animationtwo: 'slideshowtwo 140s linear infinite',
       backgroundLightOpacity: "backgroundLightOpacityMedia 200ms forwards",
       backgroundDarkOpacity: "backgroundDarkOpacityMedia 600ms forwards",
       none: "none",
@@ -166,11 +168,11 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
-      secondary : '#0b8fbf',
-      primary : '#de518e',
-      text : '#ffffff',
-      darkBack : '#2b2d31',
-      DarkerBack : '#ffffff',
+      secondaryy : '#0b8fbf',
+      primaryy : '#de518e',
+      textt : '#ffffff',
+      darkBackk : '#2b2d31',
+      DarkerBackk : '#ffffff',
     }),
     columns: {
       auto: "auto",
@@ -588,6 +590,16 @@ module.exports = {
       DEFAULT: "100%",
     },
     keyframes: {
+      slideshow: {
+        '0%': { left: '0' },
+        '50%': { left: '-185%' },
+        '100%': { left: '-370%' },
+      },
+      slideshowtwo: {
+        '0%': { left: '-340%' },
+        '50%': { left: '-185%' },
+        '100%': { left: '0%' },
+      },
       backgroundDarkOpacityMedia: {
         "0%": { backgroundColor: "#3234372e" },
         "50%": { backgroundColor: "#32343788" },
