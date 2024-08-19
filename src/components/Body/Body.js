@@ -8,6 +8,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
   const [showMovies1, setShowMovies1] = useState(topMovies);
   const [showMovies2, setShowMovies2] = useState(topMovies);
   const [showMovies3, setShowMovies3] = useState(topMovies);
+  const categories = ["TOP RATED", "NOW PLAYING", "POPULAR"];
   const btns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [n, setn] = useState(1);
 
@@ -51,55 +52,30 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       .catch((err) => console.error(err));
   }, [n, categoryNumber]);
 
-  const clickedTop = () => {
-    setCategory(1);
-    setShowMovies1(topMovies);
-  };
-  const clickedNow = () => {
-    setCategory(2);
-    setShowMovies2(nowMovies);
-  };
-  const clickedUp = () => {
-    setCategory(3);
-    setShowMovies3(upMovies);
-  };
-
   return (
     <>
-      <div className="" onScroll={clickedTop}>
-        <div
-          className={
-            categoryNumber === 1
-              ? styles["top-container"]
-              : styles["top-container-low-opacity"]
-          }
-          onClick={clickedTop}
-        >
-          <div className={styles.line}></div>
-          <p className={styles.top}> TOP RATED </p>
-        </div>
-        <div
-          className={
-            categoryNumber === 2
-              ? styles["now-container"]
-              : styles["now-container-low-opacity"]
-          }
-          onClick={clickedNow}
-        >
-          <div className={styles.line}></div>
-          <p className={styles.top}> NOW PLAYING </p>
-        </div>
-        <div
-          className={
-            categoryNumber === 3
-              ? styles["up-container"]
-              : styles["up-container-low-opacity"]
-          }
-          onClick={clickedUp}
-        >
-          <div className={styles.line}></div>
-          <p className={styles.top}> POPULAR </p>
-        </div>
+      <div className="w-4/5 mx-auto my-4 flex flex-row h-[40px] lg:space-x-16 md:space-x-10 sm:space-x-0">
+        {categories.map((e, index) => {
+          return (
+            <>
+              <div
+                className={
+                  categoryNumber === index + 1
+                    ? "flex flex-row hover:cursor-pointer"
+                    : "flex flex-row opacity-30 hover:opacity-60 hover:cursor-pointer"
+                }
+                onClick={() => {
+                  setCategory(index + 1);
+                }}
+              >
+                <div className="m-0 bg-primaryy h-full w-1"></div>
+                <p className="text-textt xl:text-3xl my-auto ml-2 sm:text-lg md:text-2xl">
+                  {e}
+                </p>
+              </div>
+            </>
+          );
+        })}
       </div>
 
       {categoryNumber === 1 && (

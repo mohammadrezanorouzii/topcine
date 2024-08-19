@@ -9,6 +9,7 @@ module.exports = {
       auto: "auto",
     }),
     animation: {
+      animationthree : 'imgHover 0.3s ease-in-out',
       animation: 'slideshow 300s linear infinite',
       animationtwo: 'slideshowtwo 140s linear infinite',
       backgroundLightOpacity: "backgroundLightOpacityMedia 200ms forwards",
@@ -46,6 +47,7 @@ module.exports = {
     backdropSepia: ({ theme }) => theme("sepia"),
     backgroundColor: ({ theme }) => theme("colors"),
     backgroundImage: {
+      'custom-gradient': 'linear-gradient(rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 1) 70%)',
       'scroll-gradient': 'linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%)',
       none: "none",
       "gradient-to-t": "linear-gradient(to top, var(--tw-gradient-stops))",
@@ -590,6 +592,10 @@ module.exports = {
       DEFAULT: "100%",
     },
     keyframes: {
+      imgHover: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' },
+      },
       slideshow: {
         '0%': { left: '0' },
         '50%': { left: '-185%' },

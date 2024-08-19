@@ -28,31 +28,6 @@
   width: 70%;
   margin: 20px 10%;
 }
-.top-container,
-.now-container,
-.up-container {
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  margin: 0 50px 0 0;
-}
-.top-container-low-opacity,
-.now-container-low-opacity,
-.up-container-low-opacity {
-  opacity: 0.3;
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  margin: 0 50px 0 0;
-}
-.top-container:hover,
-.now-container:hover,
-.up-container:hover,
-.top-container-low-opacity:hover,
-.now-container-low-opacity:hover,
-.up-container-low-opacity:hover {
-  cursor: pointer;
-}
 .top {
   color: #ffffff;
   font-size: 30px;

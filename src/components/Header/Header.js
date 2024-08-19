@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <div>
       <img src={showingPic} alt="" className="rounded-none h-screen w-full" />
-      <div className="absolute text-text right-20 bottom-[50px] text-3xl w-[350px]">
+      <div className="absolute text-text right-20 bottom-[50px] text-3xl w-[350px] xl:block md:hidden sm:hidden lg:block">
         <p>Explore thousands of movies and series for free</p>
         <Link to="/signup">
           <button className="btn mt-3 text-xl btn-primary bg-stone-600  text-text border-none hover:bg-primary">
