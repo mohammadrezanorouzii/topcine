@@ -1,65 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Inter");
-
-.card {
-  min-width: 28%;
-  position: relative;
-  margin-left: 4%;
-  margin-top: 5px;
-  display: grid;
-}
-@media (max-width : 1200px) {
-  .card {
-    min-width: 44%;
-    margin-left: 4%;
-  }
-}
-@media (max-width : 800px) {
-  .card {
-    min-width: 92%;
-    position: relative;
-    margin-left: 4%;
-    margin-top: 5px;
-  }
-}
-.card:hover {
-  cursor: pointer;
-}
-.pic {
-  width: 100%;
-  margin: 0;
-  border-radius: 10px;
-}
-.name {
-  font-family: "Expletus Sans";
-  color: #ffffff;
-  font-weight: 10;
-  font-size: 15px;
-  font-size: 22px;
-  margin: 25px 0 10px 10px;
-}
-.imdbrating {
-  margin: -2px 0 10px 5px;
-  font-family: "Expletus Sans";
-  color: #ffffff;
-  font-weight: 1000;
-  font-size: 15px;
-}
-.imdbcontainer {
-  display: flex;
-  flex-direction: row;
-  margin-left: 3px;
-}
-.imdbname {
-  margin: 0;
-  font-weight: 1000;
-}
 .context {
-  position: absolute;
-  z-index: 1;
-  height: 90px;
-  width: 100%;
-  bottom: 3px;
-  left: 0;
   background: linear-gradient(
     rgba(0, 0, 0, 0.01) 0%,
     rgba(0, 0, 0, 0.4) 10%,
@@ -67,8 +6,6 @@
     rgba(0, 0, 0, 1) 40%,
     rgba(0, 0, 0, 1) 60%
   );
-  border-radius: 0px 0px 10px 10px;
-  color: #ffffff;
   animation-name: hover;
   animation-duration: 0.9s;
 }
@@ -82,35 +19,4 @@
   100% {
     opacity: 1;
   }
-}
-.longcontext {
-  position: absolute;
-  z-index: 1;
-  height: 110px;
-  width: 100%;
-  bottom: 3px;
-  left: 0;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.01) 0%,
-    rgba(0, 0, 0, 0.4) 10%,
-    rgba(0, 0, 0, 0.7) 20%,
-    rgba(0, 0, 0, 1) 40%,
-    rgba(0, 0, 0, 1) 60%
-  );
-  border-radius: 0px 0px 10px 10px;
-  color: #ffffff;
-  animation-name: hover;
-  animation-duration: 0.9s;
-}
-.about {
-  display: flex;
-  flex-direction: row;
-  margin: 0 0 0 10px;
-  font-size: 15px;
-  height: 20px;
-}
-.date {
-  margin: 0;
-  margin-right: 10px;
-  font-weight: 500;
 }

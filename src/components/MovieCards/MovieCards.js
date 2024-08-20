@@ -1,76 +1,40 @@
 import React, { useState } from "react";
-import styles from "./MovieCards.module.scss";
+import { FaStar } from "react-icons/fa6";
 import "@fontsource/epilogue";
-import Star from "../../Icons/Star";
 
 export default function MovieCards({ name, pic, imdb, date }) {
   const [hovering, setHovering] = useState(false);
-  const [longName, setLongName] = useState(false);
-
-  const changeHovering = () => {
-    setHovering(true);
-  };
-
-  const falseHovering = () => {
-    setHovering(false);
-  };
-
-  const longNameCheck = () => {
-    if (name.length > 30) {
-      setLongName(true);
-    }
-  };
 
   return (
     <div
-      className="carousel carousel-center bg-neutral 
-    rounded-box max-w-md space-x-4 p-4"
+      className="lg:min-w-[28%] cursor-pointer relative grid ml-[4%] md:min-w-[44%] sm:min-w-[92%] min-w-[92%]"
+      onMouseOver={() => {
+        setHovering(true);
+      }}
+      onMouseLeave={() => {
+        setHovering(false);
+      }}
     >
-      <div className="carousel-item">
-        <img className="w-full m-0 " src={pic} alt={name} />
-      </div>
-      <div className="carousel-item">
-        <img className="w-full m-0 " src={pic} alt={name} />
+      <div className="m-0 w-full">
+        <img className="rounded-xl" src={pic} alt={name} />
+        {hovering ? (
+          <div className="text-textt absolute z-1 rounded-b-xl w-full bottom-0 left-0 bg-custom-gradient animate-imgHover">
+            <div className="mb-5">
+              <p className="font-light text-3xl my-4 mx-4"> {name} </p>
+              <div className="flex flex-row mx-4 text-xl h-5">
+                <p className="mr-3 font-medium"> {date} </p>
+                  <FaStar className="text-yellow-400 my-1"/>
+                <div className="flex font-normal flex-row text-lg">
+                  <p className="mx-1 font-normal"> IMDB : </p>
+                  <p className=" "> {imdb} / 10</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
-    // <div
-    //   className={styles.card}
-    //   onMouseOver={() => {
-    //     longNameCheck();
-    //     changeHovering();
-    //   }}
-    //   onMouseLeave={falseHovering}
-    // >
-    //   <div className={styles.pic}>
-    //     <img className={styles.pic} src={pic} alt={name} />
-    //     {hovering ? (
-    //       !longName ? (
-    //         <div className={styles.context}>
-    //           <p className={styles.name}> {name} </p>
-    //           <div className={styles.about}>
-    //             <p className={styles.date}> {date} </p>
-    //             <Star />
-    //             <div className={styles.imdbcontainer}>
-    //               <p className={styles.imdbname}> IMDB : </p>
-    //               <p className={styles.imdbrating}> {imdb} / 10</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       ) : (
-    //         <div className={styles.longcontext}>
-    //           <p className={styles.name}> {name} </p>
-    //           <div className={styles.about}>
-    //             <p className={styles.date}> {date} </p>
-    //             <Star />
-    //             <div className={styles.imdbcontainer}>
-    //               <p className={styles.imdbname}> IMDB : </p>
-    //               <p className={styles.imdbrating}> {imdb} / 10</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       )
-    //     ) : null}
-    //   </div>
-    // </div>
   );
 }
