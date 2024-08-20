@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import BodyCards from "../BodyCards/BodyCards";
-import styles from "./Body.module.scss";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 export default function Body({ topMovies, nowMovies, upMovies }) {
@@ -79,8 +78,8 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       </div>
 
       {categoryNumber === 1 && (
-        <div className={styles.allbody}>
-          <div className={styles.firstbody}>
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 lg:gap-x-[10%] mx-[10%] sm:grid-cols-1 md:gap-4 sm:gap-4">
+          <div className="min-w-[45%]">
             {showMovies1.slice(0, 10).map((obj) => {
               return (
                 <BodyCards
@@ -96,7 +95,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
               );
             })}
           </div>
-          <div className={styles.secondbody}>
+          <div className="min-w-[45%]">
             {showMovies1.slice(10, 20).map((obj) => {
               return (
                 <BodyCards
@@ -116,8 +115,8 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       )}
 
       {categoryNumber === 2 && (
-        <div className={styles.allbody}>
-          <div className={styles.firstbody}>
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 lg:gap-x-[10%] mx-[10%] sm:grid-cols-1 md:gap-4 sm:gap-4">
+          <div className="min-w-[45%]">
             {showMovies2.slice(0, 10).map((obj) => {
               return (
                 <BodyCards
@@ -133,7 +132,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
               );
             })}
           </div>
-          <div className={styles.secondbody}>
+          <div className="min-w-[45%]">
             {showMovies2.slice(10, 20).map((obj) => {
               return (
                 <BodyCards
@@ -153,8 +152,8 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
       )}
 
       {categoryNumber === 3 && (
-        <div className={styles.allbody}>
-          <div className={styles.firstbody}>
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 lg:gap-x-[10%] mx-[10%] sm:grid-cols-1 md:gap-4 sm:gap-4">
+          <div className="min-w-[45%]">
             {showMovies3.slice(0, 10).map((obj) => {
               return (
                 <BodyCards
@@ -170,7 +169,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
               );
             })}
           </div>
-          <div className={styles.secondbody}>
+          <div className="min-w-[45%]">
             {showMovies3.slice(10, 20).map((obj) => {
               return (
                 <BodyCards
@@ -188,18 +187,9 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
           </div>
         </div>
       )}
-
-      {/* <div className="join">
-        <button className="join-item btn">1</button>
-        <button className="join-item btn">2</button>
-        <button className="join-item btn btn-disabled">...</button>
-        <button className="join-item btn">99</button>
-        <button className="join-item btn">100</button>
-      </div> */}
-
-      <div className={styles["all-btns"]}>
+      <div className='mt-12 flex justify-center border-primaryy text-textt space-x-2'>
         <GrFormPrevious
-          className={styles["pre-btn"]}
+          className=' w-8 h-8 bg-darkBackk border-0 rounded-sm mx-1 cursor-pointer shadow-[10px_10px_20px_rgba(0,0,0,0.25)]'
           onClick={() => {
             if (n > 1) {
               setn(n - 1);
@@ -209,7 +199,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
         {btns.map((e) => {
           return (
             <button
-              className={e === n ? styles["selected"] : styles.not}
+              className={`cursor-pointer h-8 w-8 font-medium rounded text-lg shadow-[10px_10px_20px_rgba(0,0,0,0.25)] bg-darkBackk ${e === n ? 'bg-primaryy font-semibold' : ''}`}
               onClick={() => {
                 setn(e);
               }}
@@ -219,7 +209,7 @@ export default function Body({ topMovies, nowMovies, upMovies }) {
           );
         })}
         <GrFormNext
-          className={styles["next-btn"]}
+          className=' w-8 h-8 bg-darkBackk border-0 rounded-sm mx-1 cursor-pointer shadow-[10px_10px_20px_rgba(0,0,0,0.25)]'
           onClick={() => {
             if (n < 10) {
               setn(n + 1);

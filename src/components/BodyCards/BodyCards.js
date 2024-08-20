@@ -34,10 +34,6 @@ export default function BodyCards({
     setHovering(true);
   };
 
-  const options = {
-    method: "GET",
-  };
-
   const genreName = genres
     .filter((item) => genre.includes(item.id))
     .slice(0, 5);
@@ -46,6 +42,9 @@ export default function BodyCards({
     if (imdb === 0) {
       setImdbIsTrue(false);
     }
+    const options = {
+      method: "GET",
+    };
 
     fetch(
       "https://api.themoviedb.org/3/genre/movie/list?api_key=7a47242793d59eb1570389827de8affd&language=en-US",
@@ -56,7 +55,7 @@ export default function BodyCards({
         setGenres(response.genres);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [imdb]);
 
   return (
     <>

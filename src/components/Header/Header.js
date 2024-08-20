@@ -4,7 +4,7 @@ import img1 from "../../pics/c.jpeg";
 import img3 from "../../pics/st4.jfif";
 import img4 from "../../pics/Man.jfif";
 import img5 from "../../pics/djanog.jfif";
-import img7 from "../../pics/DV.jfif";
+import img7 from "../../pics/DV.jpg";
 import img8 from "../../pics/e.png";
 import img9 from "../../pics/a.jpg";
 
