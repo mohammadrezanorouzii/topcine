@@ -9,9 +9,9 @@ module.exports = {
       auto: "auto",
     }),
     animation: {
-      animationthree : 'imgHover 0.3s ease-in-out',
-      animation: 'slideshow 300s linear infinite',
-      animationtwo: 'slideshowtwo 140s linear infinite',
+      animationthree: "imgHover 0.3s ease-in-out",
+      animation: "slideshow 300s linear infinite",
+      animationtwo: "slideshowtwo 140s linear infinite",
       backgroundLightOpacity: "backgroundLightOpacityMedia 200ms forwards",
       backgroundDarkOpacity: "backgroundDarkOpacityMedia 600ms forwards",
       none: "none",
@@ -47,8 +47,11 @@ module.exports = {
     backdropSepia: ({ theme }) => theme("sepia"),
     backgroundColor: ({ theme }) => theme("colors"),
     backgroundImage: {
-      'custom-gradient': 'linear-gradient(rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 1) 70%)',
-      'scroll-gradient': 'linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%)',
+      "log-in-gradient":
+        "linear-gradient(90deg, #171616 50%, rgba(23, 22, 22, 0.8) 54.45%, rgba(23, 22, 22, 0.7) 57.35%, rgba(96, 86, 86, 0) 98.9%)",
+      "custom-gradient":
+        "linear-gradient(rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 1) 70%)",
+      "scroll-gradient": "linear-gradient(270deg, #0b8fbf 6.75%, #de518e 100%)",
       none: "none",
       "gradient-to-t": "linear-gradient(to top, var(--tw-gradient-stops))",
       "gradient-to-tr":
@@ -170,11 +173,12 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
-      secondaryy : '#0b8fbf',
-      primaryy : '#de518e',
-      textt : '#ffffff',
-      darkBackk : '#2b2d31',
-      DarkerBackk : '#ffffff',
+      secondaryy: "#0b8fbf",
+      primaryy: "#de518e",
+      textt: "#ffffff",
+      darkBackk: "#2b2d31",
+      DarkerBackk: "#ffffff",
+      LogInBackground: "#292a2d",
     }),
     columns: {
       auto: "auto",
@@ -317,7 +321,7 @@ module.exports = {
       DEFAULT: "1",
     },
     fontFamily: {
-      bebas: ['"Bebas Neue"', 'sans-serif'],
+      bebas: ['"Bebas Neue"', "sans-serif"],
       sans: [
         "ui-sans-serif",
         "system-ui",
@@ -593,18 +597,18 @@ module.exports = {
     },
     keyframes: {
       imgHover: {
-        '0%': { opacity: '0' },
-        '100%': { opacity: '1' },
+        "0%": { opacity: "0" },
+        "100%": { opacity: "1" },
       },
       slideshow: {
-        '0%': { left: '0' },
-        '50%': { left: '-185%' },
-        '100%': { left: '-370%' },
+        "0%": { left: "0" },
+        "50%": { left: "-185%" },
+        "100%": { left: "-370%" },
       },
       slideshowtwo: {
-        '0%': { left: '-340%' },
-        '50%': { left: '-185%' },
-        '100%': { left: '0%' },
+        "0%": { left: "-340%" },
+        "50%": { left: "-185%" },
+        "100%": { left: "0%" },
       },
       backgroundDarkOpacityMedia: {
         "0%": { backgroundColor: "#3234372e" },
@@ -1108,5 +1112,8 @@ module.exports = {
       50: "50",
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/forms'),
+  ],
 };
