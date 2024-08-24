@@ -21,15 +21,15 @@ export default function LogIn() {
         <div className='bg-log-in-gradient w-full m-0 h-full rounded-2xl '>
             <div className='p-4'>
               <Link
-                className={styles.loginlogo}
-              // className='m-0 max-h-11 text-5xl bg-clip-text'
+                // className={styles.loginlogo}
+              className='m-0 max-h-11 text-5xl bg-clip-text bg-scroll-gradient transparentLogo'
                to="/">
                 {/* add here */}
                 TopCine
               </Link>
             </div>
-          <div className='ml-20 w-1/2 '>
 
+          <div className='ml-20 w-1/2'>
             <div className='mt-10 flex flex-row relative text-textt text-4xl'>
               <h1> Log in </h1>
             </div>
@@ -41,10 +41,10 @@ export default function LogIn() {
             </div>
 
                 
-            <form className="">
+            <form className="w-3/4">
               <label
-                className="group input flex items-center gap-3 text-xl
-                            w-3/4 h-16 rounded-xl py-2 text-textt 
+                className="group input flex items-center gap-3
+                            h-16 rounded-xl py-2 text-textt 
                             mb-2 border-none"
               >
                 <svg
@@ -63,12 +63,12 @@ export default function LogIn() {
                   placeholder="Email"
                   required
                   // className={styles.inputemail}
-                  className="grow border-none focus:border-none"
+                  className="grow border-none text-lg"
                 />
               </label>
               <label
-                className="group input flex items-center gap-3 text-xl
-                w-3/4 h-16 rounded-xl py-2 text-textt border-none
+                className="group input flex items-center gap-3 
+                h-16 rounded-xl py-2 text-textt border-none
                 "
               >
                 <svg
@@ -86,7 +86,7 @@ export default function LogIn() {
                 <input
                   placeholder="Password"
                   type="password"
-                  className="grow border-none"
+                  className="grow border-none text-lg"
                   value={password}
                   onChange={(e) => {
                     setPasswrod(e.target.value);
@@ -106,7 +106,7 @@ export default function LogIn() {
               </div>
                 <input
                   type="submit"
-                  className="btn w-3/4 text-textt text-xl bg-primaryy border-none rounded-xl "
+                  className="btn hover:bg-secondary w-full text-textt text-xl bg-primaryy border-none rounded-xl "
                   value="Log In"
                 />
             </form>

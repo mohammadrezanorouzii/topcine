@@ -47,6 +47,8 @@ module.exports = {
     backdropSepia: ({ theme }) => theme("sepia"),
     backgroundColor: ({ theme }) => theme("colors"),
     backgroundImage: {
+      "sign-up-gradient":
+        "linear-gradient(270deg, #171616 50%, rgba(23, 22, 22, 0.8) 54.45%, rgba(23, 22, 22, 0.7) 57.35%, rgba(96, 86, 86, 0) 98.9%)",
       "log-in-gradient":
         "linear-gradient(90deg, #171616 50%, rgba(23, 22, 22, 0.8) 54.45%, rgba(23, 22, 22, 0.7) 57.35%, rgba(96, 86, 86, 0) 98.9%)",
       "custom-gradient":
@@ -177,7 +179,6 @@ module.exports = {
       primaryy: "#de518e",
       textt: "#ffffff",
       darkBackk: "#2b2d31",
-      DarkerBackk: "#ffffff",
       LogInBackground: "#292a2d",
     }),
     columns: {
@@ -1113,6 +1114,19 @@ module.exports = {
     },
   },
   plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.custom-border-radius': {
+          '-moz-border-radius': '20px',
+          '-webkit-border-radius': '20px',
+          'border-radius': '20px',
+        },
+        '.transparentLogo' : {
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent'
+        }
+      })
+    },
     require('daisyui'),
     require('@tailwindcss/forms'),
   ],

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import styles from "./CheckPassword.module.scss";
+import React, { useEffect, useState } from "react";
 import Done from "../../../Icons/Done";
 import NotOk from "../../../Icons/NotOk";
 
@@ -8,64 +7,68 @@ export default function CheckPassword({ password }) {
   const [safe2, setSafe2] = useState(false);
   const [safe3, setSafe3] = useState(false);
 
-  const checkPassword = () => {
-    function isUpper(str) {
-      return /.*[A-Z].*/.test(str);
-    }
-    function containsNumber(str) {
-      return /\d/.test(str);
-    }
+  function countTrue(a, b, c) {
+    return [a, b, c].filter(Boolean).length;
+  }
 
+  useEffect(() => {
     if (password.length >= 8) {
       setSafe1(true);
     } else {
       setSafe1(false);
     }
-    if (isUpper(password)) {
+    if (/.*[A-Z].*/.test(password)) {
       setSafe2(true);
     } else {
       setSafe2(false);
     }
-    if (containsNumber(password)) {
+    if (/\d/.test(password)) {
       setSafe3(true);
     } else {
       setSafe3(false);
     }
-  };
-
-  setTimeout(checkPassword, 100);
+  }, [password]);
 
   return (
     <>
-      <div className={styles.checkpass}>
-        <div className={styles.line1}>
-          <div className={styles["icon-done"]}>
-            {safe1 ? <Done /> : <NotOk />}
-          </div>
+      <div className="flex gap-2 bg-LogInBackground p-3 flex-col rounded-2xl">
+        <div className="flex flex-row gap-2">
+          <div className="my-auto">{safe1 ? <Done /> : <NotOk />}</div>
           <p
-            className={`${
-              safe1 ? styles["line1-text-light"] : styles["line1-text"]
+            className={`text-textt text-lg ${
+              safe1 ? " opacity-100" : "opacity-50"
             }`}
           >
             use at least 8 characters
           </p>
         </div>
 
-        <div className={styles.line2}>
-          <div className={styles["icon-done"]}>
-            {safe2 ? <Done /> : <NotOk />}
-          </div>
-          <p className={`${safe2 ? styles["line1-text-light"] : styles["line1-text"]}`}>
+        <div className="flex flex-row gap-2">
+          <div className="my-auto">{safe2 ? <Done /> : <NotOk />}</div>
+          <p
+            className={`text-textt text-lg ${
+              safe2 ? " opacity-100" : "opacity-50"
+            }`}
+          >
             use at least one uppercase
           </p>
         </div>
 
-        <div className={styles.line3}>
-          <div className={styles["icon-done"]}>{safe3 ? <Done /> : <NotOk />}</div>
-          <p className={`${safe3 ? styles["line1-text-light"] : styles["line1-text"]}`}>
+        <div className="flex flex-row gap-2">
+          <div className="my-auto">{safe3 ? <Done /> : <NotOk />}</div>
+          <p
+            className={`text-textt text-lg ${
+              safe3 ? " opacity-100" : "opacity-50"
+            }`}
+          >
             use at least one number
           </p>
         </div>
+        <progress
+          className="progress progress-success"
+          value={countTrue(safe1, safe2, safe3) * 34}
+          max="102"
+        ></progress>
       </div>
     </>
   );
