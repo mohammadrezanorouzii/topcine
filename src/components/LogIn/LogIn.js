@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./LogIn.module.scss";
 import img1 from "../../pics/it.jpg";
 import { Link } from "react-router-dom";
 
@@ -9,7 +8,6 @@ export default function LogIn() {
   const [password, setPasswrod] = useState("");
   // if one or both of email and pass was incorrect --> opacity of button = 0.7 and alert error
   // if one or both of email and pass was empty --> opacity of button = 0.7
-
 
   return (
     <div className='bg-LogInBackground w-full h-screen flex items-center justify-center'>
@@ -21,10 +19,8 @@ export default function LogIn() {
         <div className='bg-log-in-gradient w-full m-0 h-full rounded-2xl '>
             <div className='p-4'>
               <Link
-                // className={styles.loginlogo}
               className='m-0 max-h-11 text-5xl bg-clip-text bg-scroll-gradient transparentLogo'
                to="/">
-                {/* add here */}
                 TopCine
               </Link>
             </div>

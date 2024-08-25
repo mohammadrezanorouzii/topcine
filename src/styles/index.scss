@@ -1335,20 +1335,6 @@ select {
   border-radius: var(--rounded-box, 1rem);
   background-color: var(--fallback-bc,oklch(var(--bc)/0.2));
 }
-.range {
-  height: 1.5rem;
-  width: 100%;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  --range-shdw: var(--fallback-bc,oklch(var(--bc)/1));
-  overflow: hidden;
-  border-radius: var(--rounded-box, 1rem);
-  background-color: transparent;
-}
-.range:focus {
-  outline: none;
-}
 .select {
   display: inline-flex;
   cursor: pointer;
@@ -1854,59 +1840,6 @@ select {
       0 0 0 4px var(--fallback-b1,oklch(var(--b1)/1)) inset;
   }
 }
-.range:focus-visible::-webkit-slider-thumb {
-  --focus-shadow: 0 0 0 6px var(--fallback-b1,oklch(var(--b1)/1)) inset, 0 0 0 2rem var(--range-shdw) inset;
-}
-.range:focus-visible::-moz-range-thumb {
-  --focus-shadow: 0 0 0 6px var(--fallback-b1,oklch(var(--b1)/1)) inset, 0 0 0 2rem var(--range-shdw) inset;
-}
-.range::-webkit-slider-runnable-track {
-  height: 0.5rem;
-  width: 100%;
-  border-radius: var(--rounded-box, 1rem);
-  background-color: var(--fallback-bc,oklch(var(--bc)/0.1));
-}
-.range::-moz-range-track {
-  height: 0.5rem;
-  width: 100%;
-  border-radius: var(--rounded-box, 1rem);
-  background-color: var(--fallback-bc,oklch(var(--bc)/0.1));
-}
-.range::-webkit-slider-thumb {
-  position: relative;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: var(--rounded-box, 1rem);
-  border-style: none;
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
-  appearance: none;
-  -webkit-appearance: none;
-  top: 50%;
-  color: var(--range-shdw);
-  transform: translateY(-50%);
-  --filler-size: 100rem;
-  --filler-offset: 0.6rem;
-  box-shadow: 0 0 0 3px var(--range-shdw) inset,
-      var(--focus-shadow, 0 0),
-      calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
-}
-.range::-moz-range-thumb {
-  position: relative;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: var(--rounded-box, 1rem);
-  border-style: none;
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
-  top: 50%;
-  color: var(--range-shdw);
-  --filler-size: 100rem;
-  --filler-offset: 0.5rem;
-  box-shadow: 0 0 0 3px var(--range-shdw) inset,
-      var(--focus-shadow, 0 0),
-      calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
-}
 @keyframes rating-pop {
 
   0% {
@@ -2041,25 +1974,6 @@ html:has(.drawer-toggle:checked) {
 .menu-horizontal > li:not(.menu-title) > details > ul {
   position: absolute;
 }
-.range-xs {
-  height: 1rem;
-}
-.range-xs::-webkit-slider-runnable-track {
-  height: 0.25rem;
-}
-.range-xs::-moz-range-track {
-  height: 0.25rem;
-}
-.range-xs::-webkit-slider-thumb {
-  height: 1rem;
-  width: 1rem;
-  --filler-offset: 0.4rem;
-}
-.range-xs::-moz-range-thumb {
-  height: 1rem;
-  width: 1rem;
-  --filler-offset: 0.4rem;
-}
 .card-compact .card-body {
   padding: 1rem;
   font-size: 0.875rem;
@@ -2128,8 +2042,8 @@ html:has(.drawer-toggle:checked) {
 .left-0 {
   left: 0px;
 }
-.left-\[460px\] {
-  left: 460px;
+.left-\[520px\] {
+  left: 520px;
 }
 .right-2 {
   right: 0.5rem;
@@ -2143,8 +2057,8 @@ html:has(.drawer-toggle:checked) {
 .top-52 {
   top: 13rem;
 }
-.top-\[370px\] {
-  top: 370px;
+.top-\[305px\] {
+  top: 305px;
 }
 .z-10 {
   z-index: 10;
@@ -2230,6 +2144,9 @@ html:has(.drawer-toggle:checked) {
 .mt-20 {
   margin-top: 5rem;
 }
+.mt-28 {
+  margin-top: 7rem;
+}
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -2305,8 +2222,14 @@ html:has(.drawer-toggle:checked) {
 .w-1\/2 {
   width: 50%;
 }
+.w-1\/4 {
+  width: 25%;
+}
 .w-16 {
   width: 4rem;
+}
+.w-2\/3 {
+  width: 66.666667%;
 }
 .w-3\/4 {
   width: 75%;
@@ -2361,9 +2284,6 @@ html:has(.drawer-toggle:checked) {
 }
 .max-w-screen-sm {
   max-width: 640px;
-}
-.max-w-xs {
-  max-width: 20rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2570,6 +2490,10 @@ html:has(.drawer-toggle:checked) {
   --tw-bg-opacity: 1;
   background-color: rgb(76 5 25 / var(--tw-bg-opacity));
 }
+.bg-secondaryy {
+  --tw-bg-opacity: 1;
+  background-color: rgb(11 143 191 / var(--tw-bg-opacity));
+}
 .bg-stone-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(87 83 78 / var(--tw-bg-opacity));
@@ -2749,6 +2673,10 @@ html:has(.drawer-toggle:checked) {
 .duration-500 {
   transition-duration: 500ms;
 }
+.transparentLogo {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .checked\:bg-primaryy:checked {
   --tw-bg-opacity: 1;
   background-color: rgb(222 81 142 / var(--tw-bg-opacity));
@@ -2786,6 +2714,10 @@ html:has(.drawer-toggle:checked) {
 .hover\:bg-red-950:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(69 10 10 / var(--tw-bg-opacity));
+}
+.hover\:bg-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-s,oklch(var(--s)/var(--tw-bg-opacity)));
 }
 .hover\:bg-secondaryy:hover {
   --tw-bg-opacity: 1;

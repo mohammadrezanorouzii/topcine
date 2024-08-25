@@ -100,7 +100,8 @@ export default function BodyCards({
                 <p
                   key={index}
                   className={`text-textt p-2 rounded-xl hover:cursor-pointer 
-                              max-w-fit border-textt border-solid font-medium border-2 ${hoverClasses[index]}`}
+                              max-w-fit border-textt border-solid font-medium
+                              border-2 ${hoverClasses[index]}`}
                 >
                   {e.name}
                 </p>

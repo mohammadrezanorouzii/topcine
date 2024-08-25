@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Navbar.module.scss";
 import "@fontsource/epilogue";
 import "@fontsource/archivo";
 import "@fontsource/expletus-sans";
@@ -8,10 +7,6 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   const [navbarOpacityIsZero, setNavbarOpacityIsZero] = useState(true);
   const [scrollY, setScrollY] = useState(0);
-  // const [focus, setFocus] = useState(false);
-  // const [searchValue, setSearchValue] = useState("");
-  // const [openBurger, setBurger] = useState(false);
-  // const [showBurger, setShowBurger] = useState(true);
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -64,7 +59,7 @@ export default function Navbar() {
               </label>
             </div>
             <div className="mx-2 flex-1 px-2">
-              <p className={styles.logo}> TopCine </p>
+              <p className='transparentLogo bg-clip-text bg-scroll-gradient text-5xl font-bold'> TopCine </p>
             </div>
             <div className="hidden flex-none lg:block">
               <ul className="menu menu-horizontal">
