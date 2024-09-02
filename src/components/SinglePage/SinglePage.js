@@ -11,58 +11,48 @@ export default function SinglePage() {
   const [movieCredits, setMovieCredits] = useState([]);
   // const [pageNumber, setPageNumber] = useState(1);
   const hoverClasses = [
-    'hover:bg-[#de518e]',
-    'hover:bg-[#A9619A]',
-    'hover:bg-[#7570A7]',
-    'hover:bg-[#4080B3]',
-    'hover:bg-[#0b8fbf]',
+    "hover:bg-[#de518e]",
+    "hover:bg-[#A9619A]",
+    "hover:bg-[#7570A7]",
+    "hover:bg-[#4080B3]",
+    "hover:bg-[#0b8fbf]",
   ];
 
   // console.log(movieInfo.genres);
-  
-  useEffect(() => {
-    const options = {
-      method: "GET",
-    };
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movie_id}?api_key=7a47242793d59eb1570389827de8affd&language=en-US`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setMovieInfo(response);
-      })
-      .catch((err) => console.error(err));
-  }, [movie_id]);
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-    };
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setMovieReviews(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, [movie_id]);
+    const fetchMovieData = async () => {
+      const options = {
+        method: "GET",
+      };
 
-  useEffect(() => {
-    const options = {
-      method: "GET",
+      try {
+        const infoResponse = await fetch(
+          `https://api.themoviedb.org/3/movie/${movie_id}?api_key=7a47242793d59eb1570389827de8affd&language=en-US`,
+          options
+        );
+        const infoData = await infoResponse.json();
+        setMovieInfo(infoData);
+
+        const reviewsResponse = await fetch(
+          `https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1`,
+          options
+        );
+        const reviewsData = await reviewsResponse.json();
+        setMovieReviews(reviewsData.results);
+
+        const creditsResponse = await fetch(
+          `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=7a47242793d59eb1570389827de8affd&language=en-US`,
+          options
+        );
+        const creditsData = await creditsResponse.json();
+        setMovieCredits(creditsData.cast);
+      } catch (err) {
+        console.error(err);
+      }
     };
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=7a47242793d59eb1570389827de8affd&language=en-US`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setMovieCredits(response.cast);
-      })
-      .catch((err) => console.error(err));
+
+    fetchMovieData();
   }, [movie_id]);
 
   return (
@@ -106,17 +96,18 @@ export default function SinglePage() {
               <p className="text-textt text-2xl">{movieInfo.overview}</p>
             </div>
             <div className="flex flex-row space-x-2 mt-4">
-            {movieInfo.genres && movieInfo.genres.map((e, index) => (
-                <p
-                  key={index}
-                  className={`text-textt p-2 text-lg rounded-lg hover:cursor-pointer 
+              {movieInfo.genres &&
+                movieInfo.genres.map((e, index) => (
+                  <p
+                    key={index}
+                    className={`text-textt p-2 text-lg rounded-lg hover:cursor-pointer 
                               max-w-fit border-textt border-solid font-medium
                               border-2 ${hoverClasses[index]}`}
-                >
-                  {e.name}
-                </p>
-              ))}
-          </div>
+                  >
+                    {e.name}
+                  </p>
+                ))}
+            </div>
           </div>
         </div>
       </div>

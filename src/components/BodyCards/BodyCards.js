@@ -19,11 +19,11 @@ export default function BodyCards({
   const [genres, setGenres] = useState([]);
 
   const hoverClasses = [
-    'hover:bg-[#de518e]',
-    'hover:bg-[#A9619A]',
-    'hover:bg-[#7570A7]',
-    'hover:bg-[#4080B3]',
-    'hover:bg-[#0b8fbf]',
+    "hover:bg-[#de518e]",
+    "hover:bg-[#A9619A]",
+    "hover:bg-[#7570A7]",
+    "hover:bg-[#4080B3]",
+    "hover:bg-[#0b8fbf]",
   ];
 
   const falseHovering = () => {
@@ -39,22 +39,28 @@ export default function BodyCards({
     .slice(0, 5);
 
   useEffect(() => {
-    if (imdb === 0) {
-      setImdbIsTrue(false);
-    }
-    const options = {
-      method: "GET",
+    const fetchGenres = async () => {
+      if (imdb === 0) {
+        setImdbIsTrue(false);
+      }
+
+      const options = {
+        method: "GET",
+      };
+
+      try {
+        const response = await fetch(
+          "https://api.themoviedb.org/3/genre/movie/list?api_key=7a47242793d59eb1570389827de8affd&language=en-US",
+          options
+        );
+        const data = await response.json();
+        setGenres(data.genres);
+      } catch (err) {
+        console.error(err);
+      }
     };
 
-    fetch(
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=7a47242793d59eb1570389827de8affd&language=en-US",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        setGenres(response.genres);
-      })
-      .catch((err) => console.error(err));
+    fetchGenres();
   }, [imdb]);
 
   return (
