@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LogIn from "./components/LogIn/LogIn";
-import Home from "./components/Home/Home";
-import SignUp from "./components/SignUp/SignUp";
-import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
-import SinglePage from "./components/SinglePage/SinglePage";
+// import LogIn from "./components/LogIn/LogIn";
+// import Home from "./components/Home/Home";
+// import SignUp from "./components/SignUp/SignUp";
+// import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
+// import SinglePage from "./components/SinglePage/SinglePage";
 import ScrollToTop from "./components/ScrollToTheTop/ScrollToTop";
-import './styles/tailwind.scss';  // Tailwind CSS
-import './styles/index.scss';   // Your SASS styles
-
+import "./styles/tailwind.scss"; // Tailwind CSS
+import "./styles/index.scss"; // Your SASS styles
+const LazyLogin = React.lazy(() => import("./components/LogIn/LogIn"));
+const LazyHome = React.lazy(() => import("./components/Home/Home"));
+const LazySignup = React.lazy(() => import("./components/SignUp/SignUp"));
+const LazyNotFound = React.lazy(() =>
+  import("./components/NotFoundPage/NotFoundPage")
+);
+const LazySinglePage = React.lazy(() =>
+  import("./components/SinglePage/SinglePage")
+);
 
 function App() {
   const [items, setItems] = useState([]);
@@ -26,7 +34,7 @@ function App() {
     )
       .then((response) => response.json())
       .then((response) => {
-        return setItems(response.results.splice(0,18));
+        return setItems(response.results.splice(0, 18));
       })
       .catch((err) => console.error(err));
   }, []);
@@ -90,23 +98,54 @@ function App() {
     <Router>
       <ScrollToTop />
       <Routes>
-        <Route path="/login" element={<LogIn />}></Route>
+        <Route
+          path="/login"
+          element={
+            <React.Suspense fallback="Loading ... ">
+              <LazyLogin />
+            </React.Suspense>
+          }
+        />
         <Route
           path="/"
           element={
-            <Home
-              items={items}
-              topMovies={topMovies}
-              nowMovies={nowMovies}
-              upMovies={upMovies}
-              series={series}
-              series2={series2}
-            />
+            <React.Suspense fallback="Loading ... ">
+              <LazyHome
+                items={items}
+                topMovies={topMovies}
+                nowMovies={nowMovies}
+                upMovies={upMovies}
+                series={series}
+                series2={series2}
+              />
+            </React.Suspense>
           }
         ></Route>
-        <Route path="signup" element={<SignUp />}></Route>
-        <Route path="singlepage/:id" element={<SinglePage />}></Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
+        <Route
+          path="signup"
+          element={
+            <React.Suspense fallback="Loading ... ">
+              <LazySignup />
+            </React.Suspense>
+          }
+        ></Route>
+        <Route
+          path="singlepage/:id"
+          element={
+            <React.Suspense fallback="Loading ... ">
+              <LazySinglePage />
+            </React.Suspense>
+          }
+        ></Route>
+        <Route
+          path="*"
+          element={
+            <React.Suspense fallback="Loading ... ">
+              {" "}
+              <LazyNotFound />
+            </React.Suspense>
+          }
+        ></Route>
       </Routes>
     </Router>
   );
