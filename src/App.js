@@ -29,70 +29,124 @@ function App() {
   //----------------------------------- FETCH DATA -----------------------------------
 
   useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/trending/movie/week?api_key=7a47242793d59eb1570389827de8affd&language=en-US"
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setItems(response.results.splice(0, 18));
-      })
-      .catch((err) => console.error(err));
+    const fetchAll = async () => {
+      const options = {
+        method: "GET",
+      };
+      try {
+        const infoResponse = await fetch(
+          "https://api.themoviedb.org/3/trending/movie/week?api_key=7a47242793d59eb1570389827de8affd&language=en-US",
+          options
+        );
+        const infoData = await infoResponse.json();
+        setItems(infoData.results.splice(0, 18));
+
+        const infoResponse1 = await fetch(
+          "https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+          options
+        );
+        const infoData1 = await infoResponse1.json();
+        setTopMovies(infoData1.results);
+
+        const infoResponse2 = await fetch(
+          "https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+          options
+        );
+        const infoData2 = await infoResponse2.json();
+        setNowMovies(infoData2.results);
+
+        const infoResponse3 = await fetch(
+          "https://api.themoviedb.org/3/movie/popular?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+          options
+        );
+        const infoData3 = await infoResponse3.json();
+        setUpMovies(infoData3.results);
+
+        const infoResponse4 = await fetch(
+          "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1",
+          options
+        );
+        const infoData4 = await infoResponse4.json();
+        setSeries(infoData4.results);
+
+        const infoResponse5 = await fetch(
+          "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=2",
+          options
+        );
+        const infoData5 = await infoResponse5.json();
+        setSeries2(infoData5.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchAll();
   }, []);
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setTopMovies(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api.themoviedb.org/3/trending/movie/week?api_key=7a47242793d59eb1570389827de8affd&language=en-US"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       return setItems(response.results.splice(0, 18));
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setNowMovies(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api.themoviedb.org/3/movie/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       return setTopMovies(response.results);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setUpMovies(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api.themoviedb.org/3/movie/now_playing?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       return setNowMovies(response.results);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setSeries(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api.themoviedb.org/3/movie/popular?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       return setUpMovies(response.results);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=2"
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return setSeries2(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=1"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       return setSeries(response.results);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api.themoviedb.org/3/tv/top_rated?api_key=7a47242793d59eb1570389827de8affd&language=en-US&page=2"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       return setSeries2(response.results);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
   return (
     <Router>
